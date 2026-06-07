@@ -47,9 +47,17 @@
 - [x] 專業度提升：favicon/icon、SEO metadata、sitemap、robots、自訂 404
 - [x] 外部審查：Gemini L4（採納 a11y+限流 3 項、拒 model 倒退翻盤）；Codex L3 額度爆 SKIP
 - [🔴 帳號方針] 所有專案一律用 backup901012 部署、不再用 cbe566
-- [x] 棄用 cbe566 部署（不再對 cbe566 執行任何指令）
-- [ ] ⏳ 部署到 backup901012 Vercel：需 backup901012 的 VERCEL_TOKEN 入 ~/.claude/.env
-       （CLI 現登入 cbe566、MCP 唔會自己 push code；有 token 即可一鍵部署所有專案到 backup901012）
+- [x] 清走 cbe566：刪除 cbe566 Vercel 專案 + 移除本機連結 + vercel logout
+- [x] ✅ 正式公開上線（GitHub Pages，backup901012-stack）
+       👉 https://backup901012-stack.github.io/sen-navigator/
+- [x] repo 設為公開（免費 Pages 需公開）、推 gh-pages 分支、啟用 Pages
+- [x] 線上驗證：首頁 / services / grading 皆 200、繁中正常
+- [x] 一鍵部署腳本 scripts/deploy-pages.sh（日後更新用）
+
+## 架構調整（為靜態上線）
+- 移除 /api/chat 動態路由 → AiChat 改純前端 FAQ 知識庫關鍵字比對
+- next.config 靜態匯出（PAGES_EXPORT + basePath /sen-navigator）
+- 日後若要接真 Claude AI：需具伺服器的部署（如 backup901012 Vercel）+ 還原 api 路由
 
 ## 誠實狀態（honest-progress-reporting）
 - ✅ L1 規劃 / L2 工具 / L3 端到端（build+200+實測） 完成
