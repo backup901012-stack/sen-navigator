@@ -43,8 +43,9 @@
 - [x] 實測：10 頁全 200、中文正確顯示、AI fallback 正常
 - [x] 來源標註完整、底部敏感聲明（非官方、僅資訊整理）
 - [x] 本機 git commit
-- [ ] 部署 Vercel（⏳ 需老闆批准 — 對外動作）
-- [ ] 推 GitHub backup901012-stack（⏳ 需老闆批准 — 對外動作）
+- [x] 推 GitHub backup901012-stack → https://github.com/backup901012-stack/sen-navigator
+- [x] 部署 Vercel production READY → https://sen-navigator-jamies-projects-b02d4ae1.vercel.app
+- [ ] ⚠️ 關閉 Vercel Deployment Protection（dashboard 一步、需老闆做）才可公開分享
 
 ## 誠實狀態（honest-progress-reporting）
 - ✅ L1 規劃 / L2 工具 / L3 端到端（build+200+實測） 完成
