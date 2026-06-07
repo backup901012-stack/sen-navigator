@@ -44,8 +44,12 @@
 - [x] 來源標註完整、底部敏感聲明（非官方、僅資訊整理）
 - [x] 本機 git commit
 - [x] 推 GitHub backup901012-stack → https://github.com/backup901012-stack/sen-navigator
-- [x] 部署 Vercel production READY → https://sen-navigator-jamies-projects-b02d4ae1.vercel.app
-- [ ] ⚠️ 關閉 Vercel Deployment Protection（dashboard 一步、需老闆做）才可公開分享
+- [x] 專業度提升：favicon/icon、SEO metadata、sitemap、robots、自訂 404
+- [x] 外部審查：Gemini L4（採納 a11y+限流 3 項、拒 model 倒退翻盤）；Codex L3 額度爆 SKIP
+- [🔴 帳號方針] 所有專案一律用 backup901012 部署、不再用 cbe566
+- [x] 棄用 cbe566 部署（不再對 cbe566 執行任何指令）
+- [ ] ⏳ 部署到 backup901012 Vercel：需 backup901012 的 VERCEL_TOKEN 入 ~/.claude/.env
+       （CLI 現登入 cbe566、MCP 唔會自己 push code；有 token 即可一鍵部署所有專案到 backup901012）
 
 ## 誠實狀態（honest-progress-reporting）
 - ✅ L1 規劃 / L2 工具 / L3 端到端（build+200+實測） 完成

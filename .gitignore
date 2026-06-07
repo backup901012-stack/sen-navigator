@@ -4,6 +4,7 @@
 **/out/
 **/build/
 **/dist/
+**/.vercel/
 
 # 環境變數
 **/.env
