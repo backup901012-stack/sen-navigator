@@ -260,6 +260,7 @@ export default function MatchTool() {
             <button
               key={o.value}
               onClick={() => pick(o.value)}
+              aria-pressed={selected}
               className={`text-left px-5 py-4 rounded-xl border-2 font-medium transition-colors ${
                 selected
                   ? "border-brand-500 bg-brand-50 text-brand-800"

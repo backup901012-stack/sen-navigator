@@ -52,7 +52,12 @@ export default function AiChat() {
         </div>
       </div>
 
-      <div ref={boxRef} className="flex-1 overflow-y-auto p-4 space-y-3 bg-brand-50/30">
+      <div
+        ref={boxRef}
+        aria-live="polite"
+        aria-atomic="false"
+        className="flex-1 overflow-y-auto p-4 space-y-3 bg-brand-50/30"
+      >
         {messages.length === 0 && (
           <div className="text-center text-sm text-ink-soft py-6">
             <p>你好！我可以解答有關香港 SEN 學前資源嘅問題。</p>

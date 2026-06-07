@@ -29,7 +29,34 @@ const FALLBACK = `多謝你嘅提問！AI 即時對話功能暫未啟用（需�
 
 如急需協助，建議直接聯絡衞生署兒童體能智力測驗服務或社會福利署。`;
 
+// 基本記憶體限流（每實例、防濫用刷 API；正式環境建議改用 Upstash/Redis）
+const RATE = new Map<string, { count: number; ts: number }>();
+const WINDOW_MS = 60_000;
+const MAX_PER_WINDOW = 15;
+
+function rateLimited(req: Request): boolean {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    req.headers.get("x-real-ip") ||
+    "unknown";
+  const now = Date.now();
+  const rec = RATE.get(ip);
+  if (!rec || now - rec.ts > WINDOW_MS) {
+    RATE.set(ip, { count: 1, ts: now });
+    return false;
+  }
+  rec.count += 1;
+  return rec.count > MAX_PER_WINDOW;
+}
+
 export async function POST(req: Request) {
+  if (rateLimited(req)) {
+    return Response.json(
+      { reply: "查詢太頻繁，請稍候片刻再試。", rateLimited: true },
+      { status: 429 }
+    );
+  }
+
   let messages: ChatMessage[] = [];
   try {
     const body = await req.json();
