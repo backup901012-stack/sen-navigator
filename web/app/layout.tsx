@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "SEN 小孩導航員 — 香港特殊教育需要學前資源導航",
     template: "%s｜SEN 小孩導航員",
