@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SEN 小孩導航員 — 設計系統
+   溫暖、可信、易讀（對象：SEN 家長）
+   ============================================================ */
+
+@theme {
+  /* 主色：沉穩天藍綠（信任、平靜） */
+  --color-brand-50: #eefcfb;
+  --color-brand-100: #d4f5f3;
+  --color-brand-200: #aeeae8;
+  --color-brand-300: #76d8d6;
+  --color-brand-400: #38bdbd;
+  --color-brand-500: #16a3a6;
+  --color-brand-600: #0e8488;
+  --color-brand-700: #11696e;
+  --color-brand-800: #135459;
+  --color-brand-900: #14464b;
+
+  /* 輔色：溫暖珊瑚（行動呼籲、親和） */
+  --color-warm-50: #fff5ed;
+  --color-warm-100: #ffe8d4;
+  --color-warm-200: #ffcda8;
+  --color-warm-300: #ffa970;
+  --color-warm-400: #ff7d37;
+  --color-warm-500: #fb5c11;
+  --color-warm-600: #ec4307;
+  --color-warm-700: #c43108;
+
+  /* 中性 */
+  --color-ink: #1d2b2d;
+  --color-ink-soft: #4a5d5f;
+  --color-paper: #f7faf9;
+
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+    "Heiti TC", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-card: 1rem;
+}
+
+:root {
+  --background: #f7faf9;
+  --foreground: #1d2b2d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+}
+
+/* 易讀性：較大字、舒適行距（家長/長者友善） */
+p {
+  font-size: 1.0625rem;
+}
+
+/* 焦點可見性（無障礙） */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--color-brand-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* 容器 */
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* 卡片懸浮 */
+.card-hover {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -12px rgba(16, 105, 110, 0.35);
+}
+
+/* 動畫 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

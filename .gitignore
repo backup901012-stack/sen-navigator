@@ -1,0 +1,20 @@
+# 依賴與建置
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+**/dist/
+
+# 環境變數
+**/.env
+**/.env.local
+**/.env*.local
+
+# 原始素材（不入庫）
+*.pdf
+_pdf_pages/
+
+# 系統
+.DS_Store
+Thumbs.db
+*.log
