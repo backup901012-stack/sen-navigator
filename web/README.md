@@ -4,11 +4,23 @@
 
 服務模式參考「賽馬會 656 照顧者好幫搜 — 照顧導航員」，落地為 5 大功能。
 
+**🌐 正式網址：https://backup901012-stack.github.io/sen-navigator/**
+
 ## 技術
 
 - Next.js 16（App Router）+ React 19 + TypeScript
 - Tailwind CSS v4
-- 部署：Vercel（Root Directory 設為 `web`）
+- 部署：GitHub Pages（靜態匯出 `output: export`，帳號 backup901012-stack）
+
+## 部署（GitHub Pages）
+
+```bash
+bash scripts/deploy-pages.sh   # 一鍵：靜態 build + 推 gh-pages 分支
+```
+
+- 來源分支：`gh-pages`（root），由 `scripts/deploy-pages.sh` 產生
+- 靜態匯出用環境變數：`PAGES_EXPORT=1`、`BASE_PATH=sen-navigator`、`NEXT_PUBLIC_SITE_URL`
+- `.github/workflows/deploy.yml` 為自動部署用（需具 `workflow` scope 的 token 才能推上 GitHub，目前以腳本手動部署）
 
 ## 功能（5 大服務模式）
 
@@ -32,16 +44,10 @@ npm run build    # 正式建置
 npm run start    # 啟動正式版
 ```
 
-## 環境變數（選用）
+## AI 智能助理（純前端）
 
-AI 助理在未設定金鑰時會回傳友善的 fallback（引導至 FAQ／配對工具），設定後即啟用 Claude 即時對話：
-
-| 變數 | 說明 |
-|------|------|
-| `ANTHROPIC_API_KEY` | Anthropic API 金鑰（啟用 AI 助理） |
-| `ANTHROPIC_MODEL` | 選用，預設 `claude-haiku-4-5-20251001` |
-
-在 Vercel → Project → Settings → Environment Variables 設定。
+目前為**靜態站**，「導航員智能助理」以客戶端關鍵字比對 FAQ 知識庫即時作答，零後端、零成本、即時。
+若日後改用具伺服器的部署（如 Vercel），可加回 `app/api/chat` 路由接 Claude API（git 歷史有原始版本）。
 
 ## 資料來源與免責
 
