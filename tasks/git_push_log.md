@@ -1,5 +1,16 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-08 | sen-navigator | SCCC 分區輪候（社署實名數據）
+- 老闆提供 SCCC.csv（社署 2026-04-30、59 間中心、最後獲篩選個案申請日期）
+- 解析 → data/scccCentres.ts；新頁 /sccc 按 18 區分組、逐間顯示輪候指標
+- 依老闆指示：**不用平均輪候時間**，改逐間真實「最後獲篩選個案申請日期」
+- 移除 SCCC 舊「平均 20.2 個月」；services 卡加 CTA、footer/sitemap 加入
+- main commit ffc51d9；gh-pages 部署 bd103b6（status: built）
+- ✅ 線上實測：https://backup901012-stack.github.io/sen-navigator/sccc/ 正常、非平均、分區顯示
+
+---
+
+
 ### 2026-06-07 | sen-navigator | 正式上線 GitHub Pages（backup901012）
 - 帳號修正：清走 cbe566（刪 Vercel 專案 + logout），全面改 backup901012
 - repo 設為公開（免費 Pages 需公開、repo 無密鑰）
