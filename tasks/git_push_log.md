@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-08 | sen-navigator | 感覺統合與本體感覺科普
+- 老闆指基礎認識欠感覺統合/本體覺失調科普
+- WebSearch 查證 Ayres理論/八感/DSM-5(SPD非獨立診斷,感官反應入自閉症準則)/九成自閉症
+- 新頁 /sensory：八感、本體覺重點、三模式、表徵、與SEN關係、家居本體覺活動、強免責+來源
+- 接 FAQ基礎認識(+內部連結支援)、評估頁、頁尾、sitemap
+- main 9b4cea6；gh-pages 3fbd93e（built）；✅ 線上實測 /sensory 200
+---
+
+
 ### 2026-06-08 | sen-navigator | 協康會密集式訓練一覽表
 - 老闆指資源目錄欠協康會學前自閉症密集式訓練 2025-2026 一覽表
 - WebSearch 找到官方 PDF → WebFetch 下載 → 渲染圖片視覺逐頁讀（10 頁）
