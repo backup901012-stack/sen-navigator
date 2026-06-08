@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-08 | sen-navigator | 協康會密集式訓練一覽表
+- 老闆指資源目錄欠協康會學前自閉症密集式訓練 2025-2026 一覽表
+- WebSearch 找到官方 PDF → WebFetch 下載 → 渲染圖片視覺逐頁讀（10 頁）
+- 伴我童樂(2-3歲)/伴我童行 基礎(2-3歲)・高階(4-5歲) + 月費 $4,600-$9,900 + 10 間中心按區
+- 新頁 /heephong-asd + 目錄項目(可搜尋) + 目錄支援內部 Link + sitemap
+- main 30f9498；gh-pages 1f84090（built）；✅ 線上實測 /heephong-asd 200
+---
+
+
 ### 2026-06-08 | sen-navigator | M-CHAT-R 早期篩查工具
 - 老闆提供 M-CHAT-R_F_TraditionalFinal2018.pdf（25 頁、繁體 CID 字體亂碼→渲染圖片視覺逐頁讀）
 - 逐字錄入 20 題 + 官方計分（除2/5/12答是、其餘答否為風險；0-2低/3-7中/8-20高）
