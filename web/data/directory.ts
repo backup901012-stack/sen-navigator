@@ -118,6 +118,86 @@ export const DIRECTORY: ResourceItem[] = [
     confidence: "high",
     sources: [C("RehabGuide", "https://www.rehabguide.hk/")],
   },
+  // ---------- 家長支援與情緒健康 ----------
+  {
+    id: "prrc",
+    name: "家長／親屬資源中心（PRRC）",
+    type: "government",
+    funding: "free",
+    tags: ["家長支援", "照顧者", "互助小組", "情緒支援"],
+    ageGroup: "不限（照顧者）",
+    description:
+      "社署資助、全港 23 間。為殘疾人士的家長／親屬／照顧者提供輔導、互助小組、資源與社區教育，紓緩照顧壓力。免費，可直接向任何中心申請。",
+    url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_supportcom/centrebase/parentsrel/",
+    confidence: "high",
+    sources: [
+      C("社署 — 家長／親屬資源中心", "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_supportcom/centrebase/parentsrel/"),
+      C("data.gov.hk — 家長／親屬資源中心名單", "https://data.gov.hk/tc-data/dataset/hk-swd-rm-list-of-prc"),
+    ],
+  },
+  {
+    id: "hotline-18111",
+    name: "「情緒通」18111 精神健康支援熱線",
+    type: "hotline",
+    funding: "free",
+    tags: ["情緒支援", "精神健康", "24小時", "照顧者", "家長"],
+    ageGroup: "不限",
+    description:
+      "政府設立、24 小時一站式精神健康支援熱線（電話及 WhatsApp）。任何背景、任何年齡均可致電，照顧者本身亦可求助，並按需要轉介合適服務。",
+    phone: "18111",
+    url: "https://www.shallwetalk.hk/zh/get-help/mental-health-support-hotline-18111/",
+    confidence: "high",
+    sources: [
+      C("政府新聞公報 — 情緒通 18111", "https://www.info.gov.hk/gia/general/202312/27/P2023122700235.htm"),
+    ],
+  },
+  {
+    id: "hotline-ha",
+    name: "醫管局「精神健康專線」2466 7350",
+    type: "hotline",
+    funding: "free",
+    tags: ["情緒支援", "精神健康", "24小時", "照顧者"],
+    ageGroup: "不限",
+    description:
+      "醫院管理局 24 小時熱線，由精神科護士提供專業意見及適時轉介，服務病人、照顧者及公眾（粵／普／英）。",
+    phone: "2466 7350",
+    url: "https://www.ha.org.hk/visitor/ha_visitor_index.asp?Content_ID=279370&Lang=CHIB5&Dimension=100",
+    confidence: "high",
+    sources: [
+      C("醫院管理局 — 精神健康專線", "https://www.ha.org.hk/visitor/ha_visitor_index.asp?Content_ID=279370&Lang=CHIB5&Dimension=100"),
+    ],
+  },
+  {
+    id: "hotline-sbhk",
+    name: "香港撒瑪利亞防止自殺會 2896 0000",
+    type: "hotline",
+    funding: "free",
+    tags: ["情緒支援", "防止自殺", "24小時", "多語言"],
+    ageGroup: "不限",
+    description:
+      "24 小時中文及多種語言防止自殺熱線，為情緒困擾或有輕生念頭的人士提供即時支援。",
+    phone: "2896 0000",
+    url: "https://samaritans.org.hk/",
+    confidence: "high",
+    sources: [
+      C("香港撒瑪利亞防止自殺會", "https://samaritans.org.hk/"),
+    ],
+  },
+  {
+    id: "carers-hub",
+    name: "賽馬會「照顧者好幫搜」/ 照顧者資訊網",
+    type: "ngo",
+    funding: "free",
+    tags: ["照顧者", "家長支援", "情緒支援", "資源"],
+    ageGroup: "不限（照顧者）",
+    description:
+      "為照顧者而設的一站式資訊與支援平台，涵蓋情緒支援、社區資源與實用資訊。",
+    url: "https://carers.hk/",
+    confidence: "high",
+    sources: [
+      C("照顧者資訊網 carers.hk", "https://carers.hk/"),
+    ],
+  },
   // ---------- 機構實名密集訓練 ----------
   {
     id: "heephong-asd",

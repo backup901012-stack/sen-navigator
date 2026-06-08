@@ -7,7 +7,7 @@ import { PRIVATE_COURSES, PRIVATE_FEE_DISCLAIMER } from "@/data/privateCourses";
 import { FundingBadge, Tag, ConfidenceNote, SourceList } from "@/components/ui";
 import AddToPlanButton from "@/components/AddToPlanButton";
 
-const TYPES = ["all", "government", "assessment", "ngo", "private"] as const;
+const TYPES = ["all", "government", "assessment", "ngo", "private", "hotline"] as const;
 const FUNDINGS = ["all", "free", "subsidised", "self-pay", "mixed"] as const;
 const FUNDING_LABEL: Record<string, string> = {
   all: "全部",
@@ -69,6 +69,11 @@ export default function DirectoryExplorer() {
               {TYPE_LABEL[r.type]} · 適合 {r.ageGroup}
             </p>
             <p className="mt-2 text-sm text-ink flex-1">{r.description}</p>
+            {r.phone && (
+              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="mt-2 inline-flex items-center gap-1.5 text-brand-700 font-black">
+                📞 {r.phone}
+              </a>
+            )}
             <div className="mt-3 flex flex-wrap gap-1.5">
               {r.tags.map((t) => (
                 <Tag key={t}>{t}</Tag>
