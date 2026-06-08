@@ -1,5 +1,20 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-08 | sen-navigator | M-CHAT-R 早期篩查工具
+- 老闆提供 M-CHAT-R_F_TraditionalFinal2018.pdf（25 頁、繁體 CID 字體亂碼→渲染圖片視覺逐頁讀）
+- 逐字錄入 20 題 + 官方計分（除2/5/12答是、其餘答否為風險；0-2低/3-7中/8-20高）
+- 放大核對第 5 題「異常」等用字，確保逐字準確（零幻覺）
+- /screening 互動篩查：即時計分+分級+下一步+強免責(篩查≠診斷、16-30個月)
+- 接入首頁 banner、申請流程察覺步、頁尾、sitemap
+- main 7c4b878；gh-pages e80b86d（built）
+- ✅ 線上實測：/screening 200、20 題、免責正常
+
+### 2026-06-08 | sen-navigator | 評估頁補 Form 2 流程
+- /grading 加「Form 2 轉介信」區塊 + 兩條評估路徑 + 標準工具(綜合發展評估/M-P-R)
+- journey 第3/4步、FAQ Form 2 條目；main 64c45ac
+---
+
+
 ### 2026-06-08 | sen-navigator | SCCC 分區輪候（社署實名數據）
 - 老闆提供 SCCC.csv（社署 2026-04-30、59 間中心、最後獲篩選個案申請日期）
 - 解析 → data/scccCentres.ts；新頁 /sccc 按 18 區分組、逐間顯示輪候指標
