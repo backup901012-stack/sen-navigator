@@ -5,6 +5,7 @@ export const SITE_URL =
 
 export const ROUTES = [
   "",
+  "/screening",
   "/services",
   "/sccc",
   "/grading",

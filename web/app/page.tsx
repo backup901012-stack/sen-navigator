@@ -104,6 +104,26 @@ export default function Home() {
         </p>
       </section>
 
+      {/* 早期篩查入口 */}
+      <section className="container-page pb-4">
+        <div className="rounded-3xl bg-gradient-to-br from-warm-50 to-brand-50 border border-brand-100 p-8 sm:p-10 flex flex-col md:flex-row items-center gap-6">
+          <span className="text-5xl">🧒</span>
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-2xl font-black text-brand-900">擔心孩子的發展？由一個簡單篩查開始</h2>
+            <p className="mt-2 text-ink-soft">
+              用國際常用的 <strong>M-CHAT-R</strong> 自閉症早期篩查（適用 16–30 個月），20 條問題、約 5 分鐘，即時知道下一步方向。
+              <span className="text-ink-soft">（篩查不等於診斷）</span>
+            </p>
+          </div>
+          <Link
+            href="/screening"
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold transition-colors"
+          >
+            開始免費篩查 →
+          </Link>
+        </div>
+      </section>
+
       {/* 5 大服務模式 */}
       <section className="bg-white border-y border-brand-100">
         <div className="container-page py-16">

@@ -53,17 +53,23 @@ export default function JourneyPage() {
                 )}
                 {s.links && s.links.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-3">
-                    {s.links.map((l, i) => (
-                      <a
-                        key={i}
-                        href={l.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-brand-600 font-bold text-sm hover:underline"
-                      >
-                        {l.label} →
-                      </a>
-                    ))}
+                    {s.links.map((l, i) =>
+                      l.url.startsWith("/") ? (
+                        <Link key={i} href={l.url} className="text-brand-600 font-bold text-sm hover:underline">
+                          {l.label} →
+                        </Link>
+                      ) : (
+                        <a
+                          key={i}
+                          href={l.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-600 font-bold text-sm hover:underline"
+                        >
+                          {l.label} →
+                        </a>
+                      )
+                    )}
                   </div>
                 )}
               </div>

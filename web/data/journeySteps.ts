@@ -8,10 +8,12 @@ export const JOURNEY_STEPS: JourneyStep[] = [
     what:
       "留意孩子的發展里程碑。若發現語言、動作、社交或行為上比同齡明顯落後或有異，先記錄具體情況。",
     tips: [
+      "可先用網站的「自閉症早期篩查（M-CHAT-R）」初步了解（適用 16–30 個月）",
       "可參考母嬰健康院的兒童發展監察",
       "把觀察到的情況、頻率與例子記下，方便日後評估",
     ],
     links: [
+      { label: "自閉症早期篩查（M-CHAT-R）", url: "/screening" },
       { label: "衞生署 CAS — 轉介及評估", url: "https://www.dhcas.gov.hk/tc/referral.html" },
     ],
   },
