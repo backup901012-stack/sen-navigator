@@ -11,6 +11,7 @@ export const ROUTES = [
   "/grading",
   "/sensory",
   "/brain",
+  "/milestones",
   "/journey",
   "/directory",
   "/heephong-asd",

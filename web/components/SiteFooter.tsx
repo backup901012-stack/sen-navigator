@@ -24,6 +24,7 @@ export default function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/services" className="hover:text-white">政府學前服務</Link></li>
             <li><Link href="/sccc" className="hover:text-white">特殊幼兒中心輪候（分區）</Link></li>
+            <li><Link href="/milestones" className="hover:text-white">語言發展里程碑</Link></li>
             <li><Link href="/grading" className="hover:text-white">評估與分級</Link></li>
             <li><Link href="/sensory" className="hover:text-white">感覺統合科普</Link></li>
             <li><Link href="/brain" className="hover:text-white">童年經歷與腦部成長</Link></li>

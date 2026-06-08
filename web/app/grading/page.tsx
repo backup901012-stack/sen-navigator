@@ -243,6 +243,9 @@ export default function GradingPage() {
           <Link href="/brain" className="inline-block px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200">
             🧠 科普：童年經歷與腦部成長
           </Link>
+          <Link href="/milestones" className="inline-block px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200">
+            🗣 語言發展里程碑
+          </Link>
           <Link href="/journey" className="inline-block px-6 py-3 rounded-full bg-brand-600 text-white font-bold">
             了解完整申請流程 →
           </Link>
