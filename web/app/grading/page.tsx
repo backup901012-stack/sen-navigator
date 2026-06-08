@@ -236,7 +236,10 @@ export default function GradingPage() {
           資料來源：教育局「融合教育及特殊教育資訊網站」、衞生署兒童體能智力測驗服務（查證 2026-06）。
           類別判定須以專業評估為準。
         </p>
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex flex-wrap gap-3 justify-center">
+          <Link href="/sensory" className="inline-block px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200">
+            🧩 科普：感覺統合與本體感覺
+          </Link>
           <Link href="/journey" className="inline-block px-6 py-3 rounded-full bg-brand-600 text-white font-bold">
             了解完整申請流程 →
           </Link>

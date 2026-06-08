@@ -9,6 +9,7 @@ export const ROUTES = [
   "/services",
   "/sccc",
   "/grading",
+  "/sensory",
   "/journey",
   "/directory",
   "/heephong-asd",

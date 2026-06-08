@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { FAQ_ITEMS, FAQ_CATEGORIES } from "@/data/faq";
 
 export default function FaqSection() {
@@ -59,17 +60,23 @@ export default function FaqSection() {
                   {f.sources && f.sources.length > 0 && (
                     <div className="mt-3 pt-3 border-t border-brand-50">
                       <p className="text-[11px] font-bold text-ink-soft mb-1">資料來源</p>
-                      {f.sources.map((s, i) => (
-                        <a
-                          key={i}
-                          href={s.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block text-[11px] text-brand-600 hover:underline break-all"
-                        >
-                          {s.label}（查證 {s.checkedAt}）
-                        </a>
-                      ))}
+                      {f.sources.map((s, i) =>
+                        s.url.startsWith("/") ? (
+                          <Link key={i} href={s.url} className="block text-[11px] text-brand-600 hover:underline break-all">
+                            {s.label}
+                          </Link>
+                        ) : (
+                          <a
+                            key={i}
+                            href={s.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-[11px] text-brand-600 hover:underline break-all"
+                          >
+                            {s.label}（查證 {s.checkedAt}）
+                          </a>
+                        )
+                      )}
                     </div>
                   )}
                 </div>
