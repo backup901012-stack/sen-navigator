@@ -13,6 +13,7 @@ export const ROUTES = [
   "/sensory",
   "/brain",
   "/milestones",
+  "/odd",
   "/tcm",
   "/journey",
   "/pathways",

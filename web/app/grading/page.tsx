@@ -247,6 +247,9 @@ export default function GradingPage() {
           <Link href="/milestones" className="inline-block px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200">
             🗣 語言發展里程碑
           </Link>
+          <Link href="/odd" className="inline-block px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200">
+            😠 對立反抗症 ODD
+          </Link>
           <Link href="/journey" className="inline-block px-6 py-3 rounded-full bg-brand-600 text-white font-bold">
             了解完整申請流程 →
           </Link>
