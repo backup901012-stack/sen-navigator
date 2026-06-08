@@ -127,8 +127,8 @@ export const DIRECTORY: ResourceItem[] = [
     tags: ["家長支援", "照顧者", "互助小組", "情緒支援"],
     ageGroup: "不限（照顧者）",
     description:
-      "社署資助、全港 23 間。為殘疾人士的家長／親屬／照顧者提供輔導、互助小組、資源與社區教育，紓緩照顧壓力。免費，可直接向任何中心申請。",
-    url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_supportcom/centrebase/parentsrel/",
+      "社署資助、全港 23 間。為殘疾人士的家長／親屬／照顧者提供輔導、互助小組、資源與社區教育，紓緩照顧壓力。免費，可直接向任何中心申請。本站設各區一覽。",
+    url: "/prc",
     confidence: "high",
     sources: [
       C("社署 — 家長／親屬資源中心", "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_supportcom/centrebase/parentsrel/"),

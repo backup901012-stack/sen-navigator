@@ -116,6 +116,7 @@ export default function ParentsPage() {
           <div className="mt-5 flex flex-wrap gap-3">
             <a href="tel:18111" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 text-white font-black">📞 致電 18111</a>
             <a href="https://www.shallwetalk.hk/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full bg-white border border-brand-200 text-brand-700 font-bold">陪我講 Shall We Talk →</a>
+            <Link href="/prc" className="px-6 py-3 rounded-full bg-white border border-brand-200 text-brand-700 font-bold">各區家長資源中心 →</Link>
             <Link href="/directory" className="px-6 py-3 rounded-full bg-white border border-brand-200 text-brand-700 font-bold">更多支援資源 →</Link>
           </div>
           <p className="mt-4 text-xs text-ink-soft">
