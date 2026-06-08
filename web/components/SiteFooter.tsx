@@ -38,6 +38,7 @@ export default function SiteFooter() {
         <div>
           <h3 className="text-white font-bold mb-3 text-sm">支援工具</h3>
           <ul className="space-y-2 text-sm">
+            <li><Link href="/parents" className="hover:text-white">家長特區</Link></li>
             <li><Link href="/screening" className="hover:text-white">自閉症早期篩查 (M-CHAT-R)</Link></li>
             <li><Link href="/match" className="hover:text-white">服務配對</Link></li>
             <li><Link href="/faq" className="hover:text-white">常見問題 / AI 助理</Link></li>

@@ -17,6 +17,7 @@ export const ROUTES = [
   "/directory",
   "/heephong-asd",
   "/match",
+  "/parents",
   "/planner",
   "/faq",
   "/consult",

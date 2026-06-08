@@ -20,6 +20,7 @@ export const NAV: NavLink[] = [
   { href: "/journey", label: "申請流程" },
   { href: "/directory", label: "資源目錄" },
   { href: "/match", label: "服務配對" },
+  { href: "/parents", label: "家長特區" },
   { href: "/faq", label: "常見問題" },
 ];
 

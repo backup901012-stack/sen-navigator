@@ -136,6 +136,21 @@ export const DIRECTORY: ResourceItem[] = [
     ],
   },
   {
+    id: "shallwetalk",
+    name: "陪我講 Shall We Talk（精神健康平台）",
+    type: "ngo",
+    funding: "free",
+    tags: ["情緒支援", "精神健康", "家長", "照顧者", "資訊"],
+    ageGroup: "不限",
+    description:
+      "政府推動精神健康的平台，提供精神健康資訊、自助資源及求助途徑，旗下設「情緒通」18111 熱線。",
+    url: "https://www.shallwetalk.hk/",
+    confidence: "high",
+    sources: [
+      C("陪我講 Shall We Talk", "https://www.shallwetalk.hk/"),
+    ],
+  },
+  {
     id: "hotline-18111",
     name: "「情緒通」18111 精神健康支援熱線",
     type: "hotline",
