@@ -229,6 +229,23 @@ export const DIRECTORY: ResourceItem[] = [
       C("照顧者資訊網 carers.hk", "https://carers.hk/"),
     ],
   },
+  // ---------- 中醫輔助 ----------
+  {
+    id: "communitymedcare",
+    name: "醫道惠民 Community Med Care（中醫義診）",
+    type: "ngo",
+    funding: "free",
+    tags: ["中醫", "針灸", "推拿", "骨傷", "腦損傷", "自閉症", "唐氏綜合症", "罕有病", "義診"],
+    ageGroup: "0–30 歲",
+    description:
+      "稅例第88條非牟利慈善病人組織。為 0–30 歲有先天及後天腦損傷、自閉症、唐氏綜合症、罕有病的兒童青少年，提供以中醫骨傷科為主的中醫義診（針灸／骨傷／推拿／內科，另備中藥濃縮顆粒）。深水埗元州街及福華街兩館。中醫屬輔助、非替代主流評估與治療。",
+    phone: "2478 8808",
+    url: "https://communitymedcare.org/",
+    confidence: "high",
+    sources: [
+      C("醫道惠民 Community Med Care — 關於我們", "https://communitymedcare.org/about/"),
+    ],
+  },
   // ---------- 機構實名密集訓練 ----------
   {
     id: "heephong-asd",

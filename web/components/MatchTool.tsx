@@ -132,6 +132,18 @@ function buildRecommendations(a: Record<string, string | string[]>): {
     }
   });
 
+  // 中醫輔助（動作/肌張力相關常被考慮；屬輔助、非替代）
+  if (needs.includes("motor")) {
+    recos.push({
+      id: "reco-tcm",
+      title: "中醫輔助（如針灸、推拿）可作考慮",
+      why: "部分家長會在主流治療以外，為腦損傷／腦麻痺等孩子考慮中醫輔助。療效證據有限、屬輔助而非替代；宜先諮詢醫生並選註冊中醫。社區有「醫道惠民」中醫義診。",
+      href: "/tcm",
+      kind: "resource",
+      tag: "輔助選項",
+    });
+  }
+
   // 預算傾向
   if (budget === "both" || budget === "private") {
     recos.push({

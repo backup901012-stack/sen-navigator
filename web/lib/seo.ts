@@ -12,6 +12,7 @@ export const ROUTES = [
   "/sensory",
   "/brain",
   "/milestones",
+  "/tcm",
   "/journey",
   "/directory",
   "/heephong-asd",
