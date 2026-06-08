@@ -25,7 +25,8 @@ export const JOURNEY_STEPS: JourneyStep[] = [
       "取得「六個月內發出的正本轉介信」，致電或親臨所屬地區的兒童體能智力測驗中心，預約護士初步評估。（衞生署 CAS 不接受傳真轉介。）",
     tips: ["轉介信須為六個月內、正本", "服務對象為 12 歲以下兒童"],
     links: [
-      { label: "衞生署 兒童體能智力測驗服務", url: "https://www.dhcas.gov.hk/tc/" },
+      { label: "CAS 轉介流程與各區中心", url: "/cas" },
+      { label: "衞生署 兒童體能智力測驗服務（官方）", url: "https://www.dhcas.gov.hk/tc/" },
     ],
   },
   {

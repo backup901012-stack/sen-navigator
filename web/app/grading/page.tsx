@@ -109,8 +109,9 @@ export default function GradingPage() {
             <Info label="評估方式">跨專業團隊評估，提供教育及康復建議</Info>
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href="https://www.dhcas.gov.hk/tc/referral.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 font-bold text-sm hover:underline">衞生署 CAS 轉介及評估 →</a>
-            <a href="https://eform.cefs.gov.hk/form/dh0118/tc/" target="_blank" rel="noopener noreferrer" className="text-brand-600 font-bold text-sm hover:underline">醫療報告網上申請 →</a>
+            <Link href="/cas" className="px-4 py-2 rounded-full bg-brand-600 text-white font-bold text-sm">CAS 轉介流程與各區中心 →</Link>
+            <a href="https://www.dhcas.gov.hk/tc/referral.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 font-bold text-sm hover:underline self-center">官方轉介頁 →</a>
+            <a href="https://eform.cefs.gov.hk/form/dh0118/tc/" target="_blank" rel="noopener noreferrer" className="text-brand-600 font-bold text-sm hover:underline self-center">醫療報告網上申請 →</a>
           </div>
           <SourceList
             sources={[

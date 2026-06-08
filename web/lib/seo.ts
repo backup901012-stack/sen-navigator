@@ -9,6 +9,7 @@ export const ROUTES = [
   "/services",
   "/sccc",
   "/grading",
+  "/cas",
   "/sensory",
   "/brain",
   "/milestones",
