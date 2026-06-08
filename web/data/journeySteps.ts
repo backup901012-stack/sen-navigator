@@ -61,15 +61,19 @@ export const JOURNEY_STEPS: JourneyStep[] = [
   {
     step: 5,
     title: "輪候（善用等候期）",
-    who: "社會福利署 · 自費機構 · NGO",
+    who: "社會福利署 · NGO 家長資源中心 · 自費機構",
     what:
-      "系統按申請先後及地區編配名額。輪候期間切勿空等：可申領「學習訓練津貼」、使用過渡支援，或安排自費治療延續訓練。",
+      "系統按申請先後及地區編配名額。輪候期間切勿空等：可申領「學習訓練津貼」、使用過渡支援、安排自費治療，並善用 NGO 家長資源中心的課程，邊輪候邊裝備孩子與自己。",
     tips: [
       "符合資格者可申領學習訓練津貼（SCCC 輪候者不設入息審查）",
+      "協康會「家長資源中心 / SEN 家庭學院」設兒童、青年及家長課程：技巧訓練、治療策略與情緒支援",
+      "香港耀能協會「家長資源中心」（如東九龍）提供家長課程與支援活動",
       "輪候期是早期介入的關鍵，越早訓練越好",
     ],
     links: [
       { label: "社署 學習訓練津貼", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/tsp/" },
+      { label: "協康會 家長資源中心 / SEN 家庭學院", url: "https://www.heephong.org/services-and-programmes/families/parents-resource-centres-prcs" },
+      { label: "香港耀能協會 家長資源中心", url: "https://prc.sahk1963.org.hk/" },
     ],
   },
   {

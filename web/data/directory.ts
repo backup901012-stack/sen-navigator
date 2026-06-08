@@ -184,6 +184,37 @@ export const DIRECTORY: ResourceItem[] = [
     ],
   },
   {
+    id: "heephong-prc",
+    name: "協康會 家長資源中心 / SEN 家庭學院",
+    type: "ngo",
+    funding: "mixed",
+    tags: ["家長支援", "輪候期", "課程", "情緒支援", "互助小組"],
+    ageGroup: "SEN 兒童及家長",
+    description:
+      "設兒童、青年及家長課程：技巧訓練、治療策略與情緒支援，並有家長互助小組。輪候政府服務期間可善用，邊等邊裝備孩子與自己。",
+    url: "https://www.heephong.org/services-and-programmes/families/parents-resource-centres-prcs",
+    confidence: "high",
+    sources: [
+      C("協康會 — 家長資源中心", "https://www.heephong.org/services-and-programmes/families/parents-resource-centres-prcs"),
+      C("協康會 — SEN 家庭學院", "https://www.heephong.org/professional-training/sen-family-academy"),
+    ],
+  },
+  {
+    id: "sahk-prc",
+    name: "香港耀能協會 家長資源中心",
+    type: "ngo",
+    funding: "mixed",
+    tags: ["家長支援", "輪候期", "課程", "支援活動"],
+    ageGroup: "特殊需要兒童及家長",
+    description:
+      "為特殊需要兒童的家庭提供家長課程及支援活動（設東九龍等中心）。輪候期間可參加，持續支援家長與孩子。",
+    url: "https://prc.sahk1963.org.hk/",
+    confidence: "high",
+    sources: [
+      C("香港耀能協會 — 家長資源中心", "https://prc.sahk1963.org.hk/"),
+    ],
+  },
+  {
     id: "carers-hub",
     name: "賽馬會「照顧者好幫搜」/ 照顧者資訊網",
     type: "ngo",
