@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { DIRECTORY, TYPE_LABEL } from "@/data/directory";
 import { PRIVATE_COURSES, PRIVATE_FEE_DISCLAIMER } from "@/data/privateCourses";
 import { FundingBadge, Tag, ConfidenceNote, SourceList } from "@/components/ui";
@@ -76,11 +77,15 @@ export default function DirectoryExplorer() {
             <ConfidenceNote confidence={r.confidence} />
             <div className="mt-4 flex items-center justify-between gap-2">
               <AddToPlanButton size="sm" item={{ id: `dir-${r.id}`, title: r.name, kind: "resource" }} />
-              {r.url && r.url.startsWith("http") && (
+              {r.url && r.url.startsWith("/") ? (
+                <Link href={r.url} className="text-brand-600 font-bold text-sm hover:underline">
+                  詳情 →
+                </Link>
+              ) : r.url && r.url.startsWith("http") ? (
                 <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-brand-600 font-bold text-sm hover:underline">
                   官方頁面 →
                 </a>
-              )}
+              ) : null}
             </div>
             <SourceList sources={r.sources} />
           </article>

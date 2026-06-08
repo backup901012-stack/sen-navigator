@@ -118,6 +118,22 @@ export const DIRECTORY: ResourceItem[] = [
     confidence: "high",
     sources: [C("RehabGuide", "https://www.rehabguide.hk/")],
   },
+  // ---------- 機構實名密集訓練 ----------
+  {
+    id: "heephong-asd",
+    name: "協康會 學前自閉症兒童密集式訓練服務",
+    type: "ngo",
+    funding: "self-pay",
+    tags: ["自閉症", "密集訓練", "TEACCH", "SCERTS", "伴我童行", "伴我童樂", "自費"],
+    ageGroup: "約 2 至 5 歲",
+    description:
+      "協康會青蔥計劃 2025-2026 一覽表：伴我童樂、伴我童行（基礎・高階）密集訓練班，每月 $4,600–$9,900，多區中心。",
+    url: "/heephong-asd",
+    confidence: "high",
+    sources: [
+      C("協康會 — 學前自閉症密集式訓練 2025-2026 一覽表", "https://slp.heephong.org/cht/files/training/1211/MAS%202025%20JUN.pdf"),
+    ],
+  },
   // ---------- 自費課程類別 ----------
   {
     id: "dir-speech",

@@ -11,6 +11,7 @@ export const ROUTES = [
   "/grading",
   "/journey",
   "/directory",
+  "/heephong-asd",
   "/match",
   "/planner",
   "/faq",
