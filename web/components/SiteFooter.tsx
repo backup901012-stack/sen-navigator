@@ -26,6 +26,7 @@ export default function SiteFooter() {
             <li><Link href="/sccc" className="hover:text-white">特殊幼兒中心輪候（分區）</Link></li>
             <li><Link href="/grading" className="hover:text-white">評估與分級</Link></li>
             <li><Link href="/sensory" className="hover:text-white">感覺統合科普</Link></li>
+            <li><Link href="/brain" className="hover:text-white">童年經歷與腦部成長</Link></li>
             <li><Link href="/journey" className="hover:text-white">申請流程</Link></li>
             <li><Link href="/directory" className="hover:text-white">資源目錄</Link></li>
             <li><Link href="/resources" className="hover:text-white">權威資源連結</Link></li>
