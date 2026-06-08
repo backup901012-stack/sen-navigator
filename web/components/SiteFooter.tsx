@@ -23,6 +23,7 @@ export default function SiteFooter() {
           <h3 className="text-white font-bold mb-3 text-sm">快速連結</h3>
           <ul className="space-y-2 text-sm">
             <li><Link href="/services" className="hover:text-white">政府學前服務</Link></li>
+            <li><Link href="/sccc" className="hover:text-white">特殊幼兒中心輪候（分區）</Link></li>
             <li><Link href="/grading" className="hover:text-white">評估與分級</Link></li>
             <li><Link href="/journey" className="hover:text-white">申請流程</Link></li>
             <li><Link href="/directory" className="hover:text-white">資源目錄</Link></li>

@@ -78,12 +78,11 @@ export const GOVERNMENT_SERVICES: GovernmentService[] = [
       "經社工或康復服務單位人員轉介至社署「康復服務中央轉介系統」。",
     fee: "學費全免（校巴接載按營辦機構政策收費）",
     waiting:
-      "輪候約 1,168 人、平均約 20.2 個月（截至 2022-03-31／2021-22 年度）；較新年度平均約 19 個月，輪候時間較長",
+      "輪候因中心而異（不設全港平均）。可按分區查看各中心「最後獲篩選個案的申請日期」，採用社署 2026-04-30 最新逐間數據。",
     confidence: "high",
     sources: [
       { label: "社會福利署 — 特殊幼兒中心", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/specialchi/", checkedAt: "2026-06" },
-      { label: "立法會答覆（名額與輪候，2022-12-14）", url: "https://www.info.gov.hk/gia/general/202212/14/P2022121400203.htm", checkedAt: "2026-06" },
-      { label: "立法會特殊幼兒中心答覆（2024-03-27）", url: "https://www.info.gov.hk/gia/general/202403/27/P2024032700217.htm", checkedAt: "2026-06" },
+      { label: "社署 — 特殊幼兒中心最後獲篩選個案的申請日期（2026-04-30）", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/specialchi/", checkedAt: "2026-06" },
     ],
   },
   {

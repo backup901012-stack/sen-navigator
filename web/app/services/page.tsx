@@ -71,6 +71,17 @@ export default function ServicesPage() {
               {s.waiting && <Field label="輪候情況">{s.waiting}</Field>}
             </div>
 
+            {s.id === "sccc" && (
+              <div className="px-6 sm:px-8 pb-2">
+                <Link
+                  href="/sccc"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm"
+                >
+                  📍 按分區查看各中心輪候（社署最新數據）→
+                </Link>
+              </div>
+            )}
+
             <div className="px-6 sm:px-8 pb-6">
               <ConfidenceNote confidence={s.confidence} />
               <SourceList sources={s.sources} />
