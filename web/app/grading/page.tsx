@@ -121,6 +121,71 @@ export default function GradingPage() {
         </div>
       </section>
 
+      {/* 由評估到排隊：Form 2 */}
+      <section className="container-page pb-12">
+        <div className="rounded-2xl bg-white border-2 border-brand-200 p-6 sm:p-8">
+          <span className="inline-block px-3 py-1 rounded-full bg-warm-100 text-warm-700 text-sm font-bold">
+            最多家長忽略的關鍵
+          </span>
+          <h2 className="mt-3 text-2xl font-black text-brand-900">
+            由評估到排隊：Form 2 轉介信點嚟？
+          </h2>
+          <p className="mt-2 text-ink-soft">
+            要輪候政府資助學前康復服務（OPRS／EETC／SCCC／兼收計劃），須經
+            「康復服務中央轉介系統 — 學前兒童康復服務」，而轉介<strong className="text-brand-700">需要「Form 2」轉介信</strong>。
+          </p>
+
+          <div className="mt-5 space-y-3 text-sm">
+            <div className="flex gap-3 rounded-xl bg-brand-50/60 border border-brand-100 p-4">
+              <span className="font-black text-brand-600 shrink-0">1</span>
+              <p>
+                <strong>Form 2 由專業人員提交</strong>（醫務社工／綜合家庭服務中心社工／主流幼稚園社工），
+                並須<strong>附上評估書面報告</strong>。
+              </p>
+            </div>
+            <div className="flex gap-3 rounded-xl bg-brand-50/60 border border-brand-100 p-4">
+              <span className="font-black text-brand-600 shrink-0">2</span>
+              <div>
+                <p className="font-bold">即係要先有評估書面報告，先攞到 Form 2。報告有兩條路：</p>
+                <div className="mt-2 grid sm:grid-cols-2 gap-2">
+                  <div className="rounded-lg bg-white border border-brand-100 p-3">
+                    <p className="font-bold text-brand-800">① 政府資助評估</p>
+                    <p className="text-ink-soft mt-0.5">衞生署兒童體能智力測驗服務（CAS）。免費／低收費，但要<strong>輪候</strong>。</p>
+                  </div>
+                  <div className="rounded-lg bg-white border border-warm-100 p-3">
+                    <p className="font-bold text-warm-700">② 自費評估</p>
+                    <p className="text-ink-soft mt-0.5">私營臨床／教育心理學家。較快，收費因機構而異，可縮短整體輪候。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-3 rounded-xl bg-brand-50/60 border border-brand-100 p-4">
+              <span className="font-black text-brand-600 shrink-0">3</span>
+              <div>
+                <p className="font-bold">評估常用的標準工具（產生書面報告），例如：</p>
+                <ul className="mt-1 space-y-1 text-ink-soft">
+                  <li>· 香港學前兒童綜合發展評估（適用約 3 歲 4 個月至 6 歲）</li>
+                  <li>· 美林-帕爾默兒童智力測驗（修訂版 M-P-R）（適用約 1 個月至 6 歲 3 個月）</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-xl bg-amber-50 border border-amber-200 p-4 text-sm text-ink-soft">
+            💡 <strong>貼士：</strong>自費評估通常較快攞到報告，能更早交 Form 2、更早開始輪候；
+            但宜核實評估者資歷，及報告是否為社署接受。具體程序以社署實務指引為準。
+          </div>
+
+          <SourceList
+            sources={[
+              { label: "社署 — 康復服務中央轉介系統（CRSRehab）", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_crsrehab/centralref/", checkedAt: "2026-06" },
+              { label: "社署 — 康復服務實務指引", url: "https://www.swd.gov.hk/tc/index/site_pubsvc/page_rehab/sub_practicegu/", checkedAt: "2026-06" },
+              { label: "復康會 RehabGuide — 學前兒童評估及轉介", url: "https://www.rehabguide.hk/evaluation_ss.php?id=1", checkedAt: "2026-06" },
+            ]}
+          />
+        </div>
+      </section>
+
       {/* 中央轉介系統 */}
       <section className="container-page pb-12">
         <div className="rounded-2xl bg-brand-900 text-white p-6 sm:p-8">
