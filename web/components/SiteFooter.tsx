@@ -30,6 +30,7 @@ export default function SiteFooter() {
             <li><Link href="/brain" className="hover:text-white">童年經歷與腦部成長</Link></li>
             <li><Link href="/tcm" className="hover:text-white">中醫輔助支援</Link></li>
             <li><Link href="/journey" className="hover:text-white">申請流程</Link></li>
+            <li><Link href="/pathways" className="hover:text-white">津貼 vs 自費流程圖</Link></li>
             <li><Link href="/directory" className="hover:text-white">資源目錄</Link></li>
             <li><Link href="/resources" className="hover:text-white">權威資源連結</Link></li>
           </ul>

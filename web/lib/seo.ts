@@ -15,6 +15,7 @@ export const ROUTES = [
   "/milestones",
   "/tcm",
   "/journey",
+  "/pathways",
   "/directory",
   "/heephong-asd",
   "/match",

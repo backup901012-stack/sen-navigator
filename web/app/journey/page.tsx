@@ -19,6 +19,9 @@ export default function JourneyPage() {
           <p className="mt-4 max-w-2xl text-ink-soft">
             由察覺到獲配服務，整個過程分六大步。把握每一步，尤其別浪費輪候期。
           </p>
+          <Link href="/pathways" className="mt-5 inline-block px-5 py-2.5 rounded-full bg-brand-600 text-white font-bold text-sm">
+            📊 津貼 vs 自費 流程圖（含服務時間與急切性）→
+          </Link>
         </div>
       </section>
 
