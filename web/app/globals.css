@@ -28,10 +28,12 @@
   --color-warm-600: #ec4307;
   --color-warm-700: #c43108;
 
-  /* 中性 */
-  --color-ink: #1d2b2d;
-  --color-ink-soft: #4a5d5f;
-  --color-paper: #f7faf9;
+  /* 中性 — 護眼暖米色系 */
+  --color-ink: #2b2a23;
+  --color-ink-soft: #5b5747;
+  --color-paper: #f5efdf;
+  /* 覆寫純白為「暖白」，令所有卡片唔再刺眼（全站 bg-white / text-white 同步生效） */
+  --color-white: #fffdf6;
 
   /* 書法真書／楷書字體優先，回退至黑體與系統字體 */
   --font-sans: "LXGW WenKai", "BiauKai", "標楷體", "DFKai-SB", "Noto Sans TC",
@@ -42,8 +44,8 @@
 }
 
 :root {
-  --background: #f7faf9;
-  --foreground: #1d2b2d;
+  --background: #f5efdf;
+  --foreground: #2b2a23;
 }
 
 html {
