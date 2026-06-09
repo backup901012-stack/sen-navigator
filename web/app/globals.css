@@ -33,8 +33,10 @@
   --color-ink-soft: #4a5d5f;
   --color-paper: #f7faf9;
 
-  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
-    "Heiti TC", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* 書法真書／楷書字體優先，回退至黑體與系統字體 */
+  --font-sans: "LXGW WenKai", "BiauKai", "標楷體", "DFKai-SB", "Noto Sans TC",
+    "PingFang TC", "Microsoft JhengHei", "Heiti TC", system-ui, -apple-system,
+    "Segoe UI", sans-serif;
 
   --radius-card: 1rem;
 }

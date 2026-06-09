@@ -49,6 +49,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
+        {/* 書法真書／楷書字體：霞鶩文楷 LXGW WenKai（開源 OFL、可商用） */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css"
+          rel="stylesheet"
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         <a
