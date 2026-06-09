@@ -70,9 +70,39 @@ export default function ParentsPage() {
         </div>
       </section>
 
+      {/* 生而不同・出於愛 */}
+      <section className="container-page pb-12">
+        <div className="rounded-2xl bg-gradient-to-br from-brand-50 to-warm-50 border border-brand-100 p-6 sm:p-8">
+          <h2 className="text-2xl font-black text-brand-900">生而不同，而你一直在愛</h2>
+          <div className="mt-4 space-y-4 text-ink leading-relaxed max-w-3xl">
+            <p>
+              每一個 SEN 孩子，都是<strong className="text-brand-700">「生而不同」</strong>——
+              不是壞了，也不是「教得差」，而是他的大腦本來就以不一樣的方式運作。
+              他有自己的步伐、自己的強項，也有自己的挑戰。發展得比別人慢一點、走得比別人迂迴一點，
+              不代表他「不夠好」，只代表他需要一條更適合自己的路。當我們願意看見孩子的「不同」，
+              而不是只盯著「不足」，孩子也會慢慢學會欣賞自己。
+            </p>
+            <p>
+              而我們也想對每一位家長說一句：<strong className="text-brand-700">你的擔心、緊張，甚至那些「催谷」與「嚴管」，
+              背後其實都是同一樣東西——對孩子的愛與好意。</strong>
+              正正因為太想孩子好、太怕他將來「蝕底」，我們才會焦慮，才會不自覺地把期望愈調愈高，
+              才會一不小心跌入各種教養誤區。這些，從來不代表你是不稱職的父母；恰恰相反，
+              它證明了你有多在乎。
+            </p>
+            <p>
+              當我們同時記得這兩件事——<strong>「孩子生而不同」</strong>與<strong>「我出於愛」</strong>——
+              就能把這份愛，放在更適合孩子的位置上：接納他的獨特、把期望調到他「踮起腳就做到」的高度、
+              欣賞每一個小進步。下面的「常見誤區」，不是要責怪任何人，而是一份溫柔的提醒，
+              陪你把好意，化成孩子真正受用的支持。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 2. 教養誤區 */}
       <section className="container-page pb-12">
         <h2 className="text-2xl font-black text-brand-900">② 教養 SEN 小孩的常見誤區</h2>
+        <p className="mt-2 text-ink-soft">這些誤區人人都可能有——它們出於愛，認得出，就能慢慢調整。</p>
         <div className="mt-6 space-y-3">
           {MYTHS.map((m, i) => (
             <div key={i} className="rounded-2xl bg-white border border-brand-100 p-5">
