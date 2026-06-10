@@ -10,6 +10,15 @@ export const metadata: Metadata = {
     "香港四大政府資助學前康復服務：到校學前康復服務、早期教育及訓練中心、特殊幼兒中心、兼收計劃，對象、收費與輪候一覽。",
 };
 
+/** 每個服務的主題色（純前端視覺區分，不影響資料） */
+const SERVICE_META: Record<string, { color: string }> = {
+  oprs: { color: "#0f766e" }, // teal-700
+  eetc: { color: "#b45309" }, // amber-700
+  sccc: { color: "#9333ea" }, // purple-600
+  ip: { color: "#0369a1" }, // sky-700
+};
+const FALLBACK_META = { color: "#0f766e" };
+
 export default function ServicesPage() {
   return (
     <>
@@ -25,7 +34,9 @@ export default function ServicesPage() {
       </section>
 
       <section className="container-page py-12 space-y-8">
-        {GOVERNMENT_SERVICES.map((s) => (
+        {GOVERNMENT_SERVICES.map((s) => {
+          const meta = SERVICE_META[s.id] ?? FALLBACK_META;
+          return (
           <article
             key={s.id}
             id={s.id}
@@ -42,8 +53,8 @@ export default function ServicesPage() {
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-ink-soft mt-1">{s.nameEn}</p>
-                  <p className="mt-3 text-brand-700 font-bold">{s.tagline}</p>
+                  <p className="text-sm text-ink-soft mt-1 ml-14">{s.nameEn}</p>
+                  <p className="mt-3 font-bold" style={{ color: meta.color }}>{s.tagline}</p>
                 </div>
                 <AddToPlanButton
                   item={{ id: `svc-${s.id}`, title: s.name, kind: "service" }}
@@ -61,7 +72,7 @@ export default function ServicesPage() {
                 <ul className="grid sm:grid-cols-2 gap-2">
                   {s.highlights.map((h, i) => (
                     <li key={i} className="flex gap-2 text-sm text-ink">
-                      <span className="text-brand-500">✓</span>
+                      <span style={{ color: meta.color }}>✓</span>
                       {h}
                     </li>
                   ))}
@@ -87,7 +98,8 @@ export default function ServicesPage() {
               <SourceList sources={s.sources} />
             </div>
           </article>
-        ))}
+          );
+        })}
 
         <p className="text-xs text-ink-soft bg-amber-50 border border-amber-200 rounded-xl p-4">
           ※ {WAITING_NOTE}

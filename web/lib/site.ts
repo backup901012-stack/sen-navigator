@@ -17,6 +17,7 @@ export interface NavLink {
 export const NAV: NavLink[] = [
   { href: "/services", label: "政府學前服務" },
   { href: "/grading", label: "評估與分級" },
+  { href: "/intelligences", label: "多元智能" },
   { href: "/journey", label: "申請流程" },
   { href: "/directory", label: "資源目錄" },
   { href: "/match", label: "服務配對" },
