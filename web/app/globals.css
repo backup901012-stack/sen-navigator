@@ -105,6 +105,117 @@ p {
   animation: fadeUp 0.5s ease both;
 }
 
+/* ============================================================
+   Clay Doh 粘土質感（Claymorphism）
+   充氣立體：外柔 drop 陰影 + 內左上白高光 + 內右下品牌暗影
+   全站靠共用 class 一次套用，可整段刪除即還原。
+   注意：本區規則「無 @layer」，依 CSS 規範會穩定壓過 Tailwind
+        utilities（layered），故無需 !important / 高權重選擇器。
+   ============================================================ */
+:root {
+  /* 淺色卡片用（暖白底）— 加重：更深 drop + 更厚內陰影/高光，鼓得更明顯 */
+  --clay-light:
+    22px 26px 52px -16px rgba(17, 105, 110, 0.42),
+    inset -12px -12px 22px rgba(17, 105, 110, 0.16),
+    inset 12px 13px 26px rgba(255, 255, 255, 0.96);
+  /* 深色卡片用（brand-900 底） */
+  --clay-dark:
+    26px 30px 58px -16px rgba(0, 0, 0, 0.5),
+    inset -12px -12px 22px rgba(0, 0, 0, 0.42),
+    inset 12px 13px 26px rgba(255, 255, 255, 0.16);
+  /* 按鈕（凸起）— 更立體 */
+  --clay-btn:
+    0 14px 26px -8px rgba(17, 105, 110, 0.55),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.2),
+    inset 5px 5px 10px rgba(255, 255, 255, 0.5);
+  /* 按鈕按下（凹陷） */
+  --clay-btn-press:
+    0 5px 11px -6px rgba(17, 105, 110, 0.5),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.28),
+    inset 6px 7px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* 圓角再加大 → 更軟糯的黃土外形 */
+[class~="rounded-lg"] { border-radius: 1.2rem; }
+[class~="rounded-xl"] { border-radius: 1.7rem; }
+[class~="rounded-2xl"] { border-radius: 2.5rem; }
+[class~="rounded-3xl"] { border-radius: 3.2rem; }
+
+/* 淺色卡片：白底／淡彩底 + 中大圓角 → 充氣粘土 */
+[class~="bg-white"][class~="rounded-xl"],
+[class~="bg-white"][class~="rounded-2xl"],
+[class~="bg-white"][class~="rounded-3xl"],
+[class~="bg-brand-50"][class~="rounded-2xl"],
+[class~="bg-amber-50"][class~="rounded-2xl"],
+[class~="bg-warm-50"][class~="rounded-2xl"] {
+  border-color: transparent;
+  box-shadow: var(--clay-light);
+}
+
+/* 深色特色卡片（brand-900）→ 深粘土 */
+[class~="bg-brand-900"][class~="rounded-xl"],
+[class~="bg-brand-900"][class~="rounded-2xl"],
+[class~="bg-brand-900"][class~="rounded-3xl"] {
+  border-color: transparent;
+  box-shadow: var(--clay-dark);
+}
+
+/* 深色卡片內的半透明小方塊 → 內凹，像捏入粘土 */
+[class~="bg-white\\/10"][class~="rounded-xl"] {
+  box-shadow:
+    inset -5px -5px 12px rgba(0, 0, 0, 0.3),
+    inset 5px 5px 12px rgba(255, 255, 255, 0.12);
+}
+
+/* 按鈕／膠囊：凸起粘土 + 懸浮抬高 + 按下凹陷 */
+a[class~="rounded-full"],
+button[class~="rounded-full"] {
+  box-shadow: var(--clay-btn);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+a[class~="rounded-full"]:hover,
+button[class~="rounded-full"]:hover {
+  transform: translateY(-2px);
+}
+a[class~="rounded-full"]:active,
+button[class~="rounded-full"]:active {
+  transform: translateY(1px);
+  box-shadow: var(--clay-btn-press);
+}
+
+/* 小圓徽章（abbr 標籤等）→ 輕微鼓起 */
+[class~="rounded-md"] {
+  box-shadow:
+    inset -2px -2px 4px rgba(0, 0, 0, 0.16),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.35);
+}
+
+/* card-hover 改為粘土懸浮（壓過上方舊定義） */
+.card-hover:hover {
+  transform: translateY(-5px) scale(1.015);
+  box-shadow:
+    28px 34px 62px -18px rgba(17, 105, 110, 0.46),
+    inset -12px -12px 22px rgba(17, 105, 110, 0.16),
+    inset 12px 13px 26px rgba(255, 255, 255, 0.96);
+}
+
+/* 柔和粘土背景：兩團淡色暈染，增添黏土玩味（不影響可讀性） */
+body {
+  background-image:
+    radial-gradient(at 12% 8%, rgba(118, 216, 214, 0.16) 0px, transparent 42%),
+    radial-gradient(at 88% 22%, rgba(255, 169, 112, 0.14) 0px, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* 尊重「減少動態」偏好（無障礙） */
+@media (prefers-reduced-motion: reduce) {
+  a[class~="rounded-full"]:hover,
+  button[class~="rounded-full"]:hover,
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
 @media print {
   .no-print {
     display: none !important;
