@@ -1,6 +1,10 @@
 // 特殊幼兒中心 (SCCC) 實名清單與輪候指標
 // 來源：社會福利署「特殊幼兒中心 — 最後獲篩選個案的申請日期」
-// 更新日期：2026-04-30（資料以社署為準、會變動）
+// 逐間 lastApp 與更新日期由 waitingLive.json 驅動（scripts/update_waiting_data.mjs
+// 每月自動抓社署 SCCC.csv）；下方陣列為基準名單（名稱/分區/住宿屬性穩定、
+// 個別中心若當月不在 CSV 則沿用基準 lastApp）。
+
+import LIVE from "@/data/waitingLive.json";
 
 export interface ScccCentre {
   district: string;      // 分區（中文）
@@ -12,12 +16,14 @@ export interface ScccCentre {
   residential: boolean;  // 是否設住宿
 }
 
-/** 社署數據更新日期 */
-export const SCCC_UPDATE = "2026-04-30";
+/** 社署數據更新日期（自動） */
+export const SCCC_UPDATE = LIVE.scccUpdate;
 /** 推算輪候時長的基準月份（= 更新月份） */
-export const SCCC_AS_OF = "2026-04";
+export const SCCC_AS_OF = LIVE.scccUpdate.slice(0, 7);
 
-export const SCCC_CENTRES: ScccCentre[] = [
+const LIVE_APP = new Map(LIVE.scccCentres.map((c) => [c.code, c.lastApp]));
+
+const RAW_CENTRES: ScccCentre[] = [
   {
     "district": "中西區",
     "districtEn": "Central & Western",
@@ -550,6 +556,12 @@ export const SCCC_CENTRES: ScccCentre[] = [
     "residential": false
   }
 ];
+
+/** 逐間 lastApp 以社署最新 CSV 覆蓋（waitingLive.json）、缺項沿用基準 */
+export const SCCC_CENTRES: ScccCentre[] = RAW_CENTRES.map((c) => ({
+  ...c,
+  lastApp: LIVE_APP.get(c.code) ?? c.lastApp,
+}));
 
 /** 以 lastApp 推算「由申請到獲篩選」約多少個月（逐間、非平均） */
 export function monthsWaited(lastApp: string): number | null {

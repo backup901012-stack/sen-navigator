@@ -5,6 +5,21 @@
 
 ## 狀態：🟡 進行中 — 兩條工作線
 
+## 工作線 C：全站 UI 動畫化重構（老闆 00:5x 新指令、B 之後做）
+
+> 老闆原話：「所有UI全面重新設計，要有動畫感！依據人類視角、盡量有視覺提示的動畫邏輯、溫馨小孩家長感覺」「研究幼稚園網頁/卡通動畫/互動式UI、給我全部重作」
+
+- [ ] C1 研究：WebSearch/WebFetch 幼稚園網站設計案例 + 兒童品牌動效 + cartoon UI 互動模式（scroll reveal/吉祥物/squish 按鈕/staggered 進場/視線引導）
+- [ ] C2 動效系統（CSS-first 零新依賴、必守 prefers-reduced-motion）：
+      ・Reveal 客戶端元件（IntersectionObserver、fade-up/pop-in、stagger delay）全站段落進場
+      ・clay squish/wobble（hover scaleX/Y 果凍感）、按鈕 press squash 加強
+      ・hero 背景粘土暈染浮動呼吸動畫、logo 導字輕微 bob
+      ・視覺提示：CTA 微 pulse、箭咀 nudge、手風琴 chevron 彈跳、進度條 springy
+      ・章節圖示 hover wiggle、卡片 pop-in
+- [ ] C3 逐頁套 Reveal + 動效 class（24 頁）、保持資訊架構不變（只重構視覺/動效層）
+- [ ] C4 驗證全套：對比/溢出/身份/E2E 26 斷言/截圖目視（桌面+手機）
+- [ ] C5 version bump + push + production 驗證 + 截圖報告
+
 ## 工作線 A：動態數據全自動更新（老闆：所有動態數據要自動更新網頁）
 
 **架構（已拍板）**：官方 CSV → 排程 GitHub Actions 每月抓數 → 生成 JSON → 有變自動 commit → `gh workflow run deploy.yml` 觸發重部署（注意：GITHUB_TOKEN push 不會自動觸發其他 workflow、必須用 gh workflow run）。
@@ -14,8 +29,8 @@
 2. SCCC 逐間最後獲篩選日期：`https://www.swd.gov.hk/datagovhk/rm/SCCC.csv`（剛確認存在！下載驗 schema 後對接 scccCentres.ts）
 
 **步驟**：
-- [ ] A1 下載 SCCC.csv 看 schema（欄名/編碼/逐間 lastApp 格式）、確認可對應 scccCentres.ts 的 code/lastApp
-- [ ] A2 寫 `scripts/update_waiting_data.mjs`（Node 零依賴）：抓兩 CSV → 解析（UTF-16LE、quoted 換行）→ 驗證（行數≥15、數字≥0、日期合法、SCCC 間數 50-70）→ 寫 `web/data/waitingLive.json`（含 asOf、eetc{only,withOther,total}、ip、sccc、scccCentres[{code,lastApp}]、generatedAt）；驗證不過 exit 1 不寫檔
+- [x] A1 SCCC.csv schema 確認（61 行、c4=code PR/PS 兩款、c8=lastApp 三重引號、c2=更新日 30.4.2026）
+- [x] A2 `scripts/update_waiting_data.mjs` 寫好跑通：輸出 EETC 1402(778+624)/IP 548/SCCC 1549/asOf 2026-04-30/57 間；**57 個 code 與 scccCentres.ts 100% 配對**（雙向 0 漏）
 - [ ] A3 改 `web/data/governmentServices.ts`：waiting 字串改由 waitingLive.json 數字+asOf 插值（模板化）；`web/data/scccCentres.ts`：lastApp/SCCC_UPDATE 由 JSON 覆蓋（保留現有檔作 fallback 基準）
 - [ ] A4 寫 `.github/workflows/update-data.yml`：cron 每月 3 號 + 8 號（雙保險）香港早上（UTC 23:xx 前一天）+ workflow_dispatch；跑 A2 腳本 → 有 diff → github-actions[bot] commit + push → `gh workflow run deploy.yml`（env GH_TOKEN=github.token、permissions contents:write actions:write）
 - [ ] A5 本地跑 A2 驗證輸出數字 = 現站數字（EETC 1402/IP 548/SCCC 1549、asOf 2026-04-30）；build 通過

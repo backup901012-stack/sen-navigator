@@ -1,12 +1,15 @@
 import type { GovernmentService } from "@/lib/types";
+import LIVE from "@/data/waitingLive.json";
 
 /**
  * 資料來源：社會福利署、立法會答覆、data.gov.hk 輪候冊（每月更新）。
- * ⚠️ 輪候人數為社署輪候冊截至 2026-04-30 數字；「平均輪候時間」沿用最後公布年度
- *    （EETC／IP 為 2021-22、SCCC 為 2023-24），會隨時間變動，最新請見 data.gov.hk。
+ * 輪候人數由 waitingLive.json 驅動（scripts/update_waiting_data.mjs 每月自動抓社署 CSV 更新）；
+ * 「平均輪候時間」沿用最後公布年度（EETC／IP 為 2021-22、SCCC 為 2023-24）。
  */
-export const WAITING_NOTE =
-  "輪候人數為社署輪候冊截至 2026-04-30 的數字（每月更新）；平均輪候時間為最後公布年度的官方數字，會隨時間變動，最新請參閱 data.gov.hk。";
+const n = (x: number) => x.toLocaleString("en-US");
+const AS_OF = LIVE.asOf;
+
+export const WAITING_NOTE = `輪候人數為社署輪候冊截至 ${AS_OF} 的數字（每月更新）；平均輪候時間為最後公布年度的官方數字，會隨時間變動，最新請參閱 data.gov.hk。`;
 
 export const GOVERNMENT_SERVICES: GovernmentService[] = [
   {
@@ -53,12 +56,11 @@ export const GOVERNMENT_SERVICES: GovernmentService[] = [
     howToApply:
       "經社工或康復服務單位人員轉介至社署「康復服務中央轉介系統」。",
     fee: "每年基本費用約 HK$148（申請程序本身免費）",
-    waiting:
-      "輪候約 1,402 人（其中 624 人同時輪候其他服務；截至 2026-04-30）。平均輪候時間最後公布為約 5.4 個月（2021-22 年度）。",
+    waiting: `輪候約 ${n(LIVE.eetc.total)} 人（其中 ${n(LIVE.eetc.withOther)} 人同時輪候其他服務；截至 ${AS_OF}）。平均輪候時間最後公布為約 5.4 個月（2021-22 年度）。`,
     confidence: "medium",
     sources: [
       { label: "社會福利署 — 早期教育及訓練中心（每年基本費用 $148，2026-06-11 官頁覆核一致）", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/earlyeduca/", checkedAt: "2026-06-11" },
-      { label: "社署輪候冊（data.gov.hk，截至 2026-04-30）", url: "https://data.gov.hk/tc-data/dataset/hk-swd-rm-ps-waiting-list-for-day-service", checkedAt: "2026-06-11" },
+      { label: `社署輪候冊（data.gov.hk，截至 ${AS_OF}、自動更新）`, url: "https://data.gov.hk/tc-data/dataset/hk-swd-rm-ps-waiting-list-for-day-service", checkedAt: LIVE.generatedAt },
       { label: "立法會答覆（平均輪候 5.4 個月，2021-22 年度，2022-12-14）", url: "https://www.info.gov.hk/gia/general/202212/14/P2022121400203.htm", checkedAt: "2026-06" },
     ],
   },
@@ -80,14 +82,13 @@ export const GOVERNMENT_SERVICES: GovernmentService[] = [
     howToApply:
       "經社工或康復服務單位人員轉介至社署「康復服務中央轉介系統」。",
     fee: "學費全免（校巴接載按營辦機構政策收費）",
-    waiting:
-      "全港輪候約 1,549 人（截至 2026-04-30）；2023-24 年度平均輪候約 19.2 個月（立法會答覆）。各中心進度不一，可按分區查看「最後獲篩選個案的申請日期」（社署 2026-04-30 逐間數據）。",
+    waiting: `全港輪候約 ${n(LIVE.sccc)} 人（截至 ${AS_OF}）；2023-24 年度平均輪候約 19.2 個月（立法會答覆）。各中心進度不一，可按分區查看「最後獲篩選個案的申請日期」（社署 ${LIVE.scccUpdate} 逐間數據）。`,
     confidence: "high",
     sources: [
       { label: "社會福利署 — 特殊幼兒中心", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/specialchi/", checkedAt: "2026-06" },
       { label: "社署 — 特殊幼兒中心最後獲篩選個案的申請日期（2026-04-30）", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/specialchi/", checkedAt: "2026-06" },
       { label: "立法會答覆 — 特殊幼兒中心（2023-24 年度平均輪候 19.2 個月，2025-03-19）", url: "https://www.info.gov.hk/gia/general/202503/19/P2025031900202.htm", checkedAt: "2026-06-11" },
-      { label: "社署輪候冊（data.gov.hk，截至 2026-04-30）", url: "https://data.gov.hk/tc-data/dataset/hk-swd-rm-ps-waiting-list-for-day-service", checkedAt: "2026-06-11" },
+      { label: `社署輪候冊（data.gov.hk，截至 ${AS_OF}、自動更新）`, url: "https://data.gov.hk/tc-data/dataset/hk-swd-rm-ps-waiting-list-for-day-service", checkedAt: LIVE.generatedAt },
     ],
   },
   {
@@ -108,12 +109,11 @@ export const GOVERNMENT_SERVICES: GovernmentService[] = [
     howToApply:
       "經社工或康復服務單位人員轉介至社署「康復服務中央轉介系統」。",
     fee: "除幼稚園暨幼兒中心原有收費外，無額外費用",
-    waiting:
-      "輪候約 548 人（截至 2026-04-30）。平均輪候時間最後公布為約 6.3 個月（2021-22 年度）。",
+    waiting: `輪候約 ${n(LIVE.ip)} 人（截至 ${AS_OF}）。平均輪候時間最後公布為約 6.3 個月（2021-22 年度）。`,
     confidence: "high",
     sources: [
       { label: "社會福利署 — 兼收弱能兒童計劃", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/integrated2/", checkedAt: "2026-06" },
-      { label: "社署輪候冊（data.gov.hk，截至 2026-04-30）", url: "https://data.gov.hk/tc-data/dataset/hk-swd-rm-ps-waiting-list-for-day-service", checkedAt: "2026-06-11" },
+      { label: `社署輪候冊（data.gov.hk，截至 ${AS_OF}、自動更新）`, url: "https://data.gov.hk/tc-data/dataset/hk-swd-rm-ps-waiting-list-for-day-service", checkedAt: LIVE.generatedAt },
       { label: "立法會答覆（平均輪候 6.3 個月，2021-22 年度，2022-12-14）", url: "https://www.info.gov.hk/gia/general/202212/14/P2022121400203.htm", checkedAt: "2026-06" },
     ],
   },
