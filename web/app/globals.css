@@ -253,6 +253,16 @@ button[class~="rounded-full"]:active {
   70%  { transform: scale(0.97, 1.04); }
   100% { transform: scale(1, 1); }
 }
+/* 圖示輕浮（持續生命力） */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* 主 CTA 心跳提示（每幾秒輕輕脹一下） */
+@keyframes cta-pulse {
+  0%, 90%, 100% { transform: scale(1); }
+  95% { transform: scale(1.05); }
+}
 /* logo「導」字呼吸跳動（吉祥物感） */
 @keyframes logo-bob {
   0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -264,25 +274,41 @@ button[class~="rounded-full"]:active {
   50% { transform: translate(2%, 1.5%) scale(1.04); }
 }
 
+/* ── IO 進場引擎（Motion.tsx 驅動、fail-safe）──
+   預設一切可見；.pre 只由 JS 在「即將播動畫」時加上（JS 死 = 純靜態、永不匿內容） */
+html.motion .pre {
+  opacity: 0;
+}
+html.motion .iv {
+  animation: clay-pop-in 0.62s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+html.motion h2.iv {
+  animation-name: title-slide-in;
+  animation-duration: 0.5s;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  /* 滾入彈現：所有粘土卡片（漸進增強、舊瀏覽器直接顯示） */
-  @supports (animation-timeline: view()) {
-    [class~="bg-white"][class~="rounded-2xl"],
-    [class~="bg-white"][class~="rounded-xl"],
-    [class~="bg-brand-50"][class~="rounded-2xl"],
-    [class~="bg-amber-50"][class~="rounded-2xl"],
-    [class~="bg-warm-50"][class~="rounded-2xl"],
-    [class~="bg-brand-900"][class~="rounded-2xl"],
-    [class~="bg-brand-900"][class~="rounded-3xl"] {
-      animation: clay-pop-in 1ms linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 55%;
-    }
-    main h2 {
-      animation: title-slide-in 1ms linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 35%;
-    }
+  /* 頁面載入：第一屏內容階梯升起（每頁開頁即見、似玩具逐件擺上枱） */
+  main > section:first-child .container-page > * {
+    animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  main > section:first-child .container-page > *:nth-child(1) { animation-delay: 0.05s; }
+  main > section:first-child .container-page > *:nth-child(2) { animation-delay: 0.14s; }
+  main > section:first-child .container-page > *:nth-child(3) { animation-delay: 0.23s; }
+  main > section:first-child .container-page > *:nth-child(4) { animation-delay: 0.32s; }
+  main > section:first-child .container-page > *:nth-child(5) { animation-delay: 0.41s; }
+
+  /* 大 emoji 圖示持續輕浮（生命力；只限 span、唔郁標題） */
+  main span[class~="text-2xl"],
+  main span[class~="text-3xl"],
+  main span[class~="text-4xl"] {
+    display: inline-block;
+    animation: float-y 3.4s ease-in-out infinite;
+  }
+
+  /* 主 CTA 每幾秒輕輕「噗」一下（視覺提示：由呢度開始） */
+  a[class~="rounded-full"]:is([class~="bg-warm-500"], [class~="bg-brand-600"]):not(:hover):not(:active) {
+    animation: cta-pulse 5.2s ease-in-out 2s infinite;
   }
 
   /* hover 卡片 → 內裡 emoji 圖示搖擺（視覺提示：呢度可以㩒） */

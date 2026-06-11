@@ -230,7 +230,7 @@ async function main() {
     inp.dispatchEvent(new Event("input", { bubbles: true }));
     return true;
   })()`);
-  await new Promise((r) => setTimeout(r, 400));
+  await waitFor(`(() => { const m = document.body.innerText.match(/共\\s*(\\d+)\\s*項資源/); return m && parseInt(m[1], 10) < ${totalCount} && parseInt(m[1], 10) > 0; })()`, 5000);
   const kwCount = await evalJs(`parseInt(document.body.innerText.match(/共\\s*(\\d+)\\s*項資源/)?.[1] || "0", 10)`);
   ok(`搜尋「言語」有效縮小（${kwCount} 項）`, kwCount > 0 && kwCount < totalCount);
 
