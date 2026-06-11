@@ -61,10 +61,11 @@
 
 ## 誠實狀態（honest-progress-reporting）
 - ✅ L1 規劃 / L2 工具 / L3 端到端（build+200+實測） 完成
-- ⏳ L4 Production（Vercel 上線）待批准
+- ✅ L4 Production：GitHub Pages 上線（2026-06-07）+ GitHub Actions 自動部署（2026-06-11 啟用、push main 即部署、含產物煙霧測試）
 - v1 = 前端互動平台 + 有來源研究資料；登入個案管理 / 諮詢後端 / 真 AI key / 即時 data.gov.hk = Phase 2
 
 ## 待覆核（research agent 標示）
-- EETC 每年約 $148：單一頁面擷取，上線前再開官頁目視核對
-- 輪候數字為 2022-03/2021-22 快照，建議連動 data.gov.hk
-- 自費 OT/PT/ABA/感統/社交 收費：香港無官方統一價，標「因機構而異」
+- [x] EETC 每年約 $148：✅ 2026-06-11 官頁覆核，原文「每年基本費用$148」與站上一致（swd.gov.hk earlyeduca）
+- [x] 輪候數字：✅ 2026-06-11 更新至社署輪候冊 2026-04-30（EETC 1,402／IP 548／SCCC 1,549；OPRS 自 2023-12 起無輪候冊）+ SCCC 平均 19.2 個月（2023-24、立法會 2025-03-19）；平均月數 EETC/IP 仍為 2021-22 最後公布值、已標年度
+- 自費 OT/PT/ABA/感統/社交 收費：香港無官方統一價，標「因機構而異」（維持）
+- npm audit 2 moderate（next→postcss）：修補僅存在 16.3.0-canary.6+、無穩定版可用；已升 next 16.2.9（最新 stable）、靜態站 build-time 依賴、運行時無暴露；等 16.3 stable 再評估
