@@ -1,32 +1,41 @@
-# 接力檔 — SEN 小孩導航員（2026-06-11 23:56 更新）
+# 接力檔 — SEN 小孩導航員（2026-06-12 00:55 更新）
 
-> 額度 98% 用盡、約 03:40 重置。排程會在 03:50 喚醒繼續。老闆指令：「給我全自動完成」、做完先停。
+> 額度近盡（~03:40 重置）。排程 03:55 喚醒。老闆指令：「給我全自動完成」+ 兩條新任務。
+> v1.2.0（Clay Doh 色系+粉圓體）已上線驗證完畢、勿動。
 
-## 狀態：✅ DONE（2026-06-12 00:4x 全部完成：v1.2.0 上線、production E2E 26/26、線上截圖確認、續工 cron 已刪）
+## 狀態：🟡 進行中 — 兩條工作線
 
-## 任務：全站改 Clay Doh 粘土色系 + 兒童化圓體字（老闆出圖拍板）
-- 色系（已半完成）：Plasticine 薄荷主色 / Bubble Gum 粉行動色 / Candlewax 紫 + Terracota 陶土點綴 / Translucent 奶白底
-- 字體（未做）：換兒童化圓體、首選 justfont 開源「粉圓體」（Google Fonts 名 **Huninn**）
+## 工作線 A：動態數據全自動更新（老闆：所有動態數據要自動更新網頁）
 
-## 已完成（不要重做）
-- [x] globals.css @theme 全色板已換（brand=薄荷 / warm=泡泡糖粉 / 新增 lilac + terra / paper=#faf6ef / ink=#2f2b33）
-- [x] clay 陰影 rgba(17,105,110,*)→rgba(30,70,60,*)、card-hover 同步、背景三團暈染（薄荷/粉/紫）
-- [x] 之前的逐功能核對 v1.1.5 已上線（E2E 26/26、勿動）
+**架構（已拍板）**：官方 CSV → 排程 GitHub Actions 每月抓數 → 生成 JSON → 有變自動 commit → `gh workflow run deploy.yml` 觸發重部署（注意：GITHUB_TOKEN push 不會自動觸發其他 workflow、必須用 gh workflow run）。
 
-## 待做（按序、全自動、不問選項）
-- [ ] ① 字體：查 web/app/layout.tsx 現時點載入 LXGW WenKai（Google Fonts link 或 next/font）→ 換 Huninn
-      ・先驗證 `https://fonts.googleapis.com/css2?family=Huninn&display=swap` 回 200 有 TC unicode-range
-      ・若 Google Fonts 無 Huninn → 後備：fontsource/CDN jsdelivr `jf-openhuninn` 或保留 LXGW + 圓體 fallback、誠實記錄
-      ・globals.css --font-sans 改 "Huninn" 開頭、fallback 保留 Noto Sans TC 等
-- [ ] ② 對比度驗證：寫 scripts/contrast_check.mjs 算 WCAG 對比（關鍵組合：white文字 on brand-600/warm-500、brand-700/warm-700 on white/brand-50/warm-50、ink/ink-soft on paper/white、brand-100 on brand-900）全部 ≥4.5（大字 ≥3）、唔夠就微調 globals.css 色值
-- [ ] ③ build（PAGES_EXPORT=1 BASE_PATH=sen-navigator NEXT_PUBLIC_SITE_URL=https://backup901012-stack.github.io/sen-navigator）
-- [ ] ④ 截圖目視（headless Chrome --screenshot、home/services/match/parents、桌面+手機）— 用 Read 工具睇圖、確認粘土色+圓體生效、冇爆版
-- [ ] ⑤ mobile_overflow_check.mjs 24 頁 0 溢出 + page_identity_check.py 本地 25/25
-- [ ] ⑥ version 1.2.0 + lock 同步 + commit + push（用 `git -c credential.helper= -c "credential.helper=!gh auth git-credential" push origin main`）→ Actions 自動部署
-- [ ] ⑦ production 驗證：footer v1.2.0 + e2e_flows.mjs 26/26 + page_identity 25/25
-- [ ] ⑧ push log + memory 更新、本檔標 ✅ DONE、刪除續工 cron、向老闆報告（附截圖證據）
+**兩個官方數據源（都已實測 200、UTF-16 tab 分隔）**：
+1. 輪候人數：`https://www.swd.gov.hk/datagovhk/rm/Waiting-list-for-day-service.csv`（每月更新、含截至日期欄）
+2. SCCC 逐間最後獲篩選日期：`https://www.swd.gov.hk/datagovhk/rm/SCCC.csv`（剛確認存在！下載驗 schema 後對接 scccCentres.ts）
 
-## 注意
-- 本地 server 跑法：`New-Item -ItemType Junction D:\tmp_e2e_root\sen-navigator -Target web\out`、`python -m http.server 8077`（背景）、測完刪 junction
-- Chrome 截圖經 Bash 跑（PowerShell 啟動輸出會全失）；量溢出用 CDP device metrics（--window-size 截圖有偽影）
-- 老闆已下「全部包括性授權」：直接做、不問、做完報告
+**步驟**：
+- [ ] A1 下載 SCCC.csv 看 schema（欄名/編碼/逐間 lastApp 格式）、確認可對應 scccCentres.ts 的 code/lastApp
+- [ ] A2 寫 `scripts/update_waiting_data.mjs`（Node 零依賴）：抓兩 CSV → 解析（UTF-16LE、quoted 換行）→ 驗證（行數≥15、數字≥0、日期合法、SCCC 間數 50-70）→ 寫 `web/data/waitingLive.json`（含 asOf、eetc{only,withOther,total}、ip、sccc、scccCentres[{code,lastApp}]、generatedAt）；驗證不過 exit 1 不寫檔
+- [ ] A3 改 `web/data/governmentServices.ts`：waiting 字串改由 waitingLive.json 數字+asOf 插值（模板化）；`web/data/scccCentres.ts`：lastApp/SCCC_UPDATE 由 JSON 覆蓋（保留現有檔作 fallback 基準）
+- [ ] A4 寫 `.github/workflows/update-data.yml`：cron 每月 3 號 + 8 號（雙保險）香港早上（UTC 23:xx 前一天）+ workflow_dispatch；跑 A2 腳本 → 有 diff → github-actions[bot] commit + push → `gh workflow run deploy.yml`（env GH_TOKEN=github.token、permissions contents:write actions:write）
+- [ ] A5 本地跑 A2 驗證輸出數字 = 現站數字（EETC 1402/IP 548/SCCC 1549、asOf 2026-04-30）；build 通過
+- [ ] A6 push 後 `gh workflow run update-data.yml` 實測一次端到端（跑完 deploy 自動觸發、線上數字不變但管線證實）
+
+## 工作線 B：FAQ 圖示化改版（老闆出多元智能彩輪圖做風格參考）
+
+**設計方向（自動執行、不問）**：
+- [ ] B1 上網查 FAQ 圖示化/分類視覺最佳實踐（icon category grid + accordion 保留）
+- [ ] B2 改 /faq：頂部加「彩色粘土圖示分類格」——8 個範疇磚（全部/基礎認識/評估/制度/服務/費用/輪候/自費），每磚一個大 emoji/SVG 圖示 + Clay Doh 色（薄荷/粉/紫/陶土/黃/藍輪替、似多元智能彩輪），點磚 = 篩選（接現有 cat state）；每條問題加範疇小圖示；保留搜尋+手風琴
+- [ ] B3 「最權威」：加 **schema.org FAQPage JSON-LD**（Google rich results、SEO 權威化）——在 faq page 服務端輸出 <script type="application/ld+json"> 全部 Q/A
+- [ ] B4 對比度過 contrast_check（新色磚文字）、375px 無溢出、E2E faq 流程照過
+- [ ] B5 version 1.3.0 + build + push + production 驗證 + 截圖
+
+## 收尾（兩線都完）
+- [ ] push log + memory 更新、本檔標 ✅ DONE、刪續工 cron、向老闆報告（附證據）
+
+## 關鍵備忘
+- push：`git -c credential.helper= -c "credential.helper=!gh auth git-credential" push origin main`
+- build env：PAGES_EXPORT=1 BASE_PATH=sen-navigator NEXT_PUBLIC_SITE_URL=https://backup901012-stack.github.io/sen-navigator
+- ⚠️ 改 JSON/檔案一律用 Write/Edit 工具（PS5.1 Set-Content 會加 BOM、上次炸過 build）
+- 本地測 server：junction D:\tmp_e2e_root\sen-navigator → web\out、python -m http.server 8077
+- E2E：node scripts/e2e_flows.mjs <base>；溢出：mobile_overflow_check.mjs；身份：page_identity_check.py；對比：contrast_check.mjs
