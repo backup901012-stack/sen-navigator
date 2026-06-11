@@ -41,6 +41,10 @@ const PAIRS = [
   ["warm-700", "warm-50", 4.5, "粉徽章字 on warm-50"],
   ["warm-700", "warm-100", 4.5, "粉徽章字 on warm-100"],
   ["warm-700", "white", 4.5, "粉字 on 白卡"],
+  ["lilac-700", "lilac-100", 4.5, "FAQ 評估磚字"],
+  ["terra-700", "terra-100", 4.5, "FAQ 輪候磚字"],
+  ["warm-700", "warm-100", 4.5, "FAQ 服務磚字"],
+  ["brand-800", "brand-100", 4.5, "FAQ 基礎磚字"],
 ];
 
 let bad = 0;

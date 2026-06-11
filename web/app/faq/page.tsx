@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FaqSection from "@/components/FaqSection";
 import AiChat from "@/components/AiChat";
+import { FAQ_ITEMS } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "常見問題 / AI 助理",
@@ -8,9 +9,24 @@ export const metadata: Metadata = {
     "香港 SEN 學前資源常見問題：評估、服務分別、收費、輪候、自費治療，並有 AI 助理即時解答。",
 };
 
+/** schema.org FAQPage 結構化數據（利 AI 搜尋/LLM 正確引用；rich results 視乎 Google 政策） */
+const FAQ_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function FaqPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }}
+      />
       <section className="bg-gradient-to-br from-brand-50 to-white">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">解答查詢</p>
