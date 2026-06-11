@@ -1,27 +1,32 @@
-# 接力檔 — SEN 小孩導航員（2026-06-11）
+# 接力檔 — SEN 小孩導航員（2026-06-11 23:56 更新）
 
-> 用途：若 session 因額度/時間上限中斷，新 session（或 durable cron 喚起）讀本檔第一句直接續做。
-> 老闆指令：「做好後告訴我已經做到全香港最好的然後可以用了」+「額度恢復後繼續自動工作直到全部做完」。
+> 額度 98% 用盡、約 03:40 重置。排程會在 03:50 喚醒繼續。老闆指令：「給我全自動完成」、做完先停。
 
-## 狀態：✅ DONE（2026-06-11 23:1x 全部完成、v1.1.4 上線驗證、續工排程已刪）
+## 狀態：🟡 進行中 — Clay Doh 色系+字體改版（v1.2.0）
+
+## 任務：全站改 Clay Doh 粘土色系 + 兒童化圓體字（老闆出圖拍板）
+- 色系（已半完成）：Plasticine 薄荷主色 / Bubble Gum 粉行動色 / Candlewax 紫 + Terracota 陶土點綴 / Translucent 奶白底
+- 字體（未做）：換兒童化圓體、首選 justfont 開源「粉圓體」（Google Fonts 名 **Huninn**）
 
 ## 已完成（不要重做）
-- [x] v1.1.0-1.1.3 全部上線（GitHub Pages + Actions 自動部署、push main 即部署）
-- [x] 輪候數字更新至社署輪候冊 2026-04-30（EETC 1,402/IP 548/SCCC 1,549、OPRS 2023-12 起無輪候冊、SCCC 平均 19.2 個月 2023-24）
-- [x] EETC $148 官頁覆核一致；next 16.2.9；Actions 升 Node 24 就緒版（run 全綠）
-- [x] 全站靜態體檢：27 頁、0 內部斷鏈、0 SEO head 缺失、0 a11y 基礎問題（scripts/site_audit.py）
-- [x] 外部連結 55 條體檢（scripts/check_external_links.py）：唯一真死鏈（社署 practicegu）已改指學前康復服務總覽（grading/page.tsx:183）
-- [x] 競品掃描：OneSEN（活動/資訊/情緒、學齡）、sense.edb.gov.hk（官方資訊站、學齡）、教城共融資料館（資料庫）、NGO 服務頁——無一提供「官方輪候數據+互動配對+篩查」組合
+- [x] globals.css @theme 全色板已換（brand=薄荷 / warm=泡泡糖粉 / 新增 lilac + terra / paper=#faf6ef / ink=#2f2b33）
+- [x] clay 陰影 rgba(17,105,110,*)→rgba(30,70,60,*)、card-hover 同步、背景三團暈染（薄荷/粉/紫）
+- [x] 之前的逐功能核對 v1.1.5 已上線（E2E 26/26、勿動）
 
-## 待做（按序執行）
-- [ ] ① commit + push v1.1.4（死鏈修復 + 兩個 audit script + 本接力檔）→ Actions 自動部署
-- [ ] ② 線上驗證：7 關鍵頁 200 + /grading 新來源連結在線 + footer v1.1.4
-- [ ] ③ （可選強化）線上互動頁 console 檢查（/match /planner /faq）
-- [ ] ④ 更新 tasks/git_push_log.md + memory（project_sen_navigator.md）
-- [ ] ⑤ 全部完成後：本檔狀態改「✅ DONE」、CronDelete 刪除「sen-navigator-續工」排程、向老闆報告（誠實版「全港最好」聲明：在學前 SEN 導航此細分市場、就 2026-06-11 市場掃描所及、無同類免費互動工具；附差異化證據；禁無依據絕對化用詞）
+## 待做（按序、全自動、不問選項）
+- [ ] ① 字體：查 web/app/layout.tsx 現時點載入 LXGW WenKai（Google Fonts link 或 next/font）→ 換 Huninn
+      ・先驗證 `https://fonts.googleapis.com/css2?family=Huninn&display=swap` 回 200 有 TC unicode-range
+      ・若 Google Fonts 無 Huninn → 後備：fontsource/CDN jsdelivr `jf-openhuninn` 或保留 LXGW + 圓體 fallback、誠實記錄
+      ・globals.css --font-sans 改 "Huninn" 開頭、fallback 保留 Noto Sans TC 等
+- [ ] ② 對比度驗證：寫 scripts/contrast_check.mjs 算 WCAG 對比（關鍵組合：white文字 on brand-600/warm-500、brand-700/warm-700 on white/brand-50/warm-50、ink/ink-soft on paper/white、brand-100 on brand-900）全部 ≥4.5（大字 ≥3）、唔夠就微調 globals.css 色值
+- [ ] ③ build（PAGES_EXPORT=1 BASE_PATH=sen-navigator NEXT_PUBLIC_SITE_URL=https://backup901012-stack.github.io/sen-navigator）
+- [ ] ④ 截圖目視（headless Chrome --screenshot、home/services/match/parents、桌面+手機）— 用 Read 工具睇圖、確認粘土色+圓體生效、冇爆版
+- [ ] ⑤ mobile_overflow_check.mjs 24 頁 0 溢出 + page_identity_check.py 本地 25/25
+- [ ] ⑥ version 1.2.0 + lock 同步 + commit + push（用 `git -c credential.helper= -c "credential.helper=!gh auth git-credential" push origin main`）→ Actions 自動部署
+- [ ] ⑦ production 驗證：footer v1.2.0 + e2e_flows.mjs 26/26 + page_identity 25/25
+- [ ] ⑧ push log + memory 更新、本檔標 ✅ DONE、刪除續工 cron、向老闆報告（附截圖證據）
 
-## 關鍵操作備忘
-- push 用：`git -c credential.helper= -c "credential.helper=!gh auth git-credential" push origin main`（gh keyring token 有 workflow scope）
-- build 驗證：`cd web; $env:PAGES_EXPORT='1'; $env:BASE_PATH='sen-navigator'; $env:NEXT_PUBLIC_SITE_URL='https://backup901012-stack.github.io/sen-navigator'; npm run build`
-- 版本號規則：package.json patch +1、footer 自動顯示、同 commit 包含功能改動
-- 線上：https://backup901012-stack.github.io/sen-navigator/
+## 注意
+- 本地 server 跑法：`New-Item -ItemType Junction D:\tmp_e2e_root\sen-navigator -Target web\out`、`python -m http.server 8077`（背景）、測完刪 junction
+- Chrome 截圖經 Bash 跑（PowerShell 啟動輸出會全失）；量溢出用 CDP device metrics（--window-size 截圖有偽影）
+- 老闆已下「全部包括性授權」：直接做、不問、做完報告

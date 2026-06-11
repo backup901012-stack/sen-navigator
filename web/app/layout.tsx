@@ -45,13 +45,9 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        {/* 兒童化圓體：justfont 開源粉圓 Huninn（open 粉圓 2.1 授權、可商用）+ Noto Sans TC 後備 */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
-          rel="stylesheet"
-        />
-        {/* 書法真書／楷書字體：霞鶩文楷 LXGW WenKai（開源 OFL、可商用） */}
-        <link
-          href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css"
+          href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
       </head>
