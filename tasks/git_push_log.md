@@ -1,5 +1,15 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-11 (下午) | sen-navigator | 全自動化授權執行：CI + 數據更新 v1.1.3
+- 老闆「所有東西都授權給你了」→ 四件全自己做完：
+- ① **GitHub Actions 自動部署啟用**（57b2030）：gh keyring token 有 workflow scope（.env PAT 沒有、6/7 記憶過時）；Pages build_type 切 workflow；deploy.yml 加產物煙霧測試 + job 級權限（Codex P2 採納 ×2、P1 BASE_PATH 為誤報 next.config.ts:7 有正規化）；run 27341144062 success 50s
+- ② **EETC $148 覆核**：官頁原文「每年基本費用$148」一致、來源標 2026-06-11
+- ③ **輪候數字更新**（bf3a20e、v1.1.3）：data.gov.hk 輪候冊 CSV（UTF-16）截至 2026-04-30 程式加總 — EETC 1,402（含同時輪候 624）/ IP 548 / SCCC 1,549；SCCC 平均 19.2 個月（2023-24、立法會 2025-03-19）；**OPRS 自 2023-12 起無輪候冊**（取代過時 2,703 人/4.3 個月）；Codex 抓到 OPRS 例外漏「正接受其他資助服務者」已修；CSV 快照入庫 tasks/
+- ④ **npm audit 評估**：postcss 修補僅存在 next 16.3 canary、不採用；升最新 stable 16.2.9
+- 線上驗證：✅ /services 含 1,402/19.2 個月/無輪候冊、舊 2,703 已消失、首頁 v1.1.3、7 頁 200（Actions 自動部署、非手動腳本）
+- ⑤ **Node 24 預修**（1ab70f7）：GitHub 6/16 強制 Node 24、actions 升 checkout/setup-node v6 + pages 三件 v5/v6（版本 gh api 實查）
+---
+
 ### 2026-06-11 | sen-navigator | 巡檢修補 v1.1.2（補推 v1.1.0/v1.1.1）
 - 巡檢發現：6/10 兩個 commit（v1.1.0 多元智能、v1.1.1 Clay Doh）只在本機、未推未部署；線上實測 /intelligences 404
 - 修 sitemap 漏項：lib/seo.ts ROUTES 補 /intelligences（v1.1.0 加頁時漏）
