@@ -220,13 +220,113 @@ button[class~="rounded-full"]:active {
     inset 12px 13px 26px rgba(255, 255, 255, 0.96);
 }
 
-/* 柔和粘土背景：三團粘土色暈染（薄荷/泡泡糖/蠟燭紫）、似影樓擺三舊粘土 */
+/* 柔和粘土背景：已搬到下方動畫層 body::before（三團暈染 + 慢漂） */
+
+/* ============================================================
+   動畫層（2026-06-12 老闆指令：全站動畫感、視覺提示、溫馨親子）
+   策略：CSS scroll-driven（animation-timeline: view()）漸進增強、
+   零 JS 零依賴、全域 selector 套用（同 clay 層做法）、
+   舊瀏覽器自動回退靜態、prefers-reduced-motion 全面尊重。
+   ============================================================ */
+
+/* 粘土彈入（卡片滾入視口時、似粘土「啪」一聲放上枱） */
+@keyframes clay-pop-in {
+  0%   { opacity: 0; transform: translateY(26px) scale(0.93); }
+  70%  { opacity: 1; transform: translateY(-4px) scale(1.015); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* 標題滑入（視線引導：由左輕推） */
+@keyframes title-slide-in {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+/* 圖示搖擺（hover 卡片時、圖示似俾人逗笑） */
+@keyframes icon-wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-8deg) scale(1.12); }
+  60% { transform: rotate(7deg) scale(1.08); }
+}
+/* 按鈕果凍 squish（按下去似粘土俾手指撳扁） */
+@keyframes clay-squish {
+  0%   { transform: scale(1, 1); }
+  35%  { transform: scale(1.06, 0.92); }
+  70%  { transform: scale(0.97, 1.04); }
+  100% { transform: scale(1, 1); }
+}
+/* logo「導」字呼吸跳動（吉祥物感） */
+@keyframes logo-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(-3deg); }
+}
+/* 背景粘土暈染慢漂（溫馨流動感） */
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2%, 1.5%) scale(1.04); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 滾入彈現：所有粘土卡片（漸進增強、舊瀏覽器直接顯示） */
+  @supports (animation-timeline: view()) {
+    [class~="bg-white"][class~="rounded-2xl"],
+    [class~="bg-white"][class~="rounded-xl"],
+    [class~="bg-brand-50"][class~="rounded-2xl"],
+    [class~="bg-amber-50"][class~="rounded-2xl"],
+    [class~="bg-warm-50"][class~="rounded-2xl"],
+    [class~="bg-brand-900"][class~="rounded-2xl"],
+    [class~="bg-brand-900"][class~="rounded-3xl"] {
+      animation: clay-pop-in 1ms linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    main h2 {
+      animation: title-slide-in 1ms linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+
+  /* hover 卡片 → 內裡 emoji 圖示搖擺（視覺提示：呢度可以㩒） */
+  .card-hover:hover :is([class~="text-2xl"], [class~="text-3xl"], [class~="text-4xl"]) {
+    display: inline-block;
+    animation: icon-wiggle 0.55s ease both;
+  }
+
+  /* 按鈕 hover 果凍 squish（原有抬高保留、加彈性） */
+  a[class~="rounded-full"]:hover,
+  button[class~="rounded-full"]:hover {
+    animation: clay-squish 0.45s ease both;
+  }
+
+  /* logo「導」字輕微 bob（吉祥物呼吸感） */
+  header a[href] > span:first-child {
+    animation: logo-bob 2.6s ease-in-out infinite;
+  }
+
+  /* 手風琴 ＋ 號彈性旋轉 */
+  [aria-expanded] > span:last-child {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+/* 背景暈染搬去 ::before 做慢漂（transform 動畫、唔郁 layout） */
 body {
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: -6%;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     radial-gradient(at 12% 8%, rgba(147, 214, 185, 0.22) 0px, transparent 42%),
     radial-gradient(at 88% 22%, rgba(244, 154, 194, 0.16) 0px, transparent 40%),
     radial-gradient(at 20% 88%, rgba(195, 163, 224, 0.14) 0px, transparent 38%);
-  background-attachment: fixed;
+}
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: blob-drift 16s ease-in-out infinite;
+  }
 }
 
 /* 尊重「減少動態」偏好（無障礙） */
@@ -235,6 +335,11 @@ body {
   button[class~="rounded-full"]:hover,
   .card-hover:hover {
     transform: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
