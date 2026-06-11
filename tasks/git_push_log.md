@@ -1,5 +1,12 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (凌晨後半) | sen-navigator | 三連發：數據自動化 v1.2.1 + FAQ 圖示化 v1.2.2 + 動畫層 v1.3.0
+- **A 數據自動更新（69d1be6）**：update_waiting_data.mjs 抓社署兩官方 CSV（輪候冊+SCCC 逐間、UTF-16）→ 驗證 → waitingLive.json；governmentServices/scccCentres 全改 JSON 驅動（57 code 100% 配對）；update-data.yml 每月 3+10 號自動跑、bot commit + gh workflow run deploy（GITHUB_TOKEN push 不觸發其他 workflow 的坑已繞）；**workflow_dispatch 首跑 CI success**（27362356038、無變動路徑正確）
+- **B FAQ 圖示化（f7c2d15）**：8 粘土彩磚（圖示+條數+點磚篩選）+ 每題範疇圖示 chip + FAQPage JSON-LD；新色對對比 4 組 6.29-7.30 全過；截圖目視 PASS
+- **C 動畫層（da4b9d8 v1.3.0）**：CSS scroll-driven（animation-timeline: view()）卡片彈入 + 標題滑入 + emoji 搖擺 + 按鈕果凍 squish + logo bob + 背景暈染慢漂；零 JS 零依賴、漸進增強、prefers-reduced-motion 全尊重；E2E 26/26、24 頁 0 溢出
+- 中途事故：build 被殘留本地 server 鎖 out/（8077/8079 殭屍 python）→ 殺進程修復；E2E 首跑 3 假陽性紅、重跑全綠
+---
+
 ### 2026-06-12 (凌晨) | sen-navigator | Clay Doh 色系 + 粉圓體 v1.2.0
 - 老闆出圖拍板：izuka-effects Clay Doh 13 粘土材質色系 + 兒童化圓體字
 - 色板：brand=Plasticine 薄荷 / warm=Bubble Gum 粉（warm-500 調 #cb2a79 達 4.98 對比）/ 新增 lilac=Candlewax + terra=Terracota / paper=Translucent 奶白 / ink=Space Clay 墨
