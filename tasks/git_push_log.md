@@ -9,6 +9,9 @@
 - 本地實測：E2E 26/26 PASS、頁面身份 25/25 PASS
 - 視覺/響應式：scripts/mobile_overflow_check.mjs（CDP 真手機模擬 375px）24 頁 0 水平溢出 + 6 頁截圖目視正常
 - 功能核對矩陣寫入 tasks/todo.md
+- main 0763e25、Actions run 27358756962 success 59s
+- **Production 終驗（部署後對線上重跑）**：E2E 26/26 ✅、頁面身份 25/25 ✅、footer v1.1.5 ✅
+- Codex L3：聚焦 diff PASS（首跑全量 diff 含 lock 10 分鐘無輸出、circuit break 重試）
 ---
 
 ### 2026-06-11 (晚) | sen-navigator | 全站品質終驗 v1.1.4（「全港最好」證據包）
