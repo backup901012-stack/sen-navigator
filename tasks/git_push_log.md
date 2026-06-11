@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (凌晨) | sen-navigator | Clay Doh 色系 + 粉圓體 v1.2.0
+- 老闆出圖拍板：izuka-effects Clay Doh 13 粘土材質色系 + 兒童化圓體字
+- 色板：brand=Plasticine 薄荷 / warm=Bubble Gum 粉（warm-500 調 #cb2a79 達 4.98 對比）/ 新增 lilac=Candlewax + terra=Terracota / paper=Translucent 奶白 / ink=Space Clay 墨
+- 字體：LXGW 楷書 → justfont 粉圓 Huninn（Google Fonts、open 粉圓 2.1 可商用）、目視確認圓體生效
+- 驗證：WCAG 對比 20/20（contrast_check.mjs 新工具）、375px 24 頁 0 溢出、頁面身份 25/25、截圖目視
+- 🔴 事故與自救：9804fa8 的 package.json 被 PS5.1 Set-Content -Encoding UTF8 寫入 BOM → turbopack 解析失敗 build 紅；**煙霧測試擋住、線上未受影響**；06363f6 用 Write 工具去 BOM 修復
+- 教訓：改 JSON 一律用 Write/Edit 工具、唔好用 PS5.1 Set-Content（必加 BOM）
+---
+
 ### 2026-06-11 (深夜) | sen-navigator | 逐功能核對 + 3 bug 修復 v1.1.5
 - 老闆挑戰「每一個 UI 跟功能都一個一個核對咗未」→ 答案係未夠深、即補：9 互動元件逐個源碼邏輯審 + CDP 真瀏覽器逐流程點擊
 - 🔴 修 MatchTool：TSP 推薦邏輯反轉（原 both/private、正確 gov/both 且非 over6——TSP 資格繫於輪候資助服務）+ over6 空結果加 SENCO 卡 + over6 文案準確化
