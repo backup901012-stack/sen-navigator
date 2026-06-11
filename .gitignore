@@ -20,3 +20,4 @@ _prc_pages/
 .DS_Store
 Thumbs.db
 *.log
+__pycache__/
