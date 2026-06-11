@@ -14,6 +14,7 @@ export const ROUTES = [
   "/brain",
   "/milestones",
   "/odd",
+  "/intelligences",
   "/ot-confidence",
   "/tcm",
   "/journey",

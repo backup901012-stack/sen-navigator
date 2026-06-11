@@ -14,6 +14,7 @@
 # 原始素材（不入庫）
 *.pdf
 _pdf_pages/
+_prc_pages/
 
 # 系統
 .DS_Store

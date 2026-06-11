@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-11 | sen-navigator | 巡檢修補 v1.1.2（補推 v1.1.0/v1.1.1）
+- 巡檢發現：6/10 兩個 commit（v1.1.0 多元智能、v1.1.1 Clay Doh）只在本機、未推未部署；線上實測 /intelligences 404
+- 修 sitemap 漏項：lib/seo.ts ROUTES 補 /intelligences（v1.1.0 加頁時漏）
+- .gitignore 加 _prc_pages/（PRC 來源截圖、同 _pdf_pages 慣例不入庫）
+- 版本 1.1.2；build 30 路由 ✅；out/sitemap.xml 含 intelligences ✅
+- gh-pages 部署：⏳ 待老闆拍板後跑 scripts/deploy-pages.sh（線上仍是 6/9 版）
+- npm audit：2 moderate（next→postcss、build-time、靜態站影響低）；.github/workflows/deploy.yml 未啟用、待拍板
+---
+
 ### 2026-06-08 | sen-navigator | 語言發展里程碑
 - 老闆提供新界西醫院聯網言語治療部「語言發展里程碑」表（相片）
 - 逐項視覺讀取整理（略過家長手寫剔號）；10 個年齡階段 × 言語表達/聆聽理解/其他
