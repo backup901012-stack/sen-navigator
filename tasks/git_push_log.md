@@ -5,7 +5,8 @@
 - 修 sitemap 漏項：lib/seo.ts ROUTES 補 /intelligences（v1.1.0 加頁時漏）
 - .gitignore 加 _prc_pages/（PRC 來源截圖、同 _pdf_pages 慣例不入庫）
 - 版本 1.1.2；build 30 路由 ✅；out/sitemap.xml 含 intelligences ✅
-- gh-pages 部署：⏳ 待老闆拍板後跑 scripts/deploy-pages.sh（線上仍是 6/9 版）
+- gh-pages 部署：✅ 老闆拍板「部署」→ 6/11 跑 deploy-pages.sh、gh-pages 7119de8→84aa459、Pages build=built
+- 線上驗證：✅ 7 關鍵頁（/ intelligences services grading parents directory faq）全 200、sitemap 含 intelligences、首頁 footer v1.1.2、導覽含多元智能
 - npm audit：2 moderate（next→postcss、build-time、靜態站影響低）；.github/workflows/deploy.yml 未啟用、待拍板
 ---
 
