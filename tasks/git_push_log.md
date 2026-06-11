@@ -1,5 +1,13 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (02:xx) | sen-navigator | 動畫引擎 fail-safe 重寫 v1.4.0（31c2d69）
+- 老闆「感受唔到動畫」→ 檢討屬實：v1.3.0 scroll-driven 太保守（@supports 限定、視口內元素直接終態）
+- 第一版重寫（CSS 先隱藏+JS 解鎖）實測出**h2 永久隱形**失敗模式（headless 環境 IO 未開火）→ 推倒改 fail-safe：預設全可見、.pre 只在 JS 活著時加、3s 兜底 interval — 任何失敗退化為靜態頁
+- 動畫構成：首屏 hydration 階梯彈入 + 滾動 IO 進場 + 動態內容進場（MutationObserver）+ hero CSS 階梯（無 JS 即有）+ 圖示輕浮 + CTA 心跳 + logo bob + hover wiggle/squish
+- 實證：CDP 輪詢 iv 軌跡 0→1→5（首屏彈入+滾動進場+pre 正確保留）；E2E 26/26；24 頁 0 溢出
+- e2e 目錄搜尋斷言改輪詢（根治 flake）；新工具 scripts/probe_motion.mjs（動畫引擎現場偵錯）
+---
+
 ### 2026-06-12 (凌晨後半) | sen-navigator | 三連發：數據自動化 v1.2.1 + FAQ 圖示化 v1.2.2 + 動畫層 v1.3.0
 - **A 數據自動更新（69d1be6）**：update_waiting_data.mjs 抓社署兩官方 CSV（輪候冊+SCCC 逐間、UTF-16）→ 驗證 → waitingLive.json；governmentServices/scccCentres 全改 JSON 驅動（57 code 100% 配對）；update-data.yml 每月 3+10 號自動跑、bot commit + gh workflow run deploy（GITHUB_TOKEN push 不觸發其他 workflow 的坑已繞）；**workflow_dispatch 首跑 CI success**（27362356038、無變動路徑正確）
 - **B FAQ 圖示化（f7c2d15）**：8 粘土彩磚（圖示+條數+點磚篩選）+ 每題範疇圖示 chip + FAQPage JSON-LD；新色對對比 4 組 6.29-7.30 全過；截圖目視 PASS
