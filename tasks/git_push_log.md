@@ -1,5 +1,16 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-11 (深夜) | sen-navigator | 逐功能核對 + 3 bug 修復 v1.1.5
+- 老闆挑戰「每一個 UI 跟功能都一個一個核對咗未」→ 答案係未夠深、即補：9 互動元件逐個源碼邏輯審 + CDP 真瀏覽器逐流程點擊
+- 🔴 修 MatchTool：TSP 推薦邏輯反轉（原 both/private、正確 gov/both 且非 over6——TSP 資格繫於輪候資助服務）+ over6 空結果加 SENCO 卡 + over6 文案準確化
+- 🔴 修 AiChat：mode.cats +2 加權無條件套用、任何亂入輸入都誤中 ≥2 門檻答非所問 → 改為有實際命中先加權
+- 🟡 修 ConsultForm：clipboard 失敗 try/catch + 選字後備
+- 新工具：scripts/e2e_flows.mjs（CDP 零依賴、26 斷言：match 兩路徑/M-CHAT 三計分情境/planner 全鏈路/AiChat 修復驗證/目錄搜尋/consult/sccc 分區）+ scripts/page_identity_check.py（24 路由+404 行為）
+- 本地實測：E2E 26/26 PASS、頁面身份 25/25 PASS
+- 視覺/響應式：scripts/mobile_overflow_check.mjs（CDP 真手機模擬 375px）24 頁 0 水平溢出 + 6 頁截圖目視正常
+- 功能核對矩陣寫入 tasks/todo.md
+---
+
 ### 2026-06-11 (晚) | sen-navigator | 全站品質終驗 v1.1.4（「全港最好」證據包）
 - 全站靜態體檢（site_audit.py）：27 頁、0 內部斷鏈、0 SEO head 缺失、0 a11y 基礎問題
 - 外部來源 55 條全檢（check_external_links.py）：唯一真死鏈（社署 practicegu 改版 404）→ 改指學前康復服務總覽（實測 200）

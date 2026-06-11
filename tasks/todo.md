@@ -64,6 +64,22 @@
 - ✅ L4 Production：GitHub Pages 上線（2026-06-07）+ GitHub Actions 自動部署（2026-06-11 啟用、push main 即部署、含產物煙霧測試）
 - v1 = 前端互動平台 + 有來源研究資料；登入個案管理 / 諮詢後端 / 真 AI key / 即時 data.gov.hk = Phase 2
 
+## 功能核對矩陣（2026-06-11 逐一核對、v1.1.5）
+> 方法：9 個互動元件逐個源碼邏輯審 + 真瀏覽器 CDP 逐流程點擊驗證（scripts/e2e_flows.mjs、26 條斷言）+ 24 路由頁面身份檢查（scripts/page_identity_check.py、25 項）
+
+| 功能 | 邏輯審 | 瀏覽器 E2E | 發現與處置 |
+|---|---|---|---|
+| M-CHAT 篩查（MchatScreener+data/mchat） | ✅ 反向題 2/5/12、分段 0-2/3-7/8-20 對官方 | ✅ 三種計分情境 | 無誤 |
+| 服務配對（MatchTool） | 🔴 TSP 邏輯反轉（漏 gov、錯包 private）+ over6 空結果 | ✅ 兩條路徑 10 斷言 | 已修：TSP=gov/both 且非 over6；over6 加 SENCO 卡 |
+| AI 助理（AiChat） | 🔴 範疇加權無條件 +2、亂入輸入誤中門檻答非所問 | ✅ fallback+實質答案 | 已修：加權僅在有實際命中時生效 |
+| 規劃清單（PlannerBoard+plan.ts） | ✅ 每變更派發 plan-changed | ✅ 加→重載持久→完成→移除 | 無誤 |
+| 加入規劃（AddToPlanButton） | ✅ 跨實例同步、防 hydration mismatch | ✅（隨配對/篩查流程） | 無誤 |
+| 諮詢摘要（ConsultForm） | 🟡 clipboard 失敗未處理 | ✅ 生成+內容 | 已修：try/catch+選字後備 |
+| 資源目錄（DirectoryExplorer） | ✅ 搜尋/雙篩選/空狀態/tel: | ✅ 搜尋縮小 23→1 | 無誤 |
+| FAQ（FaqSection） | ✅ 搜尋+範疇+手風琴+來源 | ✅（faq 頁載入） | 無誤 |
+| SCCC 分區輪候（ScccWaiting） | ✅ monthsWaited 算式抽驗 2 例 | ✅ 屯門篩選 | 無誤 |
+| 24 內容路由 | ✅ site_audit 0/0/0 | ✅ 頁面身份 25/25（含 404） | 無誤 |
+
 ## 待覆核（research agent 標示）
 - [x] EETC 每年約 $148：✅ 2026-06-11 官頁覆核，原文「每年基本費用$148」與站上一致（swd.gov.hk earlyeduca）
 - [x] 輪候數字：✅ 2026-06-11 更新至社署輪候冊 2026-04-30（EETC 1,402／IP 548／SCCC 1,549；OPRS 自 2023-12 起無輪候冊）+ SCCC 平均 19.2 個月（2023-24、立法會 2025-03-19）；平均月數 EETC/IP 仍為 2021-22 最後公布值、已標年度

@@ -125,8 +125,8 @@ function answer(q: string, mode: Mode): string {
       情緒: 2, 反抗: 3, 里程: 2, 中醫: 2,
     };
     for (const k in KW) if (q.includes(k) && hay.includes(k)) score += KW[k];
-    // 模式範疇加權
-    if (mode.cats.includes(f.category)) score += 2;
+    // 模式範疇加權：只在已有實際文字命中時加（否則任何輸入都會誤中門檻、答非所問）
+    if (score > 0 && mode.cats.includes(f.category)) score += 2;
     if (score > best.score) best = { score, a: f.a };
   }
   return best.score >= 2 ? best.a : mode.fallback;

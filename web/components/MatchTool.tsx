@@ -31,6 +31,14 @@ function buildRecommendations(a: Record<string, string | string[]>): {
   if (age === "over6") {
     note =
       "本平台主要聚焦 0–6 歲學前資源。孩子已 6 歲或以上，學校支援多透過教育局「全校參與模式」處理，建議同時聯絡學校的特殊教育需要統籌主任及教育局。";
+    recos.push({
+      id: "reco-senco",
+      title: "聯絡學校 SENCO（特殊教育需要統籌主任）",
+      why: "6 歲或以上的在校支援由學校按教育局「全校參與模式」統籌。SENCO 是學校支援的統籌人，建議先約見了解校內支援層級，亦可參閱教育局「融情·特教」網站。",
+      href: "/resources",
+      kind: "step",
+      tag: "學齡支援",
+    });
   }
 
   // 評估：未評估 / 懷疑 → 先做評估
@@ -124,10 +132,13 @@ function buildRecommendations(a: Record<string, string | string[]>): {
       recos.push({
         id: `reco-${m.id}`,
         title: `${m.title}（可考慮自費補充）`,
-        why: "針對你關注的範疇，輪候政府服務期間可考慮自費訓練延續成效。收費因機構而異，宜核實治療師資歷。",
+        why:
+          age === "over6"
+            ? "針對你關注的範疇，可考慮自費訓練作針對性提升。收費因機構而異，宜核實治療師資歷。"
+            : "針對你關注的範疇，輪候政府服務期間可考慮自費訓練延續成效。收費因機構而異，宜核實治療師資歷。",
         href: "/directory#fee",
         kind: "course",
-        tag: "輪候期支援",
+        tag: age === "over6" ? "自費支援" : "輪候期支援",
       });
     }
   });
@@ -144,12 +155,13 @@ function buildRecommendations(a: Record<string, string | string[]>): {
     });
   }
 
-  // 預算傾向
-  if (budget === "both" || budget === "private") {
+  // 學習訓練津貼：資格繫於「正在輪候資助學前康復服務」——
+  // 走政府軌（gov / both）先合資格；純自費不輪候（private）不適用；6 歲以上非學前範圍
+  if ((budget === "gov" || budget === "both") && age !== "over6") {
     recos.push({
       id: "reco-tsp",
       title: "申領學習訓練津貼 (TSP)",
-      why: "輪候資助服務期間，符合資格者可申領津貼支援訓練（特殊幼兒中心輪候者不設入息審查）。",
+      why: "輪候資助學前康復服務期間，符合資格者可申領津貼支援訓練（特殊幼兒中心輪候者不設入息審查）。",
       href: "/services",
       kind: "step",
       tag: "經濟支援",

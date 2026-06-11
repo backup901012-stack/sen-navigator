@@ -27,9 +27,21 @@ export default function ConsultForm() {
 
   const copy = async () => {
     if (!summary) return;
-    await navigator.clipboard.writeText(summary);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(summary);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // 剪貼簿被拒（舊瀏覽器/權限）：選取摘要文字、方便手動複製
+      const node = document.getElementById("summary-box")?.querySelector("pre");
+      if (node) {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+      }
+    }
   };
 
   return (
