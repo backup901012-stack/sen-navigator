@@ -180,7 +180,7 @@ export default function GradingPage() {
           <SourceList
             sources={[
               { label: "社署 — 康復服務中央轉介系統（CRSRehab）", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_crsrehab/centralref/", checkedAt: "2026-06" },
-              { label: "社署 — 康復服務實務指引", url: "https://www.swd.gov.hk/tc/index/site_pubsvc/page_rehab/sub_practicegu/", checkedAt: "2026-06" },
+              { label: "社署 — 學前康復服務總覽", url: "https://www.swd.gov.hk/tc/pubsvc/rehab/cat_serpresch/", checkedAt: "2026-06-11" },
               { label: "復康會 RehabGuide — 學前兒童評估及轉介", url: "https://www.rehabguide.hk/evaluation_ss.php?id=1", checkedAt: "2026-06" },
             ]}
           />
