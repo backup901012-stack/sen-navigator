@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-11 (晚) | sen-navigator | 全站品質終驗 v1.1.4（「全港最好」證據包）
+- 全站靜態體檢（site_audit.py）：27 頁、0 內部斷鏈、0 SEO head 缺失、0 a11y 基礎問題
+- 外部來源 55 條全檢（check_external_links.py）：唯一真死鏈（社署 practicegu 改版 404）→ 改指學前康復服務總覽（實測 200）
+- 真瀏覽器實證（headless Chrome、零新套件）：match/planner/faq/screening 四互動頁 0 console 錯誤、hydration 全掛載（match 5 選項鈕、screening M-CHAT 42 鈕、faq 輸入框+AI 助理、planner 規劃清單）
+- 競品掃描：OneSEN（活動/資訊/情緒、學齡）、教育局融情特教（官方資訊站）、教城共融資料館、NGO 服務頁 — 無一同時提供「官方輪候數據 + 配對 + 篩查 + 規劃」
+- 連續性機制：tasks/next_session_handoff_2026-06-11.md + session 內 :43 hourly 續工 cron（完工後已刪）
+- main 9745cb1、Actions run 27356021456 success、線上 v1.1.4 + grading 新來源驗證 ✅
+---
+
 ### 2026-06-11 (下午) | sen-navigator | 全自動化授權執行：CI + 數據更新 v1.1.3
 - 老闆「所有東西都授權給你了」→ 四件全自己做完：
 - ① **GitHub Actions 自動部署啟用**（57b2030）：gh keyring token 有 workflow scope（.env PAT 沒有、6/7 記憶過時）；Pages build_type 切 workflow；deploy.yml 加產物煙霧測試 + job 級權限（Codex P2 採納 ×2、P1 BASE_PATH 為誤報 next.config.ts:7 有正規化）；run 27341144062 success 50s
