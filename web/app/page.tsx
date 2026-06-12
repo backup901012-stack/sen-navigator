@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PILLARS, SITE } from "@/lib/site";
 import { SectionTitle, CardLink } from "@/components/ui";
 import { PILLAR_ICONS, IconBank, IconChart, IconPuzzle } from "@/components/icons";
+import Mascot from "@/components/Mascot";
 
 const PAINS = [
   "孩子發展好似比同齡慢，唔知去邊度評估？",
@@ -57,7 +58,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="animate-fade-up">
+          <div className="animate-fade-up relative">
+            <div className="absolute -top-16 right-4 hidden sm:block" aria-hidden>
+              <Mascot size={108} />
+            </div>
             <div className="bg-white rounded-3xl border border-brand-100 shadow-xl shadow-brand-900/5 p-6">
               <p className="font-bold text-brand-800 mb-4">孩子的支援之路</p>
               <ol className="space-y-3">

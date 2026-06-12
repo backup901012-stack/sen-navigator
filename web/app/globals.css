@@ -342,6 +342,106 @@ html.motion h2.iv {
   }
 }
 
+/* ============================================================
+   卡通層（2026-06-12 老闆指令：全站動畫卡通感）
+   粗邊框粘土卡 + 玩具按鈕 + footer 波浪 + 漂浮雲 + 吉祥物動畫
+   ============================================================ */
+
+/* 粗邊框（claymorphism 規範 3-4px、邊色 = 填色深一級、卡通 chunky 感） */
+[class~="bg-white"][class~="rounded-xl"],
+[class~="bg-white"][class~="rounded-2xl"],
+[class~="bg-white"][class~="rounded-3xl"] {
+  border: 3px solid var(--color-brand-100);
+}
+[class~="bg-brand-50"][class~="rounded-2xl"] { border: 3px solid var(--color-brand-200); }
+[class~="bg-amber-50"][class~="rounded-2xl"] { border: 3px solid #fde68a; }
+[class~="bg-warm-50"][class~="rounded-2xl"] { border: 3px solid var(--color-warm-200); }
+
+/* 玩具按鈕：實色底邊（似可以撳落去嘅膠鈕）；按下變平 */
+a[class~="rounded-full"],
+button[class~="rounded-full"] {
+  box-shadow:
+    var(--clay-btn),
+    0 5px 0 -1px rgba(30, 70, 60, 0.3);
+}
+a[class~="rounded-full"]:active,
+button[class~="rounded-full"]:active {
+  transform: translateY(2px);
+  box-shadow: var(--clay-btn-press);
+}
+
+/* footer 波浪邊（卡通世界地平線） */
+footer {
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: -21px;
+  left: 0;
+  right: 0;
+  height: 22px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 22'%3E%3Cpath d='M0 22 Q 20 0 40 11 T 80 22 Z' fill='%231e463c'/%3E%3C/svg%3E");
+  background-size: 80px 22px;
+  background-repeat: repeat-x;
+}
+
+/* 吉祥物動畫：漂浮 + 揮手 + 眨眼 */
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes mascot-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-18deg); }
+}
+@keyframes mascot-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.08); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mascot { animation: mascot-float 3.2s ease-in-out infinite; }
+  .mascot-arm {
+    transform-origin: 28px 62px;
+    animation: mascot-wave 2.4s ease-in-out infinite;
+  }
+  .mascot-eyes {
+    transform-origin: 60px 54px;
+    animation: mascot-blink 4.6s ease-in-out infinite;
+  }
+}
+
+/* 漂浮卡通雲（兩朵、極慢飄過） */
+@keyframes clouds-drift {
+  from { background-position: -180px 12%, 110vw 64%; }
+  to { background-position: 110vw 12%, -260px 64%; }
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 180px 90px, 130px 65px;
+  background-position: 8% 12%, 86% 64%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  body::after {
+    animation: clouds-drift 90s linear infinite;
+  }
+}
+
+/* 數據欄等寬數字（輪候人數/日期唔會跳閘） */
+main {
+  font-variant-numeric: tabular-nums;
+}
+
 /* 背景暈染搬去 ::before 做慢漂（transform 動畫、唔郁 layout） */
 body {
   position: relative;
