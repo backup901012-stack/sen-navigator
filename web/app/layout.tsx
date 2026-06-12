@@ -42,6 +42,13 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant-HK">
       <head>
+        {/* 低感官偏好喺 paint 前套用（避免返訪用戶裝飾閃現） */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(localStorage.getItem('sen-calm')==='1')document.documentElement.classList.add('calm')}catch(e){}",
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

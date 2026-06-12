@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { NAV, SITE } from "@/lib/site";
 import { IconClipboard } from "@/components/icons";
+import CalmToggle from "@/components/CalmToggle";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -46,7 +47,8 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-2">
+          <CalmToggle />
           <Link
             href="/planner"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-warm-500 hover:bg-warm-600 text-white font-bold text-sm transition-colors"
@@ -98,6 +100,9 @@ export default function SiteHeader() {
             >
               <IconClipboard size={18} /> 我的規劃清單
             </Link>
+            <div className="mt-2 flex justify-center">
+              <CalmToggle />
+            </div>
           </div>
         </nav>
       )}

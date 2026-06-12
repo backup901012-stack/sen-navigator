@@ -627,6 +627,59 @@ body::before {
   }
 }
 
+/* ── 低感官模式（html.calm、CalmToggle 切換）──
+   SEN 兒童感官過載友善：裝飾動效全關、內容功能全留 */
+html.calm body::before,
+html.calm body::after {
+  display: none;                 /* 天空浮游物 + 粘土暈染 */
+}
+html.calm .cursor-pet,
+html.calm .cursor-spark {
+  display: none !important;      /* 星塵尾巴 + 爆星 */
+}
+@media (pointer: fine) {
+  html.calm body,
+  html.calm a,
+  html.calm button,
+  html.calm [role="button"],
+  html.calm summary,
+  html.calm label {
+    cursor: auto;                /* 還原系統鼠標 */
+  }
+  html.calm a,
+  html.calm button:not(:disabled),
+  html.calm [role="button"],
+  html.calm summary {
+    cursor: pointer;
+  }
+}
+html.calm .mascot,
+html.calm .mascot-arm,
+html.calm .mascot-eyes,
+html.calm main h2::after,
+html.calm header a[href] > span:first-child,
+html.calm main span[class~="text-2xl"],
+html.calm main span[class~="text-3xl"],
+html.calm main span[class~="text-4xl"],
+html.calm a[class~="rounded-full"],
+html.calm button[class~="rounded-full"] {
+  animation: none !important;    /* 吉祥物/章節星/logo/圖示浮動/CTA 心跳 */
+}
+html.calm .pre {
+  opacity: 1;                    /* 進場動畫關、內容直接可見 */
+}
+html.calm .iv,
+html.calm main > section:first-child .container-page > * {
+  animation: none !important;
+  opacity: 1;
+}
+html.calm .card-hover:hover,
+html.calm a[class~="rounded-full"]:hover,
+html.calm button[class~="rounded-full"]:hover {
+  transform: none;
+  animation: none !important;
+}
+
 /* 尊重「減少動態」偏好（無障礙） */
 @media (prefers-reduced-motion: reduce) {
   a[class~="rounded-full"]:hover,
