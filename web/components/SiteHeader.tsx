@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { NAV, SITE } from "@/lib/site";
+import { IconClipboard } from "@/components/icons";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -33,6 +34,7 @@ export default function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
               className={`px-3 py-2 rounded-lg text-[15px] font-medium transition-colors ${
                 isActive(l.href)
                   ? "bg-brand-50 text-brand-700"
@@ -49,7 +51,7 @@ export default function SiteHeader() {
             href="/planner"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-warm-500 hover:bg-warm-600 text-white font-bold text-sm transition-colors"
           >
-            📋 我的規劃
+            <IconClipboard size={17} /> 我的規劃
           </Link>
         </div>
 
@@ -79,6 +81,7 @@ export default function SiteHeader() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
+                aria-current={isActive(l.href) ? "page" : undefined}
                 className={`px-3 py-3 rounded-lg text-base font-medium ${
                   isActive(l.href)
                     ? "bg-brand-50 text-brand-700"
@@ -91,9 +94,9 @@ export default function SiteHeader() {
             <Link
               href="/planner"
               onClick={() => setOpen(false)}
-              className="mt-1 px-3 py-3 rounded-lg text-base font-bold bg-warm-500 text-white text-center"
+              className="mt-1 px-3 py-3 rounded-lg text-base font-bold bg-warm-500 text-white text-center inline-flex items-center justify-center gap-1.5"
             >
-              📋 我的規劃清單
+              <IconClipboard size={18} /> 我的規劃清單
             </Link>
           </div>
         </nav>
