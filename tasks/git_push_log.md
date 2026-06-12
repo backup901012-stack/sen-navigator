@@ -1,5 +1,12 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (12:xx) | sen-navigator | 全站互動卡通系統 v1.7.0（f7a9815）
+- 老闆五連指令：全部頁卡通圖案/互動邏輯唔係淨睇/鼠標都要溫馨卡通/skill 用到最好/家長小孩都啱
+- 研究：2026 micro-interaction 準則（200-500ms、motion=結構非裝飾）+ RememBear 狀態反應吉祥物
+- 落地：吉祥物家族 3 變體（導仔/心心/星星）、Buddy 導仔陪伴系統（24 頁、點擊出 contextual 導航貼士 12 條+鼓勵語）、卡通鼠標（粘土圓點+小星）+星塵尾巴+點擊爆星、M-CHAT 結果吉祥物變身、footer 家族、planner 空狀態、背景星星
+- E2E 26/26、溢出 0/24、skill UX 驗證 pass、aria 完整
+---
+
 ### 2026-06-12 (11:xx) | sen-navigator | 卡通動畫層 v1.6.0（ea775c1）
 - 老闆三連指令：/ui-ux-pro-max 直調 +「所有UI動畫卡通感」+「全面重構不懂就學」
 - 研究（svgator/99designs/junoteam 等）確認手法：吉祥物/波浪分隔/chunky 邊框/漂浮元素
