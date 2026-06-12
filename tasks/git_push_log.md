@@ -1,5 +1,13 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (11:xx) | sen-navigator | 卡通動畫層 v1.6.0（ea775c1）
+- 老闆三連指令：/ui-ux-pro-max 直調 +「所有UI動畫卡通感」+「全面重構不懂就學」
+- 研究（svgator/99designs/junoteam 等）確認手法：吉祥物/波浪分隔/chunky 邊框/漂浮元素
+- 落地：Mascot.tsx 導仔吉祥物（SVG+CSS 漂浮/揮手/眨眼）、白卡 3px 薄荷粗邊、玩具按鈕實色底邊、footer 波浪、兩朵雲 90s 飄、main tabular-nums
+- skill --persist：design-system/sen-小孩導航員/MASTER.md 入庫（跨 session 設計真源）
+- E2E 26/26、24 頁 0 溢出、截圖目視（導仔/粗邊/雲全現）
+---
+
 ### 2026-06-12 (10:xx) | sen-navigator | ui-ux-pro-max skill 對標 v1.5.0（434ee3d）
 - 老闆裝咗 ui-ux-pro-max skill（09:21）指定用佢做全面 UI——按 skill 流程：--design-system 取建議 → 對照規則表執行
 - skill 印證現方向（claymorphism/FAQ pattern/圓體）+ 抓出 3 硬差距：①emoji 結構圖示 ②Tailwind v4 無 cursor-pointer ③動畫時序超標（620ms>400 規範）
