@@ -10,6 +10,7 @@ import {
   addToPlan,
 } from "@/lib/plan";
 import type { PlanItem } from "@/lib/types";
+import Mascot from "@/components/Mascot";
 
 const KIND_LABEL: Record<string, string> = {
   service: "政府服務",
@@ -45,7 +46,9 @@ export default function PlannerBoard() {
   if (items.length === 0) {
     return (
       <div className="rounded-2xl bg-white border border-brand-100 p-10 text-center">
-        <p className="text-4xl">📋</p>
+        <div className="flex justify-center" aria-hidden>
+          <Mascot size={96} variant="lilac" />
+        </div>
         <h2 className="mt-3 text-xl font-black text-brand-900">清單仲係空嘅</h2>
         <p className="mt-2 text-ink-soft">
           去瀏覽服務、流程或資源，按「＋ 加入規劃」就會出現喺呢度。

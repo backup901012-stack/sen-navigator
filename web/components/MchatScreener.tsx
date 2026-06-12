@@ -4,13 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { MCHAT_ITEMS, scoreBand, MCHAT_SOURCE } from "@/data/mchat";
 import AddToPlanButton from "@/components/AddToPlanButton";
+import Mascot from "@/components/Mascot";
 
 type Ans = "yes" | "no";
 
-const BAND_STYLE: Record<string, { box: string; chip: string }> = {
-  green: { box: "bg-green-50 border-green-200", chip: "bg-green-600" },
-  amber: { box: "bg-amber-50 border-amber-200", chip: "bg-amber-500" },
-  warm: { box: "bg-warm-50 border-warm-200", chip: "bg-warm-600" },
+const BAND_STYLE: Record<string, { box: string; chip: string; mascot: "mint" | "lilac" | "pink" }> = {
+  green: { box: "bg-green-50 border-green-200", chip: "bg-green-600", mascot: "mint" },
+  amber: { box: "bg-amber-50 border-amber-200", chip: "bg-amber-500", mascot: "lilac" },
+  warm: { box: "bg-warm-50 border-warm-200", chip: "bg-warm-600", mascot: "pink" },
 };
 
 export default function MchatScreener() {
@@ -34,7 +35,10 @@ export default function MchatScreener() {
     return (
       <div>
         <div className={`rounded-2xl border-2 p-6 sm:p-8 ${st.box}`}>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
+            <span aria-hidden className="shrink-0 -my-2">
+              <Mascot size={84} variant={st.mascot} />
+            </span>
             <span className={`grid place-items-center w-14 h-14 rounded-full text-white text-2xl font-black ${st.chip}`}>
               {score}
             </span>

@@ -1,10 +1,19 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import pkg from "../package.json";
+import Mascot from "@/components/Mascot";
 
 export default function SiteFooter() {
   return (
     <footer className="bg-brand-900 text-brand-100 no-print">
+      {/* 吉祥物家族企喺波浪上（每頁可見、純裝飾） */}
+      <div aria-hidden className="relative h-0 container-page hidden sm:block">
+        <div className="absolute left-4 -top-[4.5rem] flex items-end gap-0">
+          <Mascot size={64} variant="pink" />
+          <Mascot size={78} variant="mint" />
+          <Mascot size={60} variant="lilac" />
+        </div>
+      </div>
       <div className="container-page py-12 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-3">
