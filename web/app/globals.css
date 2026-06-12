@@ -347,6 +347,126 @@ html.motion h2.iv {
    粗邊框粘土卡 + 玩具按鈕 + footer 波浪 + 漂浮雲 + 吉祥物動畫
    ============================================================ */
 
+/* ── 手繪有機框（最大卡通邏輯：冇一個框係死板矩形）──
+   四款手剪形狀輪流 + 微傾斜 + hover 果凍變形，似小朋友剪紙貼簿 */
+[class~="bg-white"][class~="rounded-2xl"],
+[class~="bg-white"][class~="rounded-xl"],
+[class~="bg-white"][class~="rounded-3xl"],
+[class~="bg-brand-50"][class~="rounded-2xl"],
+[class~="bg-amber-50"][class~="rounded-2xl"],
+[class~="bg-warm-50"][class~="rounded-2xl"],
+[class~="bg-brand-900"][class~="rounded-2xl"],
+[class~="bg-brand-900"][class~="rounded-3xl"] {
+  border-radius: 1.9rem 1.2rem 2.2rem 1.3rem / 1.3rem 2.1rem 1.2rem 2.3rem;
+  transition: border-radius 0.45s ease, transform 0.3s ease;
+}
+/* 形狀輪流（同一格仔入面、隔籬框形狀都唔同 = 手作感） */
+:is(div, li, article):nth-child(3n+2) > :is([class~="bg-white"][class~="rounded-2xl"]),
+:is(div, ul, section) > :is([class~="bg-white"][class~="rounded-2xl"], [class~="bg-brand-50"][class~="rounded-2xl"]):nth-child(3n+2),
+article[class~="rounded-2xl"]:nth-child(3n+2) {
+  border-radius: 1.3rem 2.2rem 1.2rem 2rem / 2.2rem 1.3rem 2.1rem 1.2rem;
+}
+:is(div, li, article):nth-child(3n):not(:first-child) > :is([class~="bg-white"][class~="rounded-2xl"]),
+:is(div, ul, section) > :is([class~="bg-white"][class~="rounded-2xl"], [class~="bg-brand-50"][class~="rounded-2xl"]):nth-child(3n),
+article[class~="rounded-2xl"]:nth-child(3n) {
+  border-radius: 2.2rem 1.4rem 1.9rem 2.3rem / 1.5rem 2.2rem 1.3rem 1.9rem;
+}
+/* 微傾斜：格仔卡片左搖右擺（≤0.8deg、唔影響閱讀） */
+[class~="card-hover"]:nth-child(odd) { transform: rotate(-0.6deg); }
+[class~="card-hover"]:nth-child(even) { transform: rotate(0.5deg); }
+/* hover：果凍變形 + 擺正（畀人「揀咗你」嘅感覺） */
+[class~="card-hover"]:hover {
+  border-radius: 2.4rem 1.6rem 2.4rem 1.6rem / 1.6rem 2.4rem 1.6rem 2.4rem;
+}
+
+/* 全部大卡頂「彩色膠紙」貼住（剪貼簿質感、三色輪流、唔只互動卡） */
+[class~="card-hover"],
+[class~="bg-white"][class~="rounded-2xl"],
+[class~="bg-white"][class~="rounded-3xl"],
+[class~="bg-brand-50"][class~="rounded-2xl"],
+[class~="bg-amber-50"][class~="rounded-2xl"] {
+  position: relative;
+}
+[class~="card-hover"]::before,
+[class~="bg-white"][class~="rounded-2xl"]::before,
+[class~="bg-white"][class~="rounded-3xl"]::before,
+[class~="bg-brand-50"][class~="rounded-2xl"]::before,
+[class~="bg-amber-50"][class~="rounded-2xl"]::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 58px;
+  height: 17px;
+  border-radius: 4px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(147, 214, 185, 0.65);
+  pointer-events: none;
+}
+:is(div, li, article, section):nth-child(3n+2) > :is([class~="bg-white"][class~="rounded-2xl"], [class~="bg-brand-50"][class~="rounded-2xl"])::before,
+:is([class~="card-hover"], article[class~="rounded-2xl"]):nth-child(3n+2)::before {
+  background: rgba(244, 154, 194, 0.6);
+  transform: translateX(-50%) rotate(2.5deg);
+}
+:is(div, li, article, section):nth-child(3n) > :is([class~="bg-white"][class~="rounded-2xl"], [class~="bg-brand-50"][class~="rounded-2xl"])::before,
+:is([class~="card-hover"], article[class~="rounded-2xl"]):nth-child(3n)::before {
+  background: rgba(195, 163, 224, 0.6);
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+/* 章節標題掛一粒慢轉小星（每個 h2 都有卡通記號 + hover 搖擺） */
+@keyframes star-spin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.18); }
+  to { transform: rotate(360deg) scale(1); }
+}
+main h2 {
+  position: relative;
+}
+main h2::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.35em;
+  vertical-align: baseline;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z' fill='%23ea66a2'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+@media (prefers-reduced-motion: no-preference) {
+  main h2::after {
+    animation: star-spin 6s ease-in-out infinite;
+  }
+  main h2:hover::after {
+    animation-duration: 1.2s;
+  }
+}
+
+/* 提示框（amber-50）→ 吉祥物講嘢嘅對話泡（帶尾巴 + 手帳虛線） */
+[class~="bg-amber-50"][class~="rounded-2xl"],
+[class~="bg-amber-50"][class~="rounded-xl"] {
+  position: relative;
+  border-style: dashed;
+}
+[class~="bg-amber-50"][class~="rounded-2xl"]::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 2.6rem;
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 13px solid #fffbeb;
+  filter: drop-shadow(0 3px 0 #fde68a);
+}
+
+/* 輸入框都係手繪形（搜尋/文字輸入） */
+input[type="search"],
+input[type="text"],
+textarea {
+  border-radius: 1.2rem 0.9rem 1.3rem 0.9rem / 0.9rem 1.3rem 0.9rem 1.2rem;
+}
+
 /* 粗邊框（claymorphism 規範 3-4px、邊色 = 填色深一級、卡通 chunky 感） */
 [class~="bg-white"][class~="rounded-xl"],
 [class~="bg-white"][class~="rounded-2xl"],
@@ -412,10 +532,10 @@ footer::before {
   }
 }
 
-/* 漂浮卡通雲（兩朵、極慢飄過） */
-@keyframes clouds-drift {
-  from { background-position: -180px 12%, 110vw 64%; }
-  to { background-position: 110vw 12%, -260px 64%; }
+/* 漂浮卡通天空（三朵雲 + 兩粒星 + 一粒愛心、唔同深度極慢飄） */
+@keyframes sky-drift {
+  from { background-position: -190px 8%, 110vw 38%, -150px 70%, 88% 18%, 10% 60%, 105vw 82%; }
+  to { background-position: 110vw 8%, -170px 38%, 108vw 70%, 92% 22%, 6% 56%, -90px 82%; }
 }
 body::after {
   content: "";
@@ -423,19 +543,21 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.6;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M15 2 L18 12 L28 15 L18 18 L15 28 L12 18 L2 15 L12 12 Z' fill='%23f49ac2' opacity='0.55'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M11 1 L13.2 8.8 L21 11 L13.2 13.2 L11 21 L8.8 13.2 L1 11 L8.8 8.8 Z' fill='%2393d6b9' opacity='0.6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 180px 90px, 130px 65px, 30px 30px, 22px 22px;
-  background-position: 8% 12%, 86% 64%, 92% 22%, 6% 72%;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M15 2 L18 12 L28 15 L18 18 L15 28 L12 18 L2 15 L12 12 Z' fill='%23f49ac2' opacity='0.7'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M11 1 L13.2 8.8 L21 11 L13.2 13.2 L11 21 L8.8 13.2 L1 11 L8.8 8.8 Z' fill='%2393d6b9' opacity='0.75'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' viewBox='0 0 26 24'%3E%3Cpath d='M13 22 L3.5 12.5 A6 6 0 1 1 13 5 A6 6 0 1 1 22.5 12.5 Z' fill='%23f49ac2' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 190px 95px, 140px 70px, 110px 55px, 30px 30px, 22px 22px, 26px 24px;
+  background-position: 8% 8%, 86% 38%, 14% 70%, 90% 18%, 8% 60%, 70% 82%;
 }
 @media (prefers-reduced-motion: no-preference) {
   body::after {
-    animation: clouds-drift 90s linear infinite;
+    animation: sky-drift 110s linear infinite;
   }
 }
 
