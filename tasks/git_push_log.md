@@ -1,5 +1,13 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (14:xx) | sen-navigator | 雙 LLM 評分 + 低感官模式 v1.9.0（9f85459）
+- 老闆三指令：逐頁檢查 + 問其他 LLM 評分 + 列改善
+- 逐頁檢查：6 頁 production 截圖逐張目視（home/services/faq/match/screening/parents）全部卡通元素齊、無爆版
+- **外部評分：Codex 94/100、Gemini 92/100**（同一份事實清單+評分維度、平行獨立）
+- 兩家共識 #1 建議相同：「低感官/安靜模式」（SEN 兒童感官過載友善）→ 即實裝 CalmToggle：html.calm 關全部裝飾動效、localStorage 記住、head inline script paint 前套用；CDP 全鏈路實測 PASS；E2E 26/26
+- 其餘建議入 roadmap：Buddy 語音朗讀（粵語 TTS）、長文區自動降噪、motion budget、真機 FPS/INP 監測、高風險結果頁強化求助 CTA
+---
+
 ### 2026-06-12 (13:3x) | sen-navigator | 最大卡通框邏輯 v1.8.0（9c2a1fa）
 - 老闆批評「框草率、得兩朵雲、要最多卡通邏輯」→ 手繪有機框（4 款形狀輪流+微傾斜+hover 果凍變形）、全部大卡頂三色膠紙、每個 h2 掛慢轉粉紅星、天空 2→6 件（3 雲+2 星+1 心）、提示框變對話泡、輸入框手繪形
 - E2E 26/26、溢出 0/24、services/faq 內頁截圖目視全現
