@@ -1,5 +1,10 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (13:3x) | sen-navigator | 最大卡通框邏輯 v1.8.0（9c2a1fa）
+- 老闆批評「框草率、得兩朵雲、要最多卡通邏輯」→ 手繪有機框（4 款形狀輪流+微傾斜+hover 果凍變形）、全部大卡頂三色膠紙、每個 h2 掛慢轉粉紅星、天空 2→6 件（3 雲+2 星+1 心）、提示框變對話泡、輸入框手繪形
+- E2E 26/26、溢出 0/24、services/faq 內頁截圖目視全現
+---
+
 ### 2026-06-12 (12:4x) | sen-navigator | skill 規則閉環 v1.7.1（04c3477）
 - /ui-ux-pro-max 再調用 → 對照規則表掃殘留：nav-state-active 視覺已有、補 aria-current="page" 語義（桌面+手機）；header 📋 ×2 換 IconClipboard——全站結構圖示 0 emoji 達成
 - skill 99 條規則 CRITICAL/HIGH 全閉環；design-system/MASTER.md 為跨 session 真源
