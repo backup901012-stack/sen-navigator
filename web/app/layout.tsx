@@ -46,13 +46,13 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        {/* 兒童化圓體：justfont 開源粉圓 Huninn（open 粉圓 2.1 授權、可商用）+ Noto Sans TC 後備 */}
+        {/* 兒童化圓體：Nunito（拉丁/數字）+ justfont 粉圓 Huninn（中文、open 粉圓 2.1 可商用）+ Noto Sans TC 後備 */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-dvh flex flex-col">
         <Motion />
         <a
           href="#main"

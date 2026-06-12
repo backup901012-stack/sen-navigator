@@ -76,6 +76,7 @@ export default function ScccWaiting() {
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
+          aria-label="搜尋特殊幼兒中心"
           placeholder="搜尋中心名稱、編號或分區"
           className="w-full rounded-xl border border-brand-200 px-4 py-3 focus:border-brand-400"
         />

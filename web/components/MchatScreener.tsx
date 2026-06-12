@@ -121,7 +121,7 @@ export default function MchatScreener() {
                         key={opt}
                         onClick={() => pick(it.no, opt)}
                         aria-pressed={a === opt}
-                        className={`px-6 py-2 rounded-full font-bold text-sm border-2 transition-colors ${
+                        className={`px-6 py-2 min-h-11 rounded-full font-bold text-sm border-2 transition-colors ${
                           a === opt
                             ? "border-brand-500 bg-brand-600 text-white"
                             : "border-brand-200 bg-white text-brand-700 hover:border-brand-400"

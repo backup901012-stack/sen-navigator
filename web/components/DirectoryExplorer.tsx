@@ -44,6 +44,7 @@ export default function DirectoryExplorer() {
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
+          aria-label="搜尋資源目錄"
           placeholder="搜尋服務、機構或關鍵字（如：言語治療、自閉症、評估）"
           className="w-full rounded-xl border border-brand-200 px-4 py-3 text-base focus:border-brand-400"
         />

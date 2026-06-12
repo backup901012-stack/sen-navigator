@@ -1,19 +1,22 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { FAQ_ITEMS, FAQ_CATEGORIES } from "@/data/faq";
+import {
+  IconRainbow, IconBook, IconSearch, IconBank, IconPuzzle, IconCoins, IconHourglass, IconCart,
+} from "@/components/icons";
 
-/** 範疇 → 粘土色圖示磚（Clay Doh 13 材質色系輪替） */
-const CAT_META: Record<string, { icon: string; tile: string; chip: string }> = {
-  全部:     { icon: "🌈", tile: "bg-white text-brand-900",          chip: "bg-brand-50 text-brand-800" },
-  基礎認識: { icon: "📚", tile: "bg-brand-100 text-brand-800",      chip: "bg-brand-100 text-brand-800" },
-  評估:     { icon: "🔍", tile: "bg-lilac-100 text-lilac-700",      chip: "bg-lilac-100 text-lilac-700" },
-  制度:     { icon: "🏛️", tile: "bg-sky-100 text-sky-800",          chip: "bg-sky-100 text-sky-800" },
-  服務:     { icon: "🧩", tile: "bg-warm-100 text-warm-700",        chip: "bg-warm-100 text-warm-700" },
-  費用:     { icon: "💰", tile: "bg-amber-100 text-amber-800",      chip: "bg-amber-100 text-amber-800" },
-  輪候:     { icon: "⏳", tile: "bg-terra-100 text-terra-700",      chip: "bg-terra-100 text-terra-700" },
-  自費:     { icon: "🛒", tile: "bg-emerald-100 text-emerald-800",  chip: "bg-emerald-100 text-emerald-800" },
+/** 範疇 → 粘土色圖示磚（Clay Doh 13 材質色系輪替；SVG 圖示、非 emoji） */
+const CAT_META: Record<string, { icon: ReactNode; tile: string; chip: string }> = {
+  全部:     { icon: <IconRainbow size={22} />,   tile: "bg-white text-brand-900",          chip: "bg-brand-50 text-brand-800" },
+  基礎認識: { icon: <IconBook size={22} />,      tile: "bg-brand-100 text-brand-800",      chip: "bg-brand-100 text-brand-800" },
+  評估:     { icon: <IconSearch size={22} />,    tile: "bg-lilac-100 text-lilac-700",      chip: "bg-lilac-100 text-lilac-700" },
+  制度:     { icon: <IconBank size={22} />,      tile: "bg-sky-100 text-sky-800",          chip: "bg-sky-100 text-sky-800" },
+  服務:     { icon: <IconPuzzle size={22} />,    tile: "bg-warm-100 text-warm-700",        chip: "bg-warm-100 text-warm-700" },
+  費用:     { icon: <IconCoins size={22} />,     tile: "bg-amber-100 text-amber-800",      chip: "bg-amber-100 text-amber-800" },
+  輪候:     { icon: <IconHourglass size={22} />, tile: "bg-terra-100 text-terra-700",      chip: "bg-terra-100 text-terra-700" },
+  自費:     { icon: <IconCart size={22} />,      tile: "bg-emerald-100 text-emerald-800",  chip: "bg-emerald-100 text-emerald-800" },
 };
 
 export default function FaqSection() {
@@ -42,6 +45,7 @@ export default function FaqSection() {
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}
+        aria-label="搜尋常見問題"
         placeholder="搜尋問題…"
         className="w-full rounded-xl border border-brand-200 px-4 py-3 focus:border-brand-400"
       />

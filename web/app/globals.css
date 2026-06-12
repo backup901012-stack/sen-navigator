@@ -56,8 +56,8 @@
   /* 覆寫純白為「奶白」，令所有卡片唔再刺眼（全站 bg-white / text-white 同步生效） */
   --color-white: #fffdf8;
 
-  /* 兒童化圓體：粉圓 Huninn 優先（圓滾滾、Clay Doh 字感），回退圓體/黑體 */
-  --font-sans: "Huninn", "jf open 粉圓", "Yuanti TC", "YouYuan", "Noto Sans TC",
+  /* 兒童化圓體：拉丁/數字用 Nunito（claymorphism 標配）、中文用粉圓 Huninn */
+  --font-sans: "Nunito", "Huninn", "jf open 粉圓", "Yuanti TC", "YouYuan", "Noto Sans TC",
     "PingFang TC", "Microsoft JhengHei", "Heiti TC", system-ui, -apple-system,
     "Segoe UI", sans-serif;
 
@@ -92,6 +92,14 @@ p {
   outline: 3px solid var(--color-brand-400);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* 可點元素指標 + 消除 300ms tap delay（ui-ux-pro-max：cursor-pointer / tap-delay） */
+:where(a, button, [role="button"], summary, input[type="search"]) {
+  touch-action: manipulation;
+}
+:where(button:not(:disabled), [role="button"], summary) {
+  cursor: pointer;
 }
 
 /* 容器 */
@@ -280,11 +288,11 @@ html.motion .pre {
   opacity: 0;
 }
 html.motion .iv {
-  animation: clay-pop-in 0.62s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: clay-pop-in 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 html.motion h2.iv {
   animation-name: title-slide-in;
-  animation-duration: 0.5s;
+  animation-duration: 0.38s;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -320,7 +328,7 @@ html.motion h2.iv {
   /* 按鈕 hover 果凍 squish（原有抬高保留、加彈性） */
   a[class~="rounded-full"]:hover,
   button[class~="rounded-full"]:hover {
-    animation: clay-squish 0.45s ease both;
+    animation: clay-squish 0.28s ease-out both;
   }
 
   /* logo「導」字輕微 bob（吉祥物呼吸感） */

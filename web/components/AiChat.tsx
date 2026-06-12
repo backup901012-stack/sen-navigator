@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { FAQ_ITEMS } from "@/data/faq";
+import { IconSprout, IconSearch, IconBook, IconHeart, IconBot } from "@/components/icons";
 
 interface Msg {
   role: "user" | "assistant";
@@ -10,7 +11,7 @@ interface Msg {
 
 interface Mode {
   id: string;
-  icon: string;
+  icon: ReactNode;
   title: string;
   desc: string;
   cats: string[]; // 偏向的 FAQ 範疇
@@ -44,7 +45,7 @@ const NEWLY_FALLBACK = `啱啱知道孩子有 SEN，感到亂、擔心、甚至�
 const MODES: Mode[] = [
   {
     id: "newly",
-    icon: "🌱",
+    icon: <IconSprout size={26} />,
     title: "剛知道・仲在消化",
     desc: "啱啱知道孩子有 SEN，仲未平復",
     cats: [],
@@ -58,7 +59,7 @@ const MODES: Mode[] = [
   },
   {
     id: "resource",
-    icon: "🔍",
+    icon: <IconSearch size={26} />,
     title: "積極尋找資源",
     desc: "評估、政府服務、輪候、自費、學前資源",
     cats: ["評估", "制度", "服務", "費用", "輪候", "自費"],
@@ -73,7 +74,7 @@ const MODES: Mode[] = [
   },
   {
     id: "learn",
-    icon: "📚",
+    icon: <IconBook size={26} />,
     title: "想了解 SEN 基礎知識",
     desc: "咩係 SEN、發展、情緒行為等",
     cats: ["基礎認識"],
@@ -88,7 +89,7 @@ const MODES: Mode[] = [
   },
   {
     id: "support",
-    icon: "💗",
+    icon: <IconHeart size={26} />,
     title: "需要情緒支援",
     desc: "照顧者的情緒與支援",
     cats: [],
@@ -167,7 +168,9 @@ export default function AiChat() {
     <div className="rounded-2xl bg-white border border-brand-100 overflow-hidden flex flex-col h-[34rem]">
       <div className="bg-brand-600 text-white px-5 py-3 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="text-xl">🤖</span>
+          <span className="text-xl grid place-items-center w-8 h-8 rounded-full bg-white/15">
+            <IconBot size={20} />
+          </span>
           <div>
             <p className="font-black leading-tight">導航員智能助理</p>
             <p className="text-xs text-brand-100">{mode ? mode.title : "即時解答 SEN 疑問"}</p>

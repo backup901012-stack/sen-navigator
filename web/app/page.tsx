@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PILLARS, SITE } from "@/lib/site";
 import { SectionTitle, CardLink } from "@/components/ui";
+import { PILLAR_ICONS, IconBank, IconChart, IconPuzzle } from "@/components/icons";
 
 const PAINS = [
   "孩子發展好似比同齡慢，唔知去邊度評估？",
@@ -137,7 +138,9 @@ export default function Home() {
             {PILLARS.map((p) => (
               <CardLink key={p.num} href={p.href}>
                 <div className="flex items-start justify-between">
-                  <span className="text-3xl">{p.icon}</span>
+                  <span className="text-3xl grid place-items-center w-12 h-12 rounded-2xl bg-brand-50 text-brand-600">
+                    {PILLAR_ICONS[p.num]?.({ size: 28 }) ?? p.icon}
+                  </span>
                   <span className="grid place-items-center w-7 h-7 rounded-full bg-brand-50 text-brand-600 font-black text-sm">
                     {p.num}
                   </span>
@@ -165,7 +168,9 @@ export default function Home() {
             href="/services"
             className="bg-gradient-to-br from-brand-600 to-brand-700 !border-brand-700 text-white"
           >
-            <span className="text-3xl">🏛️</span>
+            <span className="text-3xl grid place-items-center w-12 h-12 rounded-2xl bg-white/15 text-white">
+              <IconBank size={28} />
+            </span>
             <h3 className="mt-4 text-xl font-black">政府學前康復服務</h3>
             <p className="mt-2 text-sm text-brand-50">
               到校學前康復服務、特殊幼兒中心、早期教育及訓練中心、兼收計劃等資助服務一覽。
@@ -174,7 +179,9 @@ export default function Home() {
           </CardLink>
 
           <CardLink href="/grading">
-            <span className="text-3xl">📊</span>
+            <span className="text-3xl grid place-items-center w-12 h-12 rounded-2xl bg-lilac-100 text-lilac-700">
+              <IconChart size={28} />
+            </span>
             <h3 className="mt-4 text-xl font-black text-brand-900">評估與分級制度</h3>
             <p className="mt-2 text-sm text-ink-soft">
               兒童體能智力測驗、需求評估如何決定服務、中央轉介系統怎樣運作。
@@ -183,7 +190,9 @@ export default function Home() {
           </CardLink>
 
           <CardLink href="/directory">
-            <span className="text-3xl">🧩</span>
+            <span className="text-3xl grid place-items-center w-12 h-12 rounded-2xl bg-warm-100 text-warm-700">
+              <IconPuzzle size={28} />
+            </span>
             <h3 className="mt-4 text-xl font-black text-brand-900">自費訓練課程</h3>
             <p className="mt-2 text-sm text-ink-soft">
               言語治療、職業治療、行為訓練、社交小組等自費選項，輪候期間的支援。

@@ -39,7 +39,7 @@ export default function Motion() {
         let batch = 0;
         for (const e of entries) {
           if (!e.isIntersecting) continue;
-          reveal(e.target as HTMLElement, Math.min(batch * 70, 420));
+          reveal(e.target as HTMLElement, Math.min(batch * 40, 280));
           io.unobserve(e.target);
           batch++;
         }
@@ -58,7 +58,7 @@ export default function Motion() {
         const r = el.getBoundingClientRect();
         if (r.top < vh * 1.12 && r.bottom > 0) {
           // 首屏：即時階梯彈入
-          reveal(el, Math.min(batch * 80, 480));
+          reveal(el, Math.min(batch * 45, 320));
           batch++;
         } else {
           // 視口外：先藏、入場先彈
