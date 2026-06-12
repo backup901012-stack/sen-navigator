@@ -1,5 +1,13 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (10:xx) | sen-navigator | ui-ux-pro-max skill 對標 v1.5.0（434ee3d）
+- 老闆裝咗 ui-ux-pro-max skill（09:21）指定用佢做全面 UI——按 skill 流程：--design-system 取建議 → 對照規則表執行
+- skill 印證現方向（claymorphism/FAQ pattern/圓體）+ 抓出 3 硬差距：①emoji 結構圖示 ②Tailwind v4 無 cursor-pointer ③動畫時序超標（620ms>400 規範）
+- 落地：icons.tsx 零依賴 SVG 庫 17 枚（pillar/FAQ 磚/AI 模式全換）、全域 cursor+touch-action、時序對標、Nunito+Huninn 配對、aria-label ×3、44px 觸控、min-h-dvh
+- 色板保留老闆拍板 Clay Doh（skill 建議 cyan 讓位於老闆決定、有記錄）
+- Codex L3 P1（顯式 ReactNode import）採納；E2E 26/26、對比 24/24、溢出 0/24、截圖目視 PASS
+---
+
 ### 2026-06-12 (02:xx) | sen-navigator | 動畫引擎 fail-safe 重寫 v1.4.0（31c2d69）
 - 老闆「感受唔到動畫」→ 檢討屬實：v1.3.0 scroll-driven 太保守（@supports 限定、視口內元素直接終態）
 - 第一版重寫（CSS 先隱藏+JS 解鎖）實測出**h2 永久隱形**失敗模式（headless 環境 IO 未開火）→ 推倒改 fail-safe：預設全可見、.pre 只在 JS 活著時加、3s 兜底 interval — 任何失敗退化為靜態頁
