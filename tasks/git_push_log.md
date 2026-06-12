@@ -1,5 +1,10 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-12 (12:4x) | sen-navigator | skill 規則閉環 v1.7.1（04c3477）
+- /ui-ux-pro-max 再調用 → 對照規則表掃殘留：nav-state-active 視覺已有、補 aria-current="page" 語義（桌面+手機）；header 📋 ×2 換 IconClipboard——全站結構圖示 0 emoji 達成
+- skill 99 條規則 CRITICAL/HIGH 全閉環；design-system/MASTER.md 為跨 session 真源
+---
+
 ### 2026-06-12 (12:xx) | sen-navigator | 全站互動卡通系統 v1.7.0（f7a9815）
 - 老闆五連指令：全部頁卡通圖案/互動邏輯唔係淨睇/鼠標都要溫馨卡通/skill 用到最好/家長小孩都啱
 - 研究：2026 micro-interaction 準則（200-500ms、motion=結構非裝飾）+ RememBear 狀態反應吉祥物
