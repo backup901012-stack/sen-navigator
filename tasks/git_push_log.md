@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-13 | sen-navigator | CAS/CAC 事實修正 v1.9.1（6f64b6e）
+- 老闆指正評估與分級頁機制 C 事實有誤 → 官方多源查證後修正
+- CAS（服務 Service）vs CAC（中心 Centre）正名；全港 8 間 CAC = 衞生署 7 + 醫管局 1（大口環根德公爵夫人兒童醫院、dkhcac@ha.org.hk、2974 0331）
+- 改 /cas（說明框+中心分兩組+大口環+來源加 HA）、grading 機制 C、match 問卷 help、directory 描述
+- 誠實指出老闆把「尤德夫人」（衞生署觀塘/沙田）與「根德公爵夫人」（大口環/醫管局）混淆，已用官方名
+- 查證源：HA Content_ID=282515 + 官方 PDF + dhcas.gov.hk + data.gov.hk；首條 tasks/lessons.md
+- 線上驗證：v1.9.1 + 大口環+醫管局+8 間+dkhcac email + grading 機制C 全 True
+---
+
 ### 2026-06-12 (14:xx) | sen-navigator | 雙 LLM 評分 + 低感官模式 v1.9.0（9f85459）
 - 老闆三指令：逐頁檢查 + 問其他 LLM 評分 + 列改善
 - 逐頁檢查：6 頁 production 截圖逐張目視（home/services/faq/match/screening/parents）全部卡通元素齊、無爆版
