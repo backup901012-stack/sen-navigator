@@ -20,6 +20,8 @@ export const ROUTES = [
   "/tcm",
   "/journey",
   "/pathways",
+  "/special-schools",
+  "/training-methods",
   "/directory",
   "/heephong-asd",
   "/match",

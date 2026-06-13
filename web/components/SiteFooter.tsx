@@ -44,6 +44,9 @@ export default function SiteFooter() {
             <li><Link href="/pathways" className="hover:text-white">津貼 vs 自費流程圖</Link></li>
             <li><Link href="/directory" className="hover:text-white">資源目錄</Link></li>
             <li><Link href="/resources" className="hover:text-white">權威資源連結</Link></li>
+            <li><Link href="/understanding" className="hover:text-white">認識・同理・靜觀</Link></li>
+            <li><Link href="/special-schools" className="hover:text-white">特殊學校與升學（6 歲以上）</Link></li>
+            <li><Link href="/training-methods" className="hover:text-white">常見訓練方法</Link></li>
           </ul>
         </div>
 

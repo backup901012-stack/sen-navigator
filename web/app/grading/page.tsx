@@ -208,6 +208,20 @@ export default function GradingPage() {
         </div>
       </section>
 
+      {/* 6 歲後升學 · 特殊學校 */}
+      <section className="container-page pb-12">
+        <Link href="/special-schools" className="block rounded-2xl bg-white border border-brand-100 p-6 card-hover">
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex-1 min-w-[14rem]">
+              <p className="text-brand-600 font-bold text-sm">6 歲以上・學齡延伸</p>
+              <h2 className="mt-1 text-lg font-black text-brand-900">孩子 6 歲後呢？特殊學校與升學</h2>
+              <p className="mt-1 text-sm text-ink-soft">了解融合教育與特殊學校「雙軌制」、各類特殊學校（輕度／中度／嚴重）與入學轉介機制。</p>
+            </div>
+            <span className="px-4 py-2 rounded-full bg-brand-600 text-white font-bold text-sm shrink-0">了解升學 →</span>
+          </div>
+        </Link>
+      </section>
+
       {/* SEN 類別 */}
       <section className="container-page pb-16">
         <SectionTitle
