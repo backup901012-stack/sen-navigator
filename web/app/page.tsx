@@ -86,6 +86,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 認識・同理 橋樑入口（寫給每一位） */}
+      <section className="container-page pt-6 pb-2">
+        <Link
+          href="/understanding"
+          className="block rounded-2xl bg-gradient-to-br from-warm-50 to-brand-50 border border-warm-100 p-6 sm:p-8 card-hover"
+        >
+          <div className="flex items-center gap-5 flex-wrap">
+            <span aria-hidden className="shrink-0">
+              <Mascot size={72} variant="pink" />
+            </span>
+            <div className="flex-1 min-w-[15rem]">
+              <p className="text-warm-700 font-bold text-sm">寫給每一位</p>
+              <h2 className="mt-1 text-xl sm:text-2xl font-black text-brand-900">
+                每個孩子，都值得被理解
+              </h2>
+              <p className="mt-1.5 text-sm text-ink-soft">
+                開始覺得孩子有點不同？想認識 SEN？還是在街上遇到、不知如何反應？
+                由靜觀情緒與同理出發，這一頁，寫給你。
+              </p>
+            </div>
+            <span className="px-5 py-2.5 rounded-full bg-warm-500 text-white font-bold text-sm shrink-0">
+              認識・同理 →
+            </span>
+          </div>
+        </Link>
+      </section>
+
       {/* 同理痛點 */}
       <section className="container-page py-16">
         <SectionTitle

@@ -566,6 +566,32 @@ main {
   font-variant-numeric: tabular-nums;
 }
 
+/* ── 靜觀呼吸圈（BreathingCircle）── */
+.breathe-ring {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, #d4f0e3, #62bd9b);
+  box-shadow:
+    0 14px 36px -10px rgba(46, 129, 104, 0.55),
+    inset -7px -7px 16px rgba(30, 70, 60, 0.2),
+    inset 7px 7px 16px rgba(255, 255, 255, 0.6);
+  transform: scale(0.6);
+}
+@keyframes breathe {
+  0% { transform: scale(0.55); }
+  40% { transform: scale(1.08); }
+  55% { transform: scale(1.08); }
+  100% { transform: scale(0.55); }
+}
+.breathe-on {
+  animation: breathe 10s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-on { animation: none; transform: scale(0.92); }
+}
+html.calm .breathe-on { animation: none; transform: scale(0.92); }
+
 /* ── 溫馨卡通鼠標（桌面 fine pointer 限定；觸控裝置自動唔生效） ── */
 @media (pointer: fine) {
   /* 預設：薄荷粘土圓點 */

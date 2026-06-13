@@ -22,6 +22,7 @@ export const NAV: NavLink[] = [
   { href: "/directory", label: "資源目錄" },
   { href: "/match", label: "服務配對" },
   { href: "/parents", label: "家長特區" },
+  { href: "/understanding", label: "認識同理" },
   { href: "/faq", label: "常見問題" },
 ];
 
