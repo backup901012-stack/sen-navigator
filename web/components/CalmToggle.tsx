@@ -32,7 +32,7 @@ export default function CalmToggle() {
       onClick={toggle}
       aria-pressed={calm}
       title="低感官模式：關閉裝飾動畫、減少視覺刺激"
-      className={`inline-flex items-center gap-1.5 px-3 py-2 min-h-11 rounded-full text-sm font-bold border-2 transition-colors ${
+      className={`inline-flex items-center gap-1.5 px-3 py-2 min-h-11 rounded-full text-sm font-bold border-2 whitespace-nowrap shrink-0 transition-colors ${
         calm
           ? "bg-brand-700 border-brand-700 text-white"
           : "bg-white border-brand-200 text-brand-700 hover:border-brand-400"

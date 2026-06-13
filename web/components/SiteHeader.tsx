@@ -30,13 +30,13 @@ export default function SiteHeader() {
         </Link>
 
         {/* 桌面導覽 */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-0.5">
           {NAV.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               aria-current={isActive(l.href) ? "page" : undefined}
-              className={`px-3 py-2 rounded-lg text-[15px] font-medium transition-colors ${
+              className={`px-2.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
                 isActive(l.href)
                   ? "bg-brand-50 text-brand-700"
                   : "text-ink-soft hover:bg-brand-50 hover:text-brand-700"
@@ -47,11 +47,11 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden xl:flex items-center gap-2 shrink-0">
           <CalmToggle />
           <Link
             href="/planner"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-warm-500 hover:bg-warm-600 text-white font-bold text-sm transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-warm-500 hover:bg-warm-600 text-white font-bold text-sm whitespace-nowrap shrink-0 transition-colors"
           >
             <IconClipboard size={17} /> 我的規劃
           </Link>
@@ -60,7 +60,7 @@ export default function SiteHeader() {
         {/* 手機選單按鈕 */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden p-2 rounded-lg text-brand-800 hover:bg-brand-50"
+          className="xl:hidden p-2 rounded-lg text-brand-800 hover:bg-brand-50"
           aria-label="開啟選單"
           aria-expanded={open}
         >
@@ -76,7 +76,7 @@ export default function SiteHeader() {
 
       {/* 手機導覽 */}
       {open && (
-        <nav className="lg:hidden border-t border-brand-100 bg-white">
+        <nav className="xl:hidden border-t border-brand-100 bg-white">
           <div className="container-page py-3 flex flex-col gap-1">
             {NAV.map((l) => (
               <Link
