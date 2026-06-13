@@ -1,5 +1,14 @@
 # Git Push Log — SEN 小孩導航員
 
+### 2026-06-13 | sen-navigator | 受眾擴展三頁 v1.9.1→1.11.0
+- 老闆 vision：由「已接受家長的資訊工具」擴成「全社會同理橋樑」+ 學齡升學 + 訓練方法
+- **v1.10.0 /understanding 認識・同理・靜觀**：三路徑（怕標籤家長/大眾/公眾遇到）+ 靜觀呼吸圈 + meltdown≠扭計 + **同理≠同情**（老闆心理輔導糾正、Brené Brown）+ 首頁分流入口 + NAV「認識同理」
+- **v1.11.0 /special-schools 特殊學校升學**：雙軌制、非自行報名（EDB 評估轉介 4 步）、62 所 6 類別（智障輕/中/嚴重 43…）、誠實「無校網分區」、EDB 官方名單
+- **v1.11.0 /training-methods 常見訓練方法**（HKU PAAC ASDTx PDF）：ABA/DTT/TEACCH/PECS/地板時間/社交故事/感覺統合 + 選擇清單 + 食療藥物輔助誠實警示
+- 查證：autism.org.uk、neurodiversity、Brené Brown、EDB sense、EDB 名單/雙軌制 PDF、HKU PAAC
+- 27 路由、E2E 26/26、桌面+手機截圖目視、lessons +2 條（同理≠同情、特殊教育官方知識）
+---
+
 ### 2026-06-13 | sen-navigator | CAS/CAC 事實修正 v1.9.1（6f64b6e）
 - 老闆指正評估與分級頁機制 C 事實有誤 → 官方多源查證後修正
 - CAS（服務 Service）vs CAC（中心 Centre）正名；全港 8 間 CAC = 衞生署 7 + 醫管局 1（大口環根德公爵夫人兒童醫院、dkhcac@ha.org.hk、2974 0331）
