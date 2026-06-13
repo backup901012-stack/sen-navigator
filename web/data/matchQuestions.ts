@@ -13,7 +13,7 @@ export const MATCH_QUESTIONS: MatchQuestion[] = [
   {
     id: "assessed",
     question: "孩子有冇做過專業評估？",
-    help: "例如衞生署兒童體能智力測驗服務（CAS）或私營評估。",
+    help: "例如衞生署兒童體能智力測驗中心（CAC）或私營評估。",
     options: [
       { value: "no", label: "未做過評估" },
       { value: "suspect", label: "懷疑有需要，未確診" },

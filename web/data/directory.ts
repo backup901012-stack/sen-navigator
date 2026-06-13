@@ -76,7 +76,7 @@ export const DIRECTORY: ResourceItem[] = [
     funding: "subsidised",
     tags: ["評估", "診斷", "發展障礙"],
     ageGroup: "12 歲以下",
-    description: "衞生署為 12 歲以下兒童進行發展評估，判定發展障礙類別與程度。設各區測驗中心，書面報告是申請學前康復服務的關鍵。",
+    description: "衞生署為 12 歲以下兒童進行發展評估，判定發展障礙類別與程度。評估在各區兒童體能智力測驗中心（CAC）進行——全港 8 間，其中 1 間由醫院管理局營辦（大口環根德公爵夫人兒童醫院）。書面報告是申請學前康復服務的關鍵。",
     url: "/cas",
     confidence: "high",
     sources: [C("衞生署 CAS", "https://www.dhcas.gov.hk/tc/")],

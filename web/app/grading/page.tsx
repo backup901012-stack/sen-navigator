@@ -95,15 +95,17 @@ export default function GradingPage() {
             機制 C
           </span>
           <h2 className="mt-3 text-2xl font-black text-brand-900">
-            衞生署 兒童體能智力測驗服務（CAS）
+            兒童體能智力測驗服務（CAS）與各區中心（CAC）
           </h2>
           <p className="mt-2 text-ink-soft">
-            這是判定發展障礙類別與程度的關鍵評估，結果是日後編配服務的重要依據。
+            「兒童體能智力測驗服務」（Child Assessment Service，CAS）判定發展障礙的類別與程度，是日後編配服務的關鍵依據；
+            評估在各區「兒童體能智力測驗中心」（Child Assessment Centre，CAC）進行。
+            全港共 <strong className="text-brand-700">8 間 CAC：7 間由衞生署管理、1 間由醫院管理局營辦</strong>（大口環根德公爵夫人兒童醫院）。
           </p>
           <div className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
             <Info label="服務對象">12 歲以下、有發展障礙或行為問題的兒童</Info>
             <Info label="轉介來源">母嬰健康院、註冊西醫、心理學家、醫院（不接受傳真轉介）</Info>
-            <Info label="申請方式">持六個月內正本轉介信，致電或親臨所屬地區測驗中心預約</Info>
+            <Info label="申請方式">持六個月內正本轉介信，致電或親臨所屬兒童體能智力測驗中心（CAC）預約</Info>
             <Info label="處理時間">收齊文件及費用後，醫療報告約 6 至 8 星期處理</Info>
             <Info label="醫療報告費用">每份申請 HK$960（撤回不退款）</Info>
             <Info label="評估方式">跨專業團隊評估，提供教育及康復建議</Info>

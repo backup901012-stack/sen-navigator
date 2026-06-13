@@ -3,9 +3,9 @@ import Link from "next/link";
 import { SourceList } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "兒童體能智力測驗服務（CAS）轉介與中心",
+  title: "兒童體能智力測驗服務（CAS）與各區中心（CAC）",
   description:
-    "衞生署兒童體能智力測驗服務（CAS）一站整理：服務對象、涵蓋的發展障礙類別、轉介來源與轉介信要求、預約步驟、評估與跟進，以及各區測驗中心地址與電話。",
+    "衞生署兒童體能智力測驗服務（Child Assessment Service, CAS）一站整理：服務對象、涵蓋的發展障礙類別、轉介與轉介信要求、預約步驟，以及全港兒童體能智力測驗中心（Child Assessment Centre, CAC）——7 間由衞生署管理、1 間由醫院管理局營辦（大口環根德公爵夫人兒童醫院）。",
 };
 
 const CONDITIONS = [
@@ -14,7 +14,8 @@ const CONDITIONS = [
   "弱聽", "視障", "焦慮症", "整體發展遲緩",
 ];
 
-const CENTRES = [
+// 衞生署轄下兒童體能智力測驗中心（CAC）：7 間
+const DH_CENTRES = [
   { name: "中九龍兒童體能智力測驗中心", addr: "九龍城亞皆老街 147L 號 2 字樓", tel: "2246 6633" },
   { name: "尤德夫人兒童體能智力測驗中心（觀塘）", addr: "觀塘茶果嶺道 79 號 3 字樓", tel: "2727 8474" },
   { name: "牛頭角兒童體能智力測驗中心", addr: "牛頭角定安街 60 號牛頭角賽馬會診所 1 字樓", tel: "2921 1028" },
@@ -22,6 +23,16 @@ const CENTRES = [
   { name: "尤德夫人兒童體能智力測驗中心（沙田）", addr: "沙田插桅杆街 31–33 號 2 字樓", tel: "2210 1600" },
   { name: "粉嶺兒童體能智力測驗中心", addr: "粉嶺璧峰路 2 號粉嶺健康中心 4 字樓", tel: "2639 1402" },
   { name: "屯門兒童體能智力測驗中心", addr: "屯門青松觀路屯門醫院特別座地下", tel: "2468 5261" },
+];
+
+// 醫院管理局營辦的兒童體能智力測驗中心（CAC）：1 間
+const HA_CENTRES = [
+  {
+    name: "大口環根德公爵夫人兒童醫院 — 兒童體能智力測驗中心",
+    addr: "香港薄扶林大口環道 12 號（致電確認所屬座數）",
+    tel: "2974 0331",
+    note: "電郵 dkhcac@ha.org.hk · 由醫院管理局（港島西聯網）營辦",
+  },
 ];
 
 const STEPS = [
@@ -37,11 +48,12 @@ export default function CasPage() {
     <>
       <section className="bg-gradient-to-br from-brand-600 to-brand-700 text-white">
         <div className="container-page py-14">
-          <p className="text-brand-100 font-bold text-sm mb-2">衞生署 · 評估與診斷</p>
-          <h1 className="text-3xl sm:text-4xl font-black">兒童體能智力測驗服務（CAS）</h1>
+          <p className="text-brand-100 font-bold text-sm mb-2">評估與診斷</p>
+          <h1 className="text-3xl sm:text-4xl font-black">兒童體能智力測驗服務（CAS）與各區中心（CAC）</h1>
           <p className="mt-4 max-w-2xl text-brand-50">
-            CAS 是政府為 12 歲以下兒童提供的發展評估服務，判定發展障礙的類別與程度，
-            其書面報告是日後申請學前康復服務的關鍵依據。
+            「兒童體能智力測驗服務」（Child Assessment Service，CAS）是政府為 12 歲以下兒童提供的發展評估，
+            判定發展障礙的類別與程度；服務透過各區「兒童體能智力測驗中心」（Child Assessment Centre，CAC）提供。
+            評估書面報告是日後申請學前康復服務的關鍵依據。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a href="https://www.dhcas.gov.hk/tc/referral.html" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-full bg-white text-brand-800 font-bold text-sm">官方轉介頁 →</a>
@@ -80,16 +92,47 @@ export default function CasPage() {
         </div>
       </section>
 
+      {/* CAS vs CAC 說明 */}
+      <section className="container-page pb-4">
+        <div className="rounded-2xl bg-brand-50 border border-brand-100 p-5 text-sm text-ink leading-relaxed">
+          <p className="font-black text-brand-800 mb-1">「服務」與「中心」點分？</p>
+          <p>
+            <strong>兒童體能智力測驗服務</strong>（Child Assessment <strong>Service</strong>，CAS）是整體服務名稱；
+            實際評估在各區<strong>兒童體能智力測驗中心</strong>（Child Assessment <strong>Centre</strong>，CAC）進行。
+            全港共 <strong>8 間</strong> CAC：<strong>7 間由衞生署</strong>管理，
+            <strong>1 間由醫院管理局</strong>營辦（大口環根德公爵夫人兒童醫院）。
+          </p>
+        </div>
+      </section>
+
       {/* 各區中心 */}
       <section className="container-page pb-12">
-        <h2 className="text-2xl font-black text-brand-900 mb-2">各區測驗中心</h2>
-        <p className="text-ink-soft mb-5 text-sm">致電或親臨所屬地區中心預約。以下為部分中心，完整名單以官方為準。</p>
+        <h2 className="text-2xl font-black text-brand-900 mb-2">各區兒童體能智力測驗中心（CAC）</h2>
+        <p className="text-ink-soft mb-5 text-sm">致電或親臨所屬地區中心預約。完整名單與最新安排以官方為準。</p>
+
+        <h3 className="flex items-center gap-2 text-lg font-black text-brand-800 mb-3">
+          <span className="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 text-xs font-bold">衞生署 · 7 間</span>
+        </h3>
         <div className="grid sm:grid-cols-2 gap-3">
-          {CENTRES.map((c) => (
+          {DH_CENTRES.map((c) => (
             <div key={c.name} className="rounded-2xl bg-white border border-brand-100 p-5">
-              <h3 className="font-black text-brand-900">{c.name}</h3>
+              <h4 className="font-black text-brand-900">{c.name}</h4>
               <p className="mt-1 text-sm text-ink-soft">📍 {c.addr}</p>
               <a href={`tel:${c.tel.replace(/\s/g, "")}`} className="mt-1 inline-block text-brand-700 font-black">📞 {c.tel}</a>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="flex items-center gap-2 text-lg font-black text-brand-800 mb-3 mt-8">
+          <span className="px-2 py-0.5 rounded-md bg-warm-100 text-warm-700 text-xs font-bold">醫院管理局 · 1 間</span>
+        </h3>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {HA_CENTRES.map((c) => (
+            <div key={c.name} className="rounded-2xl bg-white border border-warm-200 p-5">
+              <h4 className="font-black text-brand-900">{c.name}</h4>
+              <p className="mt-1 text-sm text-ink-soft">📍 {c.addr}</p>
+              <a href={`tel:${c.tel.replace(/\s/g, "")}`} className="mt-1 inline-block text-brand-700 font-black">📞 {c.tel}</a>
+              {c.note && <p className="mt-1 text-xs text-ink-soft">{c.note}</p>}
             </div>
           ))}
         </div>
@@ -113,11 +156,12 @@ export default function CasPage() {
               { label: "衞生署 CAS — 轉介及評估", url: "https://www.dhcas.gov.hk/tc/referral.html", checkedAt: "2026-06" },
               { label: "衞生署 CAS — 服務範圍", url: "https://www.dhcas.gov.hk/tc/scope.html", checkedAt: "2026-06" },
               { label: "衞生署 CAS — 中心資料", url: "https://www.dhcas.gov.hk/tc/center_info.html", checkedAt: "2026-06" },
+              { label: "醫管局 — 大口環根德公爵夫人兒童醫院", url: "https://www.ha.org.hk/visitor/ha_visitor_index.asp?Lang=CHIB5&Content_ID=282515", checkedAt: "2026-06-13" },
               { label: "醫療報告網上申請", url: "https://eform.cefs.gov.hk/form/dh0118/tc/", checkedAt: "2026-06" },
             ]}
           />
         </div>
-        <p className="mt-3 text-xs text-ink-soft">⚠️ 資料整理自衞生署 CAS 官網（查證 2026-06），詳情與最新安排以官方為準。</p>
+        <p className="mt-3 text-xs text-ink-soft">⚠️ 資料整理自衞生署 CAS 官網及醫院管理局（查證 2026-06；大口環中心 2026-06-13），詳情與最新安排以官方為準。</p>
       </section>
     </>
   );
