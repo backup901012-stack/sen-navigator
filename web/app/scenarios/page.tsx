@@ -8,6 +8,10 @@ import {
   SELFCHECK_STEPS,
   SELFCHECK_CONTRAST,
   SELFCHECK_OUTRO,
+  PARENT_VENT_TITLE,
+  PARENT_VENT_CHILD,
+  PARENT_VENT_SELF,
+  PARENT_VENT_TIPS,
   REFRAME_INTRO,
   FASTFORWARD_METAPHOR,
   REFRAME_POINTS,
@@ -148,6 +152,50 @@ export default function ScenariosPage() {
           <p className="mt-6 text-ink leading-relaxed bg-brand-50 border border-brand-100 rounded-xl p-5">
             {SELFCHECK_OUTRO}
           </p>
+
+          {/* 重要提醒：唔好喺孩子身上爆，但你可以有自己嘅情緒 */}
+          <div className="mt-8 rounded-2xl border-2 border-warm-200 overflow-hidden">
+            <div className="bg-warm-500 text-white px-5 py-3">
+              <p className="font-black text-lg">💛 {PARENT_VENT_TITLE}</p>
+            </div>
+            <div className="p-5 sm:p-6 bg-white">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="rounded-xl bg-rose-50 border border-rose-200 p-5">
+                  <p className="font-black text-rose-700 mb-2">
+                    發脾氣、咒罵、暴力 ⇏ 解決問題
+                  </p>
+                  <p className="text-sm text-ink leading-relaxed">{PARENT_VENT_CHILD}</p>
+                </div>
+                <div className="rounded-xl bg-green-50 border border-green-200 p-5">
+                  <p className="font-black text-green-700 mb-2">
+                    但你被允許有自己嘅情緒
+                  </p>
+                  <p className="text-sm text-ink leading-relaxed">{PARENT_VENT_SELF}</p>
+                </div>
+              </div>
+
+              <div className="mt-4 grid sm:grid-cols-2 gap-3">
+                {PARENT_VENT_TIPS.map((t) => (
+                  <div
+                    key={t.title}
+                    className="rounded-xl bg-brand-50 border border-brand-100 p-4"
+                  >
+                    <div className="flex items-start gap-2.5">
+                      <span className="text-2xl shrink-0" aria-hidden>
+                        {t.icon}
+                      </span>
+                      <div>
+                        <p className="font-bold text-brand-900 text-sm">{t.title}</p>
+                        <p className="text-sm text-ink-soft mt-1 leading-relaxed">
+                          {t.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* 呼吸圈：當下用得着 */}
           <div className="mt-8">
