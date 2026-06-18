@@ -258,9 +258,22 @@ export default function SpecialSchoolsPage() {
         <div className="rounded-2xl bg-warm-50 border border-warm-200 p-6 sm:p-8">
           <h2 className="text-2xl font-black text-brand-900">那「融合教育」（主流學校）又有幾多支援？</h2>
           <p className="mt-2 text-ink leading-relaxed text-sm">
-            這是兩軌最大的分別：主流學校<strong className="text-warm-700">一般沒有「常設駐校」的物理／職業治療師團隊</strong>，
-            支援主要靠以下編制與津貼，治療多以「到校節數」或轉介社區服務形式提供——
-            <strong>密度與密集度遠低於特殊學校</strong>。
+            坦白說，這是兩軌之間最大、也最常被低估的分別——
+            主流（共融）學校的<strong className="text-warm-700">專業治療支援其實非常有限</strong>：
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-ink">
+            <li className="flex gap-2"><span className="text-warm-600 font-black shrink-0">·</span>
+              <span><strong className="text-warm-700">駐校言語治療師非常少</strong>——多以「到校節數」或跨校共享形式提供，
+              不少學校根本沒有全職常駐的言語治療師。</span></li>
+            <li className="flex gap-2"><span className="text-warm-600 font-black shrink-0">·</span>
+              <span><strong className="text-warm-700">物理治療師、職業治療師在主流學校基本上沒有駐校編制</strong>，
+              有需要多靠轉介社區或自費服務。</span></li>
+            <li className="flex gap-2"><span className="text-warm-600 font-black shrink-0">·</span>
+              <span>校本支援的<strong>規劃也較粗略</strong>，多是小班／抽離輔導與課程調適，
+              而非像特殊學校般密集、個別化的治療。</span></li>
+          </ul>
+          <p className="mt-3 text-ink-soft leading-relaxed text-sm">
+            以下是主流學校現有的支援編制與津貼——整體密度與密集度，<strong>遠低於特殊學校</strong>。
           </p>
           <div className="mt-5 space-y-3">
             {MAINSTREAM_SUPPORT.map((m) => (
