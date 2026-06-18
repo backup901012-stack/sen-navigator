@@ -45,6 +45,30 @@ export default function ParentsPage() {
         </div>
       </section>
 
+      {/* 情境訓練 入口 */}
+      <section className="container-page pt-10">
+        <Link
+          href="/scenarios"
+          className="block rounded-2xl bg-gradient-to-br from-brand-600 to-warm-500 text-white p-6 sm:p-8 card-hover"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="text-white/80 font-bold text-sm">🆕 情境應對訓練</p>
+              <h2 className="text-2xl font-black mt-1">
+                孩子情緒爆發嗰一刻，你會點回應？
+              </h2>
+              <p className="mt-2 text-white/90 leading-relaxed">
+                地鐵感官超載、超市扭計、校門轉換困難……6 個真實場景，逐一練習「點回應先幫到孩子」，
+                並學會喺當下先安頓返自己嘅情緒、面對途人嘅目光。
+              </p>
+            </div>
+            <span className="px-5 py-2.5 rounded-full bg-white text-brand-700 font-black whitespace-nowrap">
+              開始練習 →
+            </span>
+          </div>
+        </Link>
+      </section>
+
       {/* 1. 辨識 */}
       <section className="container-page py-12">
         <h2 className="text-2xl font-black text-brand-900">① 辨識：留意這些「提示信號」</h2>
