@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: "情緒應對情境訓練（SEN 教養實務）",
   description:
-    "由 SEN 家長角度出發的情境應對題庫：孩子在地鐵感官超載、超市扭計、校門轉換困難、餐廳過敏、挫折爆發、公園衝動等真實場景，逐一練習「點回應先幫到孩子」。三層回饋（好回應／要小心／應避免）附實證原理，並串聯面對途人說教與投訴的壓力應對。",
+    "由 SEN 家長角度出發的情境應對題庫：12 個真實場景（地鐵感官超載、超市扭計、校門轉換、餐廳過敏、挫折爆發、公園衝動、改路崩潰、手足妒忌、咬人溝通、熄機過渡、剪髮抗拒、輸唔起），逐一練習「點回應先幫到孩子」。三層回饋（好回應／要小心／應避免）附實證原理，並串聯家長自我情緒整理與面對途人說教投訴的壓力應對。",
 };
 
 export default function ScenariosPage() {
@@ -44,7 +44,7 @@ export default function ScenariosPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-sm">
             <span className="px-3 py-1 rounded-full bg-white border border-brand-200 text-brand-700 font-bold">
-              6 個真實情境
+              12 個真實情境
             </span>
             <span className="px-3 py-1 rounded-full bg-white border border-brand-200 text-brand-700 font-bold">
               三層回饋 · 附原理
