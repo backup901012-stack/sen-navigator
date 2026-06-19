@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ScenarioTrainer from "@/components/ScenarioTrainer";
 import BreathingCircle from "@/components/BreathingCircle";
 import {
+  THESIS,
   SCENARIO_INTRO,
   PRINCIPLES,
   SELFCHECK_INTRO,
@@ -31,6 +32,29 @@ export const metadata: Metadata = {
 export default function ScenariosPage() {
   return (
     <>
+      {/* 點題（全頁最頂）：知道自己企喺邊 */}
+      <section className="bg-brand-900 text-white">
+        <div className="container-page py-12 sm:py-14">
+          <p className="text-warm-300 font-bold text-sm tracking-wide">{THESIS.eyebrow}</p>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-black leading-tight">
+            {THESIS.headline}
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg sm:text-xl text-brand-50 leading-relaxed">
+            {THESIS.lead}
+          </p>
+          <div className="mt-6 grid md:grid-cols-2 gap-4 max-w-4xl">
+            <div className="rounded-2xl bg-white/10 border border-white/15 p-5">
+              <p className="font-black text-warm-200 mb-1.5">🤍 畀家長嘅信心</p>
+              <p className="text-sm text-brand-50 leading-relaxed">{THESIS.forParent}</p>
+            </div>
+            <div className="rounded-2xl bg-white/10 border border-white/15 p-5">
+              <p className="font-black text-warm-200 mb-1.5">🌏 畀社會嘅一份責任</p>
+              <p className="text-sm text-brand-50 leading-relaxed">{THESIS.forSociety}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-warm-50 to-brand-50">
         <div className="container-page py-14">
