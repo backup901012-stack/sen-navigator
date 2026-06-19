@@ -23,7 +23,6 @@ function buildRecommendations(a: Record<string, string | string[]>): {
   const assessed = a.assessed as string;
   const inKg = a.kindergarten as string;
   const needs = (a.needs as string[]) || [];
-  const budget = a.budget as string;
 
   let note: string | undefined;
 
@@ -155,18 +154,9 @@ function buildRecommendations(a: Record<string, string | string[]>): {
     });
   }
 
-  // 學習訓練津貼：資格繫於「正在輪候資助學前康復服務」——
-  // 走政府軌（gov / both）先合資格；純自費不輪候（private）不適用；6 歲以上非學前範圍
-  if ((budget === "gov" || budget === "both") && age !== "over6") {
-    recos.push({
-      id: "reco-tsp",
-      title: "申領學習訓練津貼 (TSP)",
-      why: "輪候資助學前康復服務期間，符合資格者可申領津貼支援訓練（特殊幼兒中心輪候者不設入息審查）。",
-      href: "/services",
-      kind: "step",
-      tag: "經濟支援",
-    });
-  }
+  // 註：學習訓練津貼（TSP）是「輪候資助學前康復服務期間」的中轉／過渡服務，
+  // 綁定特定資格與申請流程（入息審查、社署編配 E 位／S 位、機構評估後才獲免費訓練），
+  // 不宜作為服務「配對」的即時建議。相關說明見 /journey 申請流程與 /directory 資源目錄。
 
   // 去重
   const unique = recos.filter((r, i) => recos.findIndex((x) => x.id === r.id) === i);
