@@ -3,6 +3,7 @@ import { PILLARS, SITE } from "@/lib/site";
 import { SectionTitle, CardLink } from "@/components/ui";
 import { PILLAR_ICONS, IconBank, IconChart, IconPuzzle } from "@/components/icons";
 import Mascot from "@/components/Mascot";
+import AudienceTriage from "@/components/AudienceTriage";
 
 const PAINS = [
   "孩子發展好似比同齡慢，唔知去邊度評估？",
@@ -40,17 +41,17 @@ export default function Home() {
               讓你清楚下一步點行。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/match"
+              <a
+                href="#for-you"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold transition-colors shadow-lg shadow-brand-600/20"
               >
-                🎯 為孩子配對服務
-              </Link>
+                👋 揀啱你嘅起點
+              </a>
               <Link
-                href="/journey"
+                href="/match"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-brand-50 text-brand-700 font-bold border border-brand-200 transition-colors"
               >
-                了解申請流程
+                🎯 為孩子配對服務
               </Link>
             </div>
             <p className="mt-5 text-xs text-ink-soft">
@@ -83,6 +84,19 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 前導分流：邊個最似而家嘅你？ */}
+      <section id="for-you" className="container-page py-14 scroll-mt-20">
+        <SectionTitle
+          center
+          eyebrow="唔使睇晒成個網站"
+          title="邊個最似而家嘅你？"
+          desc="撳一下，即刻攞到為你而設嘅路線——每步只需幾分鐘。"
+        />
+        <div className="mt-8">
+          <AudienceTriage />
         </div>
       </section>
 
