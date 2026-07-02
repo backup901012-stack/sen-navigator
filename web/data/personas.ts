@@ -63,6 +63,20 @@ export const PERSONAS: Persona[] = [
     ],
   },
   {
+    id: "inclusion",
+    emoji: "🤝",
+    label: "想了解關愛共融政策・學校",
+    quote: "學校話會支援共融，實際上係點做？信唔信得過？",
+    gradient: "linear-gradient(160deg, #c5dab8, #eef5e8)",
+    greeting: "共融唔係口號。睇清政策點運作、學校實際有咩支援：",
+    steps: [
+      { href: "/special-schools", title: "睇明雙軌制與學校安排", desc: "融合教育 vs 特殊學校、EDB 點安排，共融學校支援現實講白。", time: "6 分鐘" },
+      { href: "/services", title: "認識到校支援服務", desc: "到校學前康復服務（OPRS）：跨專業團隊點入校支援孩子同老師。", time: "5 分鐘" },
+      { href: "/intelligences", title: "了解共融背後嘅理念", desc: "多元智能：每個孩子強項唔同，共融教育嘅根基。", time: "4 分鐘" },
+      { href: "/resources", title: "查官方政策資源", desc: "教育局及官方共融教育文件、權威機構連結一覽。", time: "2 分鐘" },
+    ],
+  },
+  {
     id: "ally",
     emoji: "🏫",
     label: "我係老師／親友／街坊",

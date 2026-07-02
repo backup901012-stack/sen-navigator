@@ -108,7 +108,7 @@ export default function EntryGate() {
       />
 
       {/* 閘門面板 */}
-      <div className="relative w-full max-w-4xl max-h-[92dvh] overflow-y-auto rounded-3xl bg-paper p-6 sm:p-10 shadow-2xl animate-fade-up">
+      <div className="relative w-full max-w-5xl max-h-[92dvh] overflow-y-auto rounded-3xl bg-paper p-6 sm:p-10 shadow-2xl animate-fade-up">
         {step === 1 ? (
           <>
             <div className="text-center max-w-xl mx-auto">
@@ -123,8 +123,8 @@ export default function EntryGate() {
               </p>
             </div>
 
-            {/* 四張粉彩卡（可複選） */}
-            <div className="mt-7 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {/* 五張粉彩卡（可複選） */}
+            <div className="mt-7 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
               {PERSONAS.map((p) => {
                 const on = selected.includes(p.id);
                 return (
