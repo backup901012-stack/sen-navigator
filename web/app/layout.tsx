@@ -5,6 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Motion from "@/components/Motion";
 import Buddy from "@/components/Buddy";
 import CursorPet from "@/components/CursorPet";
+import EntryGate from "@/components/EntryGate";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -65,6 +66,7 @@ export default function RootLayout({
         <Motion />
         <Buddy />
         <CursorPet />
+        <EntryGate />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:bg-brand-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"

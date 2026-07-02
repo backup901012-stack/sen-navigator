@@ -3,7 +3,7 @@ import { PILLARS, SITE } from "@/lib/site";
 import { SectionTitle, CardLink } from "@/components/ui";
 import { PILLAR_ICONS, IconBank, IconChart, IconPuzzle } from "@/components/icons";
 import Mascot from "@/components/Mascot";
-import AudienceTriage from "@/components/AudienceTriage";
+import GateOpener from "@/components/GateOpener";
 
 const PAINS = [
   "孩子發展好似比同齡慢，唔知去邊度評估？",
@@ -41,12 +41,9 @@ export default function Home() {
               讓你清楚下一步點行。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#for-you"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold transition-colors shadow-lg shadow-brand-600/20"
-              >
-                👋 揀啱你嘅起點
-              </a>
+              <GateOpener className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold transition-colors shadow-lg shadow-brand-600/20">
+                👋 揀你嘅身份・攞路線
+              </GateOpener>
               <Link
                 href="/match"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-brand-50 text-brand-700 font-bold border border-brand-200 transition-colors"
@@ -87,17 +84,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 前導分流：百萬富翁式問答（愛馬仕配色） */}
-      <section id="for-you" className="container-page py-14 scroll-mt-20">
-        <SectionTitle
-          center
-          eyebrow="唔使睇晒成個網站"
-          title="玩一條問題，搵啱你嘅起點"
-          desc="百萬富翁式一題四選——冇獎金，但有為你度身嘅路線圖。"
-        />
-        <div className="mt-8">
-          <AudienceTriage />
-        </div>
+      {/* 重開入場分流（分流本體 = EntryGate 開站彈窗、最高圖層） */}
+      <section className="container-page pt-6 pb-2">
+        <GateOpener className="w-full flex items-center gap-3 rounded-2xl bg-white border border-brand-100 px-5 py-4 card-hover text-left cursor-pointer">
+          <span className="text-2xl" aria-hidden>
+            👋
+          </span>
+          <span className="flex-1 text-sm">
+            <strong className="text-brand-900">想快啲搵到啱你嘅內容？</strong>
+            <span className="text-ink-soft">
+              {" "}
+              揀返你嘅身份（可以揀多過一個），我哋即刻執好你嘅路線。
+            </span>
+          </span>
+          <span className="text-brand-600 font-bold text-sm shrink-0">揀身份 →</span>
+        </GateOpener>
       </section>
 
       {/* 認識・同理 橋樑入口（寫給每一位） */}

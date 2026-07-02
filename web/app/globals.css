@@ -6,55 +6,55 @@
    ============================================================ */
 
 @theme {
-  /* ── Clay Doh 粘土色系（依 izuka-effects 13 種粘土材質）──
-     主色 = Plasticine 薄荷粘土；行動色 = Bubble Gum 泡泡糖粉；
-     點綴 = Candlewax 蠟燭紫 / Terracota 陶土；底 = Translucent 奶白 */
+  /* ── 柔粉彩 Neumorphism 色系（2026-07-02 老闆指定質感圖）──
+     主色 = 鼠尾草綠×湖水 teal；行動色 = 塵霧玫瑰粉；
+     點綴 = 霧霾藍（原 lilac token）/ 奶油砂黃（原 terra token）；底 = 暖奶油米白 */
 
-  /* 主色：Plasticine 薄荷粘土（信任、平靜） */
-  --color-brand-50: #f1faf5;
-  --color-brand-100: #def2e7;
-  --color-brand-200: #bfe7d3;
-  --color-brand-300: #93d6b9;
-  --color-brand-400: #62bd9b;
-  --color-brand-500: #3d9f80;
-  --color-brand-600: #2e8168;
-  --color-brand-700: #286a57;
-  --color-brand-800: #235547;
-  --color-brand-900: #1e463c;
+  /* 主色：鼠尾草×湖水（信任、平靜） */
+  --color-brand-50: #f2f8f4;
+  --color-brand-100: #e3f0e9;
+  --color-brand-200: #c9e3d7;
+  --color-brand-300: #a5d3c1;
+  --color-brand-400: #7bbca7;
+  --color-brand-500: #569c87;
+  --color-brand-600: #3a7565;
+  --color-brand-700: #35695b;
+  --color-brand-800: #2c554a;
+  --color-brand-900: #24463d;
 
-  /* 輔色：Bubble Gum 泡泡糖粉（行動呼籲、親和） */
-  --color-warm-50: #fdf2f7;
-  --color-warm-100: #fce4ee;
-  --color-warm-200: #f9c6dc;
-  --color-warm-300: #f49ac2;
-  --color-warm-400: #ea66a2;
-  --color-warm-500: #cb2a79;
-  --color-warm-600: #b42470;
-  --color-warm-700: #8f1d59;
+  /* 輔色：塵霧玫瑰粉（行動呼籲、親和） */
+  --color-warm-50: #fdf6f8;
+  --color-warm-100: #fae8ee;
+  --color-warm-200: #f3cfdc;
+  --color-warm-300: #e9adc4;
+  --color-warm-400: #d783a4;
+  --color-warm-500: #a85177;
+  --color-warm-600: #954566;
+  --color-warm-700: #773853;
 
-  /* 點綴：Candlewax 蠟燭紫 */
-  --color-lilac-50: #f7f3fb;
-  --color-lilac-100: #ede4f7;
-  --color-lilac-200: #dcc8ef;
-  --color-lilac-300: #c3a3e0;
-  --color-lilac-400: #a87fcd;
-  --color-lilac-500: #8f63b5;
-  --color-lilac-700: #66437f;
+  /* 點綴：霧霾藍（token 名沿用 lilac、全站引用自動轉藍） */
+  --color-lilac-50: #f3f7fa;
+  --color-lilac-100: #e5eef5;
+  --color-lilac-200: #cbdeeb;
+  --color-lilac-300: #a8c6dd;
+  --color-lilac-400: #82aac9;
+  --color-lilac-500: #6089ab;
+  --color-lilac-700: #44637e;
 
-  /* 點綴：Terracota 陶土 */
-  --color-terra-50: #fbf2ec;
-  --color-terra-100: #f6e1d2;
-  --color-terra-200: #ecc4a8;
-  --color-terra-300: #dfa17b;
-  --color-terra-500: #b86238;
-  --color-terra-700: #7c4126;
+  /* 點綴：奶油砂黃（token 名沿用 terra） */
+  --color-terra-50: #faf7ec;
+  --color-terra-100: #f3ecd3;
+  --color-terra-200: #e7d9a9;
+  --color-terra-300: #d5c07e;
+  --color-terra-500: #9c8747;
+  --color-terra-700: #6b5c2f;
 
-  /* 中性 — Translucent 奶白底 + Space Clay 墨色 + Wet Clay 灰 */
-  --color-ink: #2f2b33;
-  --color-ink-soft: #5f5965;
-  --color-paper: #faf6ef;
+  /* 中性 — 暖奶油底 + 柔墨色 */
+  --color-ink: #30333a;
+  --color-ink-soft: #5d636b;
+  --color-paper: #f7f3ea;
   /* 覆寫純白為「奶白」，令所有卡片唔再刺眼（全站 bg-white / text-white 同步生效） */
-  --color-white: #fffdf8;
+  --color-white: #fbf9f3;
 
   /* 兒童化圓體：拉丁/數字用 Nunito（claymorphism 標配）、中文用粉圓 Huninn */
   --font-sans: "Nunito", "Huninn", "jf open 粉圓", "Yuanti TC", "YouYuan", "Noto Sans TC",
@@ -65,8 +65,8 @@
 }
 
 :root {
-  --background: #f5efdf;
-  --foreground: #2b2a23;
+  --background: #efe9dc;
+  --foreground: #2c2e2a;
 }
 
 html {
@@ -116,7 +116,7 @@ p {
 }
 .card-hover:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px -12px rgba(16, 105, 110, 0.35);
+  box-shadow: 0 12px 30px -12px rgba(88, 104, 96, 0.28);
 }
 
 /* 動畫 */
@@ -142,26 +142,26 @@ p {
         utilities（layered），故無需 !important / 高權重選擇器。
    ============================================================ */
 :root {
-  /* 淺色卡片用（奶白底）— 陰影改 Plasticine 深綠調、似影樓粘土相 */
+  /* 淺色卡片用（奶白底）— 柔霧灰綠陰影、soft neumorphism（2026-07-02 質感圖：更輕、更擴散） */
   --clay-light:
-    22px 26px 52px -16px rgba(30, 70, 60, 0.40),
-    inset -12px -12px 22px rgba(30, 70, 60, 0.14),
-    inset 12px 13px 26px rgba(255, 255, 255, 0.96);
+    16px 20px 44px -16px rgba(88, 104, 96, 0.30),
+    inset -10px -10px 20px rgba(88, 104, 96, 0.10),
+    inset 10px 12px 24px rgba(255, 255, 255, 0.95);
   /* 深色卡片用（brand-900 底） */
   --clay-dark:
-    26px 30px 58px -16px rgba(0, 0, 0, 0.5),
-    inset -12px -12px 22px rgba(0, 0, 0, 0.42),
-    inset 12px 13px 26px rgba(255, 255, 255, 0.16);
-  /* 按鈕（凸起）— 更立體 */
+    20px 24px 50px -16px rgba(0, 0, 0, 0.42),
+    inset -10px -10px 20px rgba(0, 0, 0, 0.34),
+    inset 10px 12px 24px rgba(255, 255, 255, 0.14);
+  /* 按鈕（凸起）— 柔和立體 */
   --clay-btn:
-    0 14px 26px -8px rgba(30, 70, 60, 0.5),
-    inset -5px -5px 10px rgba(0, 0, 0, 0.2),
-    inset 5px 5px 10px rgba(255, 255, 255, 0.5);
+    0 12px 22px -8px rgba(88, 104, 96, 0.40),
+    inset -4px -4px 9px rgba(0, 0, 0, 0.14),
+    inset 4px 4px 9px rgba(255, 255, 255, 0.55);
   /* 按鈕按下（凹陷） */
   --clay-btn-press:
-    0 5px 11px -6px rgba(30, 70, 60, 0.48),
-    inset -3px -3px 7px rgba(255, 255, 255, 0.28),
-    inset 6px 7px 14px rgba(0, 0, 0, 0.28);
+    0 5px 10px -6px rgba(88, 104, 96, 0.38),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.30),
+    inset 5px 6px 12px rgba(0, 0, 0, 0.20);
 }
 
 /* 圓角再加大 → 更軟糯的黃土外形 */
@@ -223,8 +223,8 @@ button[class~="rounded-full"]:active {
 .card-hover:hover {
   transform: translateY(-5px) scale(1.015);
   box-shadow:
-    28px 34px 62px -18px rgba(30, 70, 60, 0.44),
-    inset -12px -12px 22px rgba(30, 70, 60, 0.14),
+    28px 34px 62px -18px rgba(88, 104, 96, 0.32),
+    inset -12px -12px 22px rgba(88, 104, 96, 0.10),
     inset 12px 13px 26px rgba(255, 255, 255, 0.96);
 }
 
@@ -430,7 +430,7 @@ main h2::after {
   height: 0.7em;
   margin-left: 0.35em;
   vertical-align: baseline;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z' fill='%23ea66a2'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z' fill='%23d783a4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 @media (prefers-reduced-motion: no-preference) {
   main h2::after {
@@ -456,8 +456,8 @@ main h2::after {
   height: 0;
   border-left: 11px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 13px solid #fffbeb;
-  filter: drop-shadow(0 3px 0 #fde68a);
+  border-top: 13px solid #fdf9ec;
+  filter: drop-shadow(0 3px 0 #e7d9a9);
 }
 
 /* 輸入框都係手繪形（搜尋/文字輸入） */
@@ -474,7 +474,7 @@ textarea {
   border: 3px solid var(--color-brand-100);
 }
 [class~="bg-brand-50"][class~="rounded-2xl"] { border: 3px solid var(--color-brand-200); }
-[class~="bg-amber-50"][class~="rounded-2xl"] { border: 3px solid #fde68a; }
+[class~="bg-amber-50"][class~="rounded-2xl"] { border: 3px solid #e7d9a9; }
 [class~="bg-warm-50"][class~="rounded-2xl"] { border: 3px solid var(--color-warm-200); }
 
 /* 玩具按鈕：實色底邊（似可以撳落去嘅膠鈕）；按下變平 */
@@ -482,7 +482,7 @@ a[class~="rounded-full"],
 button[class~="rounded-full"] {
   box-shadow:
     var(--clay-btn),
-    0 5px 0 -1px rgba(30, 70, 60, 0.3);
+    0 5px 0 -1px rgba(88, 104, 96, 0.26);
 }
 a[class~="rounded-full"]:active,
 button[class~="rounded-full"]:active {
@@ -502,7 +502,7 @@ footer::before {
   right: 0;
   height: 22px;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 22'%3E%3Cpath d='M0 22 Q 20 0 40 11 T 80 22 Z' fill='%231e463c'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 22'%3E%3Cpath d='M0 22 Q 20 0 40 11 T 80 22 Z' fill='%2324463d'/%3E%3C/svg%3E");
   background-size: 80px 22px;
   background-repeat: repeat-x;
 }
@@ -549,7 +549,7 @@ body::after {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M28 48 a14 14 0 0 1 2-27 a18 18 0 0 1 34-6 a13 13 0 0 1 22 9 a11 11 0 0 1-2 24 Z' fill='white'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M15 2 L18 12 L28 15 L18 18 L15 28 L12 18 L2 15 L12 12 Z' fill='%23f49ac2' opacity='0.7'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M11 1 L13.2 8.8 L21 11 L13.2 13.2 L11 21 L8.8 13.2 L1 11 L8.8 8.8 Z' fill='%2393d6b9' opacity='0.75'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M11 1 L13.2 8.8 L21 11 L13.2 13.2 L11 21 L8.8 13.2 L1 11 L8.8 8.8 Z' fill='%23a5d3c1' opacity='0.75'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' viewBox='0 0 26 24'%3E%3Cpath d='M13 22 L3.5 12.5 A6 6 0 1 1 13 5 A6 6 0 1 1 22.5 12.5 Z' fill='%23f49ac2' opacity='0.6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 190px 95px, 140px 70px, 110px 55px, 30px 30px, 22px 22px, 26px 24px;
@@ -571,10 +571,10 @@ main {
   width: 8.5rem;
   height: 8.5rem;
   border-radius: 9999px;
-  background: radial-gradient(circle at 35% 30%, #d4f0e3, #62bd9b);
+  background: radial-gradient(circle at 35% 30%, #dcefe7, #7bbca7);
   box-shadow:
-    0 14px 36px -10px rgba(46, 129, 104, 0.55),
-    inset -7px -7px 16px rgba(30, 70, 60, 0.2),
+    0 14px 36px -10px rgba(64, 128, 110, 0.42),
+    inset -7px -7px 16px rgba(88, 104, 96, 0.16),
     inset 7px 7px 16px rgba(255, 255, 255, 0.6);
   transform: scale(0.6);
 }
@@ -596,11 +596,11 @@ html.calm .breathe-on { animation: none; transform: scale(0.92); }
 @media (pointer: fine) {
   /* 預設：薄荷粘土圓點 */
   body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='9' cy='9' r='6.5' fill='%2393d6b9' stroke='%231e463c' stroke-width='1.6'/%3E%3Ccircle cx='7' cy='7' r='2' fill='white' opacity='0.7'/%3E%3C/svg%3E") 9 9, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='9' cy='9' r='6.5' fill='%23a5d3c1' stroke='%2324463d' stroke-width='1.6'/%3E%3Ccircle cx='7' cy='7' r='2' fill='white' opacity='0.7'/%3E%3C/svg%3E") 9 9, auto;
   }
   /* 可點：泡泡糖小星 */
   a, button, [role="button"], summary, label {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M13 2 L15.6 9.4 L23.5 9.8 L17.3 14.8 L19.4 22.4 L13 18 L6.6 22.4 L8.7 14.8 L2.5 9.8 L10.4 9.4 Z' fill='%23ea66a2' stroke='%236d1b46' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 13 13, pointer;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M13 2 L15.6 9.4 L23.5 9.8 L17.3 14.8 L19.4 22.4 L13 18 L6.6 22.4 L8.7 14.8 L2.5 9.8 L10.4 9.4 Z' fill='%23d783a4' stroke='%23773853' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 13 13, pointer;
   }
   /* 文字輸入保留 I-beam（唔好搞亂輸入） */
   input[type="text"], input[type="search"], textarea {
@@ -616,8 +616,8 @@ html.calm .breathe-on { animation: none; transform: scale(0.92); }
   z-index: 90;
   pointer-events: none;
   font-size: 13px;
-  color: #ea66a2;
-  text-shadow: 0 0 6px rgba(244, 154, 194, 0.8);
+  color: #d783a4;
+  text-shadow: 0 0 6px rgba(233, 173, 196, 0.8);
   will-change: transform;
 }
 @keyframes spark-fly {
@@ -643,9 +643,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    radial-gradient(at 12% 8%, rgba(147, 214, 185, 0.22) 0px, transparent 42%),
-    radial-gradient(at 88% 22%, rgba(244, 154, 194, 0.16) 0px, transparent 40%),
-    radial-gradient(at 20% 88%, rgba(195, 163, 224, 0.14) 0px, transparent 38%);
+    radial-gradient(at 12% 8%, rgba(165, 211, 193, 0.24) 0px, transparent 42%),
+    radial-gradient(at 88% 22%, rgba(168, 198, 221, 0.20) 0px, transparent 40%),
+    radial-gradient(at 20% 88%, rgba(233, 173, 196, 0.14) 0px, transparent 38%);
 }
 @media (prefers-reduced-motion: no-preference) {
   body::before {
