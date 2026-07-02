@@ -59,6 +59,7 @@ export default function SiteFooter() {
             <li><Link href="/faq" className="hover:text-white">常見問題 / AI 助理</Link></li>
             <li><Link href="/consult" className="hover:text-white">預約諮詢</Link></li>
             <li><Link href="/planner" className="hover:text-white">我的規劃清單</Link></li>
+            <li><Link href="/podcast" className="hover:text-white">🎙️ 國語 Podcast</Link></li>
           </ul>
         </div>
       </div>

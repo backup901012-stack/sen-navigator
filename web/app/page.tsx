@@ -87,13 +87,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 前導分流：邊個最似而家嘅你？ */}
+      {/* 前導分流：百萬富翁式問答（愛馬仕配色） */}
       <section id="for-you" className="container-page py-14 scroll-mt-20">
         <SectionTitle
           center
           eyebrow="唔使睇晒成個網站"
-          title="邊個最似而家嘅你？"
-          desc="撳一下，即刻攞到為你而設嘅路線——每步只需幾分鐘。"
+          title="玩一條問題，搵啱你嘅起點"
+          desc="百萬富翁式一題四選——冇獎金，但有為你度身嘅路線圖。"
         />
         <div className="mt-8">
           <AudienceTriage />
@@ -124,6 +124,26 @@ export default function Home() {
               認識・同理 →
             </span>
           </div>
+        </Link>
+      </section>
+
+      {/* 國語 Podcast 入口 */}
+      <section className="container-page pt-4 pb-2">
+        <Link
+          href="/podcast"
+          className="flex items-center gap-3 rounded-2xl bg-lilac-50 border border-lilac-100 px-5 py-4 card-hover"
+        >
+          <span className="text-2xl" aria-hidden>
+            🎙️
+          </span>
+          <span className="flex-1 text-sm">
+            <strong className="text-brand-900">說國語的家庭？</strong>
+            <span className="text-ink-soft">
+              {" "}
+              我們正籌備「SEN 小孩導航員・國語版」音頻節目，把這裡的資訊用國語講給你聽。
+            </span>
+          </span>
+          <span className="text-lilac-700 font-bold text-sm shrink-0">看節目規劃 →</span>
         </Link>
       </section>
 

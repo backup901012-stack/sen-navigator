@@ -118,6 +118,32 @@ export const DIRECTORY: ResourceItem[] = [
     confidence: "high",
     sources: [C("RehabGuide", "https://www.rehabguide.hk/")],
   },
+  {
+    id: "dir-senvice-directory",
+    name: "SENvice 服務指南（專業人士搜尋器）",
+    type: "ngo",
+    funding: "free",
+    tags: ["搜尋器", "精神科醫生", "心理學家", "治療師", "私人機構", "NGO", "分區"],
+    ageGroup: "幼兒至青少年",
+    description:
+      "可篩選的 SEN 服務提供者搜尋器：涵蓋精神科醫生、教育／臨床心理學家、言語／職業／遊戲／音樂／藝術治療師等，按地區、服務種類、SEN 類別、服務年齡篩選，並可篩「到校／上門／減費／遙距／普通話」等條件。",
+    url: "https://www.senvice.org/",
+    confidence: "high",
+    sources: [C("SENvice 服務指南（2026-07 查證）", "https://www.senvice.org/")],
+  },
+  {
+    id: "dir-senvice-resources",
+    name: "SENvice 資源庫（免費資源搜尋器）",
+    type: "ngo",
+    funding: "free",
+    tags: ["搜尋器", "免費資源", "教材", "影片", "APPS", "繪本"],
+    ageGroup: "幼兒至青少年",
+    description:
+      "整合 400+ 項免費網上 SEN 資源（教材、影片、應用程式、繪本、文章），以本地、實證為本、免費為挑選準則，可按範疇（語言／讀寫／專注／情緒／社交等）、SEN 類別及年齡篩選。",
+    url: "https://www.senvice.org/senresources-search",
+    confidence: "high",
+    sources: [C("SENvice 資源庫（2026-07 查證）", "https://www.senvice.org/senresources-search")],
+  },
   // ---------- 家長支援與情緒健康 ----------
   {
     id: "prrc",
