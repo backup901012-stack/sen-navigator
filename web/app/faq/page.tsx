@@ -30,7 +30,7 @@ export default function FaqPage() {
       <section className="bg-gradient-to-br from-brand-50 to-white">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">解答查詢</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">常見問題 · AI 助理</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">💡 </span>常見問題 · AI 助理</h1>
           <p className="mt-4 max-w-2xl text-ink-soft">
             最常被問到的問題都整理喺度。搵唔到答案？右邊嘅 AI 助理即時為你解答。
           </p>

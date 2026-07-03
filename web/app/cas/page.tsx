@@ -49,7 +49,7 @@ export default function CasPage() {
       <section className="bg-gradient-to-br from-brand-600 to-brand-700 text-white">
         <div className="container-page py-14">
           <p className="text-brand-100 font-bold text-sm mb-2">評估與診斷</p>
-          <h1 className="text-3xl sm:text-4xl font-black">兒童體能智力測驗服務（CAS）與各區中心（CAC）</h1>
+          <h1 className="text-3xl sm:text-4xl font-black"><span aria-hidden="true">🔬 </span>兒童體能智力測驗服務（CAS）與各區中心（CAC）</h1>
           <p className="mt-4 max-w-2xl text-brand-50">
             「兒童體能智力測驗服務」（Child Assessment Service，CAS）是政府為 12 歲以下兒童提供的發展評估，
             判定發展障礙的類別與程度；服務透過各區「兒童體能智力測驗中心」（Child Assessment Centre，CAC）提供。

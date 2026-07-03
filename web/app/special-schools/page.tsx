@@ -101,7 +101,7 @@ export default function SpecialSchoolsPage() {
       <section className="bg-gradient-to-br from-brand-600 to-brand-700 text-white">
         <div className="container-page py-14">
           <p className="text-brand-100 font-bold text-sm mb-2">6 歲以上 · 學齡階段</p>
-          <h1 className="text-3xl sm:text-4xl font-black">特殊學校與升學（雙軌制）</h1>
+          <h1 className="text-3xl sm:text-4xl font-black"><span aria-hidden="true">🎓 </span>特殊學校與升學（雙軌制）</h1>
           <p className="mt-4 max-w-2xl text-brand-50">
             孩子到了學齡（一般 6 歲入學），SEN 升學分兩條路：留在主流學校接受
             <strong className="text-white">融合教育</strong>，或入讀

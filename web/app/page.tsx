@@ -136,7 +136,7 @@ export default function Home() {
         <SectionTitle
           center
           eyebrow="我們明白你的處境"
-          title="面對 SEN，最難的往往是「唔知由邊度開始」"
+          title="💭 面對 SEN，最難的往往是「唔知由邊度開始」"
         />
         <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {PAINS.map((p, i) => (
@@ -180,7 +180,7 @@ export default function Home() {
           <SectionTitle
             center
             eyebrow="導航員為你做的 5 件事"
-            title="從查詢到跟進，一條龍陪你規劃"
+            title="🧭 從查詢到跟進，一條龍陪你規劃"
             desc="參考「照顧導航員」服務模式，為 SEN 家庭量身打造。"
           />
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -210,7 +210,7 @@ export default function Home() {
         <SectionTitle
           center
           eyebrow="主要資源板塊"
-          title="政府服務、評估制度、自費課程，一次睇清"
+          title="📚 政府服務、評估制度、自費課程，一次睇清"
         />
         <div className="mt-10 grid md:grid-cols-3 gap-5">
           <CardLink

@@ -18,7 +18,7 @@ export default function MilestonesPage() {
       <section className="bg-gradient-to-br from-brand-50 to-warm-50">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">基礎認識 · 發展里程</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🌱 </span>
             兒童發展里程碑（0–6 歲）
           </h1>
           <p className="mt-4 max-w-2xl text-ink-soft">

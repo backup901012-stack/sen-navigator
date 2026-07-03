@@ -70,7 +70,7 @@ export default function TrainingMethodsPage() {
       <section className="bg-gradient-to-br from-brand-600 to-brand-700 text-white">
         <div className="container-page py-14">
           <p className="text-brand-100 font-bold text-sm mb-2">認識訓練・做明智選擇</p>
-          <h1 className="text-3xl sm:text-4xl font-black">SEN 兒童常見訓練方法</h1>
+          <h1 className="text-3xl sm:text-4xl font-black"><span aria-hidden="true">🧰 </span>SEN 兒童常見訓練方法</h1>
           <p className="mt-4 max-w-2xl text-brand-50">
             政府與自費機構為 SEN／自閉症兒童提供多種訓練方法。先認識每種方法的理念與針對的困難，
             才能與專業人員一起，為孩子規劃合適的計劃。

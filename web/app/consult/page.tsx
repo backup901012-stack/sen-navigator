@@ -35,7 +35,7 @@ export default function ConsultPage() {
       <section className="bg-gradient-to-br from-warm-50 to-brand-50">
         <div className="container-page py-14">
           <p className="text-warm-600 font-bold text-sm mb-2">諮詢支援</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">預約諮詢</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">💬 </span>預約諮詢</h1>
           <p className="mt-4 max-w-2xl text-ink-soft">
             先用下面的表單整理孩子的狀況與你最想問的問題，再帶住摘要聯絡官方或專業機構，
             溝通會更快更聚焦。

@@ -36,7 +36,7 @@ export default function ParentsPage() {
       <section className="bg-gradient-to-br from-warm-50 to-brand-50">
         <div className="container-page py-14">
           <p className="text-warm-600 font-bold text-sm mb-2">家長特區</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">陪孩子成長，也照顧好自己</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🌻 </span>陪孩子成長，也照顧好自己</h1>
           <p className="mt-4 max-w-2xl text-ink-soft">
             這裡為 SEN 家長整合三件事：學會<strong className="text-brand-700">辨識</strong>孩子的發展信號、
             避開常見的<strong className="text-brand-700">教養誤區</strong>，以及好好照顧

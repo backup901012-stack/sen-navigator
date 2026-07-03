@@ -15,7 +15,7 @@ export default function JourneyPage() {
       <section className="bg-gradient-to-br from-brand-50 to-warm-50">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">一步一步來</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">申請流程地圖</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🗺️ </span>申請流程地圖</h1>
           <p className="mt-4 max-w-2xl text-ink-soft">
             由察覺到獲配服務，整個過程分六大步。把握每一步，尤其別浪費輪候期。
           </p>

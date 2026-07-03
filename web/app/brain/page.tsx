@@ -34,7 +34,7 @@ export default function BrainPage() {
       <section className="bg-gradient-to-br from-brand-50 to-warm-50">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">基礎認識 · 科普</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">童年經歷與腦部成長</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🧠 </span>童年經歷與腦部成長</h1>
           <p className="mt-4 max-w-2xl text-ink-soft">
             孩子的腦袋並非一成不變——它由每天的經歷「塑造」出來。明白這一點，有助你理解
             SEN 孩子的行為與情緒，並知道<strong className="text-brand-700">正向關係與早期介入</strong>

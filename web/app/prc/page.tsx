@@ -14,7 +14,7 @@ export default function PrcPage() {
       <section className="bg-gradient-to-br from-brand-600 to-brand-700 text-white">
         <div className="container-page py-14">
           <p className="text-brand-100 font-bold text-sm mb-2">家長支援 · 社區資源</p>
-          <h1 className="text-3xl sm:text-4xl font-black">各區家長／親屬資源中心</h1>
+          <h1 className="text-3xl sm:text-4xl font-black"><span aria-hidden="true">🏡 </span>各區家長／親屬資源中心</h1>
           <p className="mt-4 max-w-2xl text-brand-50">
             社署資助、全港 {PRC_TOTAL} 間。為殘疾人士的家長／親屬／照顧者提供輔導、互助小組、
             資源與社區教育，紓緩照顧壓力。<strong className="text-white">免費</strong>，可直接向任何中心申請。

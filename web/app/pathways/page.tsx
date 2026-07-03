@@ -79,7 +79,7 @@ export default function PathwaysPage() {
       <section className="bg-gradient-to-br from-brand-50 to-warm-50">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">流程圖 · 比較</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🔀 </span>
             兩條路徑：津貼 vs 自費
           </h1>
           <p className="mt-4 max-w-2xl text-ink-soft">

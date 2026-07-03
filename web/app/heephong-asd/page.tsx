@@ -19,7 +19,7 @@ export default function HeepHongAsdPage() {
       <section className="bg-gradient-to-br from-warm-50 to-brand-50">
         <div className="container-page py-14">
           <p className="text-warm-600 font-bold text-sm mb-2">自費密集訓練 · {HEEPHONG_ASD.org}</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🐥 </span>
             {HEEPHONG_ASD.title}
           </h1>
           <p className="mt-2 text-brand-700 font-bold">{HEEPHONG_ASD.year}一覽表</p>

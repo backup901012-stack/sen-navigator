@@ -82,7 +82,7 @@ export default function IntelligencesPage() {
       <section className="bg-gradient-to-br from-brand-50 to-warm-50">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">基礎認識 · 科普</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">多元智能</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">🌈 </span>多元智能</h1>
           <p className="mt-4 max-w-2xl text-ink-soft">
             每個孩子聰明的方式都唔同。哈佛大學教育心理學家
             <strong className="text-brand-700"> Howard Gardner</strong>{" "}

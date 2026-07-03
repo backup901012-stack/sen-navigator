@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <section className="bg-gradient-to-br from-brand-600 to-brand-700 text-white">
         <div className="container-page py-14">
           <p className="text-brand-100 font-bold text-sm mb-2">政府資助 · 學前康復服務</p>
-          <h1 className="text-3xl sm:text-4xl font-black">四大政府學前康復服務</h1>
+          <h1 className="text-3xl sm:text-4xl font-black"><span aria-hidden="true">🏛️ </span>四大政府學前康復服務</h1>
           <p className="mt-4 max-w-2xl text-brand-50">
             香港學前康復服務由社會福利署統籌，全部經「康復服務中央轉介系統」統一輪候。
             以下為四大主要服務，幫你分清適合孩子的方向。

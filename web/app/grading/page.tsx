@@ -21,7 +21,7 @@ export default function GradingPage() {
       <section className="bg-gradient-to-br from-brand-50 to-white">
         <div className="container-page py-14">
           <p className="text-brand-600 font-bold text-sm mb-2">釐清概念</p>
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900">
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900"><span aria-hidden="true">📊 </span>
             SEN 學前服務的「分級」真相
           </h1>
           <p className="mt-4 max-w-2xl text-ink-soft">

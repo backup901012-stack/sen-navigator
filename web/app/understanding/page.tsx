@@ -19,7 +19,7 @@ export default function UnderstandingPage() {
         <div className="container-page py-14 relative">
           <div className="max-w-2xl">
             <p className="text-brand-600 font-bold text-sm mb-2">認識 · 同理 · 靜觀</p>
-            <h1 className="text-3xl sm:text-4xl font-black text-brand-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-black text-brand-900 leading-tight"><span aria-hidden="true">💛 </span>
               每個孩子，都值得被理解
             </h1>
             <p className="mt-5 text-lg text-ink-soft">
