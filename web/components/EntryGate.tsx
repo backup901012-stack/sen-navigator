@@ -18,10 +18,18 @@ export default function EntryGate() {
   const [step, setStep] = useState<1 | 2>(1);
   const [selected, setSelected] = useState<string[]>([]);
 
-  // 首次到訪自動彈出；已揀過/跳過 → 唔再自動彈
+  // 第一視覺階段：每個瀏覽 session 開站先見抽卡（本 session 內唔重複）；
+  // 已揀過嘅身份由 localStorage 預先剔返。
   useEffect(() => {
     try {
-      if (!localStorage.getItem(STORE_KEY)) setOpen(true);
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "[]");
+      if (Array.isArray(saved))
+        setSelected(saved.filter((x) => typeof x === "string"));
+    } catch {
+      /* 壞數據當無 */
+    }
+    try {
+      if (!sessionStorage.getItem("sen-entry-seen")) setOpen(true);
     } catch {
       /* storage 唔可用就唔自動彈、唔阻內容 */
     }
@@ -85,6 +93,11 @@ export default function EntryGate() {
   }
 
   function close() {
+    try {
+      sessionStorage.setItem("sen-entry-seen", "1");
+    } catch {
+      /* 唔阻流程 */
+    }
     setOpen(false);
     setStep(1);
   }
@@ -95,29 +108,36 @@ export default function EntryGate() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] grid place-items-center p-3 sm:p-6"
+      className="fixed inset-0 z-[100] overflow-y-auto bg-gradient-to-br from-brand-50 via-paper to-warm-50"
       role="dialog"
       aria-modal="true"
       aria-label="揀你嘅身份，快啲搵到啱你嘅內容"
     >
-      {/* 背景遮罩 */}
-      <div
-        className="absolute inset-0 bg-[#2c2e2a]/55 backdrop-blur-sm"
-        onClick={skip}
-        aria-hidden
-      />
+      {/* 全屏第一視覺階段（不透明、唔露底下頁面）：柔粉彩暈染裝飾 */}
+      <div aria-hidden className="pointer-events-none fixed inset-0">
+        <span className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-brand-200/50 blur-2xl" />
+        <span className="absolute top-1/3 -left-28 w-80 h-80 rounded-full bg-lilac-200/45 blur-2xl" />
+        <span className="absolute -bottom-24 right-1/4 w-80 h-80 rounded-full bg-warm-200/40 blur-2xl" />
+      </div>
 
-      {/* 閘門面板 */}
-      <div className="relative w-full max-w-5xl max-h-[92dvh] overflow-y-auto rounded-3xl bg-paper p-6 sm:p-10 shadow-2xl animate-fade-up">
+      {/* 舞台內容 */}
+      <div className="relative min-h-full grid place-items-center p-4 sm:p-8">
+        <div className="w-full max-w-5xl py-6 animate-fade-up">
         {step === 1 ? (
           <>
             <div className="text-center max-w-xl mx-auto">
-              <p className="text-sm font-bold text-brand-600">
-                歡迎嚟到 SEN 小孩導航員
+              <p className="flex items-center justify-center gap-2 font-black text-brand-800">
+                <span className="grid place-items-center w-9 h-9 rounded-xl bg-brand-600 text-white text-lg">
+                  導
+                </span>
+                SEN 小孩導航員
               </p>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-black text-brand-900 leading-snug">
+              <p className="mt-4 text-sm font-bold text-brand-600">
+                歡迎嚟到香港 SEN 學前資源一站式導航
+              </p>
+              <h1 className="mt-2 text-3xl sm:text-4xl font-black text-brand-900 leading-snug">
                 邊個係而家嘅你？
-              </h2>
+              </h1>
               <p className="mt-2 text-sm text-ink-soft">
                 可以揀多過一個——我哋即刻幫你執好啱你嘅內容，唔使睇晒成個網站。
               </p>
@@ -270,6 +290,7 @@ export default function EntryGate() {
             </div>
           </>
         )}
+        </div>
       </div>
     </div>
   );

@@ -84,23 +84,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 重開入場分流（分流本體 = EntryGate 開站彈窗、最高圖層） */}
-      <section className="container-page pt-6 pb-2">
-        <GateOpener className="w-full flex items-center gap-3 rounded-2xl bg-white border border-brand-100 px-5 py-4 card-hover text-left cursor-pointer">
-          <span className="text-2xl" aria-hidden>
-            👋
-          </span>
-          <span className="flex-1 text-sm">
-            <strong className="text-brand-900">想快啲搵到啱你嘅內容？</strong>
-            <span className="text-ink-soft">
-              {" "}
-              揀返你嘅身份（可以揀多過一個），我哋即刻執好你嘅路線。
-            </span>
-          </span>
-          <span className="text-brand-600 font-bold text-sm shrink-0">揀身份 →</span>
-        </GateOpener>
-      </section>
-
       {/* 認識・同理 橋樑入口（寫給每一位） */}
       <section className="container-page pt-6 pb-2">
         <Link
