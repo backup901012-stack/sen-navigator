@@ -131,6 +131,66 @@ export const DIRECTORY: ResourceItem[] = [
     confidence: "high",
     sources: [C("SENvice 服務指南（2026-07 查證）", "https://www.senvice.org/")],
   },
+  // ---------- 關愛共融政策・學校 ----------
+  {
+    id: "dir-sense-edb",
+    name: "融情・特教（教育局官方共融資訊網）",
+    type: "government",
+    funding: "free",
+    tags: ["共融", "融合教育", "特殊教育", "政策", "官方"],
+    ageGroup: "學前及學齡",
+    description:
+      "教育局融合教育及特殊教育一站式資訊網站：全校參與模式點運作、家長錦囊、學校支援措施、活動與資源，了解共融政策由呢度開始。",
+    url: "https://sense.edb.gov.hk/",
+    confidence: "high",
+    sources: [C("教育局 融情・特教（2026-07 查證）", "https://sense.edb.gov.hk/")],
+  },
+  {
+    id: "dir-edb-wsa",
+    name: "教育局 全校參與模式融合教育",
+    type: "government",
+    funding: "free",
+    tags: ["共融", "融合教育", "三層支援", "政策", "官方"],
+    ageGroup: "學齡",
+    description:
+      "融合教育政策官方專頁：全校參與模式、三層支援架構、學習支援津貼等，睇明主流學校支援 SEN 學生嘅制度框架。",
+    url: "https://www.edb.gov.hk/tc/edu-system/special/support/wsa/index.html",
+    confidence: "high",
+    sources: [
+      C("教育局 全校參與模式（2026-07 查證）", "https://www.edb.gov.hk/tc/edu-system/special/support/wsa/index.html"),
+    ],
+  },
+  {
+    id: "dir-caring-school",
+    name: "關愛校園獎勵計劃（得獎學校名單）",
+    type: "ngo",
+    funding: "free",
+    tags: ["共融", "關愛校園", "揀學校參考", "學校文化"],
+    ageGroup: "學前及學齡",
+    description:
+      "香港基督教服務處自 2005 年起主辦（2015/16 學年起與香港輔導教師協會聯合主辦），以 BLESS 框架公開表揚實踐關愛文化嘅學校——揀學校時可參考得獎名單了解學校關愛文化。",
+    url: "https://www.hkcs.org/tc/services/caringschoolawardscheme",
+    confidence: "high",
+    sources: [
+      C("香港基督教服務處 關愛校園獎勵計劃（2026-07 查證）", "https://www.hkcs.org/tc/services/caringschoolawardscheme"),
+    ],
+  },
+  {
+    id: "dir-chsc-profiles",
+    name: "幼稚園概覽／小學概覽（查學校 SEN 支援）",
+    type: "government",
+    funding: "free",
+    tags: ["共融", "揀學校參考", "幼稚園", "小學", "官方"],
+    ageGroup: "學前及學齡",
+    description:
+      "家庭與學校合作事宜委員會（CHSC）官方概覽：幼稚園約 970 間、小學 500+ 間嘅師資、課程及支援資料，揀共融學校前逐間查——幼稚園概覽 chsc.hk/kindergarten、小學概覽 chsc.hk/primary。",
+    url: "https://www.chsc.hk/",
+    confidence: "high",
+    sources: [
+      C("CHSC 幼稚園概覽（2026-07 查證）", "https://www.chsc.hk/kindergarten"),
+      C("CHSC 小學概覽（2026-07 查證）", "https://www.chsc.hk/primary"),
+    ],
+  },
   {
     id: "dir-senvice-resources",
     name: "SENvice 資源庫（免費資源搜尋器）",
