@@ -20,30 +20,58 @@ interface School {
 
 const ALL = SCHOOLS as School[];
 const DISTRICTS = [...new Set(ALL.map((s) => s.d))].sort();
-const TAG_OPTIONS = ["EP", "ST", "社交訓練", "情緒支援", "讀寫支援", "抽離小組", "小組訓練"];
+const TAG_OPTIONS = [
+  "EP", "ST", "社交訓練", "情緒支援", "讀寫支援",
+  "抽離小組", "小組訓練", "輔導支援", "SEN明文提及",
+];
 const TAG_LABEL: Record<string, string> = {
   EP: "🧠 教育心理學家",
   ST: "🗣️ 言語治療",
+  OT: "🖐️ 職業治療",
   社交訓練: "🤝 社交訓練",
   情緒支援: "💛 情緒支援",
   讀寫支援: "📖 讀寫支援",
   抽離小組: "👥 抽離小組",
   小組訓練: "🎯 小組訓練",
+  輔導支援: "📚 輔導班／加輔",
+  SEN明文提及: "📌 明文提及 SEN",
 };
+
+/** 官方 36 個小一校網（派位單位）；地區標示由本數據集逐間統計得出 */
+const NETS: { value: string; label: string }[] = (() => {
+  const byNet = new Map<string, Map<string, number>>();
+  for (const s of ALL) {
+    if (!byNet.has(s.net)) byNet.set(s.net, new Map());
+    const m = byNet.get(s.net)!;
+    m.set(s.d, (m.get(s.d) ?? 0) + 1);
+  }
+  const nets = [...byNet.keys()].sort((a, b) => {
+    if (a === "none") return 1;
+    if (b === "none") return -1;
+    return Number(a) - Number(b);
+  });
+  return nets.map((n) => {
+    if (n === "none") return { value: n, label: "不設校網（私立／直資等）" };
+    const top = [...byNet.get(n)!.entries()].sort((x, y) => y[1] - x[1])[0][0];
+    return { value: n, label: `校網 ${n}（${top}）` };
+  });
+})();
 
 export default function PrimaryInclusionExplorer() {
   const [district, setDistrict] = useState("all");
+  const [net, setNet] = useState("all");
   const [tags, setTags] = useState<string[]>([]);
   const [q, setQ] = useState("");
 
   const results = useMemo(() => {
     return ALL.filter((s) => {
       if (district !== "all" && s.d !== district) return false;
+      if (net !== "all" && s.net !== net) return false;
       if (tags.length && !tags.every((t) => s.tags.includes(t))) return false;
       if (q.trim() && !(s.n.includes(q.trim()) || s.s.includes(q.trim()))) return false;
       return true;
     });
-  }, [district, tags, q]);
+  }, [district, net, tags, q]);
 
   function toggleTag(t: string) {
     setTags((cur) => (cur.includes(t) ? cur.filter((x) => x !== t) : [...cur, t]));
@@ -53,9 +81,24 @@ export default function PrimaryInclusionExplorer() {
     <div>
       {/* 篩選列 */}
       <div className="rounded-2xl bg-white border border-brand-100 p-5">
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-3 gap-3">
           <label className="block text-sm">
-            <span className="font-bold text-brand-800">區域</span>
+            <span className="font-bold text-brand-800">小一校網（派位單位）</span>
+            <select
+              value={net}
+              onChange={(e) => setNet(e.target.value)}
+              className="mt-1 w-full rounded-xl border border-brand-200 bg-white px-3 py-2.5"
+            >
+              <option value="all">全部 36 個校網</option>
+              {NETS.map((n) => (
+                <option key={n.value} value={n.value}>
+                  {n.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-sm">
+            <span className="font-bold text-brand-800">行政區（參考）</span>
             <select
               value={district}
               onChange={(e) => setDistrict(e.target.value)}
@@ -80,6 +123,18 @@ export default function PrimaryInclusionExplorer() {
             />
           </label>
         </div>
+        <p className="mt-2 text-xs text-ink-soft">
+          💡 小一統一派位以<strong>校網</strong>為單位（行政區只係參考）；各校網選校名冊見{" "}
+          <a
+            href="https://www.edb.gov.hk/tc/edu-system/primary-secondary/spa-systems/primary-1-admission/school-lists/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-600 font-bold hover:underline"
+          >
+            教育局官方頁
+          </a>
+          。
+        </p>
         <div className="mt-4">
           <p className="text-sm font-bold text-brand-800">
             概覽中列明嘅支援（可多選、須全部符合）
@@ -122,7 +177,7 @@ export default function PrimaryInclusionExplorer() {
                   {s.d}
                 </span>
                 <span className="text-[11px] px-2 py-0.5 rounded-md bg-brand-100 text-brand-800 font-bold">
-                  校網 {s.net}
+                  {s.net === "none" ? "不設校網" : `校網 ${s.net}`}
                 </span>
                 <span className="text-[11px] px-2 py-0.5 rounded-md bg-terra-100 text-terra-700 font-bold">
                   {s.t}
