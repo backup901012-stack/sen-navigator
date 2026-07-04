@@ -133,6 +133,21 @@ export const DIRECTORY: ResourceItem[] = [
   },
   // ---------- 關愛共融政策・學校 ----------
   {
+    id: "dir-inclusion-schools",
+    name: "關愛共融政策・學校列表",
+    type: "government",
+    funding: "free",
+    tags: ["共融", "學校列表", "特殊學校", "62 所", "揀學校參考"],
+    ageGroup: "學前及學齡",
+    description:
+      "本站整理嘅學校資料一覽：全港 62 所資助特殊學校官方名單（按類別、逐間地址電話網址，來源教育局融情・特教），加埋點樣查主流學校共融支援嘅三個官方工具。",
+    url: "/inclusion-schools",
+    confidence: "high",
+    sources: [
+      C("教育局 融情・特教 特殊學校名單（2026-07 查證）", "https://sense.edb.gov.hk/tc/special-education/categories-and-numbers-of-special-schools.html"),
+    ],
+  },
+  {
     id: "dir-sense-edb",
     name: "融情・特教（教育局官方共融資訊網）",
     type: "government",

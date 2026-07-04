@@ -46,6 +46,7 @@ export default function SiteFooter() {
             <li><Link href="/resources" className="hover:text-white">權威資源連結</Link></li>
             <li><Link href="/understanding" className="hover:text-white">認識・同理・靜觀</Link></li>
             <li><Link href="/special-schools" className="hover:text-white">特殊學校與升學（6 歲以上）</Link></li>
+            <li><Link href="/inclusion-schools" className="hover:text-white">關愛共融政策・學校列表</Link></li>
             <li><Link href="/training-methods" className="hover:text-white">常見訓練方法</Link></li>
           </ul>
         </div>

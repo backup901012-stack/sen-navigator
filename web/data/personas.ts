@@ -73,7 +73,7 @@ export const PERSONAS: Persona[] = [
       { href: "/special-schools", title: "睇明雙軌制與學校安排", desc: "融合教育 vs 特殊學校、EDB 點安排，共融學校支援現實講白。", time: "6 分鐘" },
       { href: "/services", title: "認識到校支援服務", desc: "到校學前康復服務（OPRS）：跨專業團隊點入校支援孩子同老師。", time: "5 分鐘" },
       { href: "/intelligences", title: "了解共融背後嘅理念", desc: "多元智能：每個孩子強項唔同，共融教育嘅根基。", time: "4 分鐘" },
-      { href: "/directory", title: "查官方共融資源", desc: "融情・特教、全校參與模式、關愛校園名單、學校概覽——資源目錄一次搵晒。", time: "2 分鐘" },
+      { href: "/inclusion-schools", title: "睇關愛共融・學校列表", desc: "62 所特殊學校官方名單逐間睇，仲教你點查主流學校嘅共融支援。", time: "3 分鐘" },
     ],
   },
   {
