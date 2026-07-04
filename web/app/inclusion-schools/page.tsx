@@ -232,6 +232,19 @@ export default function InclusionSchoolsPage() {
             </div>
           ))}
         </div>
+        <Link
+          href="/primary-inclusion"
+          className="mt-5 flex items-center gap-3 rounded-2xl bg-brand-600 px-5 py-4 card-hover"
+        >
+          <span className="text-2xl" aria-hidden>
+            🔎
+          </span>
+          <span className="flex-1 text-sm text-white">
+            <strong>小學・共融支援搜尋器：</strong>
+            507 間小學官方概覽自述，一次過按區＋支援標籤（校本心理學家／言語治療／社交小組⋯）篩選。
+          </span>
+          <span className="text-white font-bold text-sm shrink-0">去篩選 →</span>
+        </Link>
         <div className="mt-5 rounded-2xl bg-brand-50/60 border border-brand-100 p-5 text-sm text-ink">
           <p className="font-bold text-brand-900">🔎 點查「你嗰間」學校有咩人手？</p>
           <p className="mt-1.5 leading-relaxed text-ink-soft">

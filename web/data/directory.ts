@@ -148,6 +148,21 @@ export const DIRECTORY: ResourceItem[] = [
     ],
   },
   {
+    id: "dir-primary-inclusion",
+    name: "小學・共融支援搜尋器",
+    type: "government",
+    funding: "free",
+    tags: ["共融", "搜尋器", "小學", "校本心理學家", "言語治療", "揀學校參考"],
+    ageGroup: "學齡（小學）",
+    description:
+      "以官方《小學概覽 2025》507 間小學嘅「全校參與照顧學生的多樣性」自述做數據，按 18 區＋支援標籤（校本教育心理學家／言語治療／社交訓練／情緒支援等）篩選學校，原文逐間可核對。",
+    url: "/primary-inclusion",
+    confidence: "high",
+    sources: [
+      C("小學概覽 2025 開放數據（2026-07 抓取）", "https://data.gov.hk/tc-data/dataset/chsc-chsc-primary-school-profiles"),
+    ],
+  },
+  {
     id: "dir-sense-edb",
     name: "融情・特教（教育局官方共融資訊網）",
     type: "government",

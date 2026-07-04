@@ -33,4 +33,5 @@ export const ROUTES = [
   "/resources",
   "/podcast",
   "/inclusion-schools",
+  "/primary-inclusion",
 ];
