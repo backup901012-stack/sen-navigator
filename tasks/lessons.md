@@ -65,3 +65,28 @@
 **處置**：移除 MatchTool 的 reco-tsp 區塊（v1.14.1）；TSP 在 /journey、/directory、/faq 仍以「過渡/輪候期支援」正確框架保留。
 
 **升級狀態**：首次。對應 commit（v1.14.1）。
+
+---
+
+## 2026-07-07 [手機驗證/UX] 「揀身份卡後去錯/空白」真因＝換步冇捲返頂 + 驗證要用 Safari 引擎
+
+**情境**：用戶回報「手機開站，揀身份卡後有反應但去錯/空白，沒連到學校資料」。
+
+**驗證方法（有效、可重用）**：
+- 用 **Playwright WebKit（真 Safari 引擎）+ Chromium 兩者**、`devices["iPhone 13"]`（mobile viewport + `hasTouch` + 真 `tap()`）跑，唔淨係 Chromium——真 iPhone 用 WebKit。
+- 逐層量測：EntryGate 揀卡 → 攞路線 → 學校連結導航（URL 有變？學校資料載入？）；`page.on("response")` 抓 4xx/5xx；`getBoundingClientRect()` 量元素喺唔喺視窗內。
+- 對照組：同一 e2e 跑 live 舊版，分清「本次回歸」定「既有問題」（本次 e2e 25/26，唯一 FAIL＝既有 TSP 過時測試、live 一致，非我回歸）。
+
+**真因（實測）**：EntryGate 兩步式 modal，step1 五張卡在螢幕下方、用戶要**捲到底**先撳到「攞我嘅路線」；換到 step2 時 `overflow-y-auto` 容器**沿用舊 scrollTop**（實測 step2 標題 top=-123），一入見中段、見唔到頂部標題同路線第一步 → 感覺「揀完去錯/搵唔到學校連結」。**新舊版皆有**、純功能其實正常（導航照跑）。
+
+**誤區**：① 一開始以為 CSS `grid place-items-center` 垂直置中裁走頂部——改 `flex + m-auto` 後**實測 top 仍 = -123、根本冇變**（差啲把無效改動當修復）。真兇係**捲動位置**唔係置中。② 模擬全過就想講「冇 bug」——但用戶真機真實經歷唔可以憑模擬否定；最可能係**舊快取**（本專案部署曾多次 failure、v1.24.0 push 部署都 failed 過、靠手動 re-trigger 上線）。
+
+**規則**：
+1. 多步式 modal / 覆蓋層，**每次換步或重開都要把捲動容器 `scrollTo(0,0)`**（`useEffect([open,step])` + `ref`），唔好靠 CSS 置中。
+2. 手機 bug 驗證**一定用 WebKit（Safari 引擎）**，唔淨係 Chromium；用真 `tap()` + mobile device descriptor。
+3. 改咗 CSS 唔好靠腦補「應該修好」，**實測量度前後數值**（`getBoundingClientRect`），無變化＝無效改動、唔可以當修復（honest-progress）。
+4. 模擬重現唔到用戶 bug 時，**查部署新鮮度 + 提醒用戶清快取/無痕測**，唔好一句「冇 bug」否定用戶。
+
+**處置**：v1.24.1（commit 823bcc7）加 `scrollRef` + `useEffect([open,step]) scrollTo(0,0)`；`close()` 順手重置 `body.overflow`；版面改頂對齊。線上實測 step2 標題 top=-123 → **top=40（可見）**、導航照常、0 錯誤。Codex review 無 P0/P1。
+
+**升級狀態**：首次。對應 commit 823bcc7（v1.24.1）。
