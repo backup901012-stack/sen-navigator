@@ -95,4 +95,26 @@
 - [x] 串聯篇：面對途人說教/投訴（6 招 + 隨身小抄 + alert card 實證）
 - [x] 家長特區頁加入口卡（避主導航第 10 項 wrap 回歸）
 - [x] WebSearch 多源實證查證；build 通過 34 路由；內容渲染全 ✓；push main b1d2a1c + e2016b1
-- [ ] ⏳ 待有網路：驗 CI deploy run 綠燈 + live https://backup901012-stack.github.io/sen-navigator/scenarios 200 + Codex/Gemini 補互審（本次 sandbox 無網路 SKIP）
+- [x] 驗 CI deploy + live（2026-06-25）：最新 CI run `completed success`（v1.14.2 scenarios 升頂點題）；live `/scenarios/` 回 **200**、首頁/example 網路皆 200；Codex/Gemini 補互審 → Gemini CLI 本機 hang/timeout SKIP（circuit-breaker）、Codex 額度前科；內容前已 WebSearch 多源實證查證，列為非阻塞後續
+
+## 2026-07-07 手機端「揀身份卡→學校資料」健壯性修復（v1.24.1）
+> 用戶回報：手機開站揀身份卡後「有反應但去錯/空白」。
+> 實測（WebKit=Safari 引擎 + Chromium、iPhone 13、真觸控）現行 v1.24.0 兩條路徑皆正常、
+> 18 個路線連結全 200、0 失敗請求、0 JS 錯誤 → 最可能是**用戶手機舊快取**（部署曾不穩，commit 534d586）。
+> 但實測發現 2 個真實可改善的健壯性問題，順手修（改動僅 EntryGate.tsx 一檔）。
+- [x] **真因**（實測發現）：step1 捲到底撳「攞路線」後，step2 沿用舊捲動位置（top=-123）→ 一入見中段、
+       見唔到頂部標題同路線開頭 → 感覺「揀完去錯/搵唔到學校連結」。新舊版皆有。
+- [x] Fix（真正有效）：加 `scrollRef` + `useEffect([open,step])` 開閘/換步都 `scrollTo(0,0)`；
+       實測 step2 標題初始 top=-123 → **top=40（可見）**，1 卡＋5 卡皆修好。
+- [x] 附帶：`close()` 順手重置 `document.body.style.overflow`（防目標頁捲不動看似空白）；
+       版面 `grid place-items-center` → `flex flex-col items-center justify-start` 頂對齊。
+- [x] version bump v1.24.0 → v1.24.1（package.json + lock 已同步、footer 顯示）
+- [x] 本地 build 通過（靜態匯出全路由 static）
+- [x] 驗證：e2e_flows.mjs **25/26**（唯一 FAIL=既有 TSP 過時測試、live v1.24.0 一致、非本次回歸）；
+       手機 WebKit 完整流程（全新+回訪）導航成功、學校資料載入、0 錯誤；step2 截圖目視標題可見
+- [x] Codex review：**無 P0/P1**（一個 P2 註解誇大已修準）
+- [ ] commit + push（用戶已授權重新部署）+ 線上驗證
+> 誠實備註：① 現行 v1.24.0 兩條路徑功能本來就正常，用戶真機「去錯/空白」最可能是**舊快取**，
+>   本次程式碼改動無法解除用戶手機「現有」快取，用戶端仍需無痕/清快取確認。
+> ② 本次修的是實測發現的「捲動位置」觀感問題（真實但屬 UX 層），非確診用戶那個 bug。
+> ③ e2e 既有 TSP 過時測試（與 2026-06-19 lesson 矛盾）留待另案處理、非本次範圍。

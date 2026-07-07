@@ -7,7 +7,7 @@
  * 任何頁可用 window CustomEvent "sen-open-gate" 重開（GateOpener 按鈕）。
  * 無障礙：role=dialog、ESC 關、body scroll lock、prefers-reduced-motion 由 CSS 層兜。
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { PERSONAS } from "@/data/personas";
 
@@ -17,6 +17,14 @@ export default function EntryGate() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<1 | 2>(1);
   const [selected, setSelected] = useState<string[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // 每次開閘 / 換步（step1→step2）都把 modal 捲返最頂：
+  // 否則喺 step1 捲到底撳「攞路線」後，step2 會停喺舊捲動位置、一入見唔到頂部標題同路線開頭，
+  // 令人以為「揀完去錯/搵唔到學校連結」。捲返頂 → 用戶由標題順住往下睇。
+  useEffect(() => {
+    if (open) scrollRef.current?.scrollTo(0, 0);
+  }, [open, step]);
 
   // 第一視覺階段：每個瀏覽 session 開站先見抽卡（本 session 內唔重複）；
   // 已揀過嘅身份由 localStorage 預先剔返。
@@ -98,6 +106,14 @@ export default function EntryGate() {
     } catch {
       /* 唔阻流程 */
     }
+    // 順手解除 body 捲動鎖：離開閘門（尤其係揀路線連結跳頁）之後，
+    // 盡量確保目標頁可以正常捲動——防手機上目標頁「載到但捲唔到、睇落好似空白」。
+    // （[open] effect 嘅 cleanup 之後仍會 restore prev，兩者一致、唔會衝突。）
+    try {
+      document.body.style.overflow = "";
+    } catch {
+      /* 唔阻流程 */
+    }
     setOpen(false);
     setStep(1);
   }
@@ -108,6 +124,7 @@ export default function EntryGate() {
 
   return (
     <div
+      ref={scrollRef}
       className="fixed inset-0 z-[100] overflow-y-auto bg-gradient-to-br from-brand-50 via-paper to-warm-50"
       role="dialog"
       aria-modal="true"
@@ -120,8 +137,9 @@ export default function EntryGate() {
         <span className="absolute -bottom-24 right-1/4 w-80 h-80 rounded-full bg-warm-200/40 blur-2xl" />
       </div>
 
-      {/* 舞台內容 */}
-      <div className="relative min-h-full grid place-items-center p-4 sm:p-8">
+      {/* 舞台內容 — 頂對齊 + 可捲動：手機上內容長過螢幕時，頂部標題（如「你嘅路線準備好喇」）
+          唔會被 grid/flex 垂直置中頂出視窗外、亦唔會被裁走；用戶一入就見到標題，順住往下捲。 */}
+      <div className="relative flex min-h-full flex-col items-center justify-start p-4 sm:p-8">
         <div className="w-full max-w-5xl py-6 animate-fade-up">
         {step === 1 ? (
           <>
