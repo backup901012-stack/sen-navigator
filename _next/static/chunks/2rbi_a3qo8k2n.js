@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,76084,t=>{"use strict";var e=t.i(43476);t.s(["default",0,function({className:t="",children:n}){return(0,e.jsx)("button",{type:"button",className:t,onClick:()=>window.dispatchEvent(new CustomEvent("sen-open-gate")),children:n})}])}]);

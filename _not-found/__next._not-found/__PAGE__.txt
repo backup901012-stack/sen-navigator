@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/sen-navigator/_next/static/chunks/3nkp23zw67-76.js","/sen-navigator/_next/static/chunks/14mrh2-p_w84d.js"],""]
+3:I[97367,["/sen-navigator/_next/static/chunks/3nkp23zw67-76.js","/sen-navigator/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-page py-24 text-center","children":[["$","p",null,{"className":"text-6xl","children":"🧭"}],["$","h1",null,{"className":"mt-4 text-3xl font-black text-brand-900","children":"搵唔到呢一頁"}],["$","p",null,{"className":"mt-3 text-ink-soft","children":"頁面可能已移動或不存在。返回首頁，或由以下入口繼續。"}],["$","div",null,{"className":"mt-8 flex flex-wrap gap-3 justify-center","children":[["$","$L2",null,{"href":"/","className":"px-6 py-3 rounded-full bg-brand-600 text-white font-bold","children":"返回首頁"}],["$","$L2",null,{"href":"/match","className":"px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200","children":"🎯 服務配對"}],["$","$L2",null,{"href":"/directory","className":"px-6 py-3 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200","children":"資源目錄"}]]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-KxyvtAiY90ZMEsam8Dwi"}
+5:null

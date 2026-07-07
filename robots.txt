@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://backup901012-stack.github.io/sen-navigator/sitemap.xml

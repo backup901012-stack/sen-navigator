@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEN 小孩導航員・國語版</title>
+    <description>為在香港、以國語（普通話）為主要語言的家庭而設的資訊節目。我們把本站已逐項查證的香港 SEN（特殊教育需要）兒童學前資源——政府服務、評估流程、輪候攻略、訓練方法——翻譯成國語音頻，每集一個主題，通勤路上就能聽懂。</description>
+    <link>https://backup901012-stack.github.io/sen-navigator/podcast</link>
+    <atom:link href="https://backup901012-stack.github.io/sen-navigator/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>zh-cmn</language>
+    <copyright>© SEN 小孩導航員</copyright>
+    <itunes:author>SEN 小孩導航員</itunes:author>
+    <itunes:image href="https://backup901012-stack.github.io/sen-navigator/podcast-cover.png"/>
+    <image>
+      <url>https://backup901012-stack.github.io/sen-navigator/podcast-cover.png</url>
+      <title>SEN 小孩導航員・國語版</title>
+      <link>https://backup901012-stack.github.io/sen-navigator/podcast</link>
+    </image>
+    <itunes:summary>為在香港、以國語（普通話）為主要語言的家庭而設的資訊節目。我們把本站已逐項查證的香港 SEN（特殊教育需要）兒童學前資源——政府服務、評估流程、輪候攻略、訓練方法——翻譯成國語音頻，每集一個主題，通勤路上就能聽懂。</itunes:summary>
+    <itunes:type>episodic</itunes:type>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Kids &amp; Family">
+      <itunes:category text="Parenting"/>
+    </itunes:category>
+
+  </channel>
+</rss>

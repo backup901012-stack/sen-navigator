@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[13781,["/sen-navigator/_next/static/chunks/3nkp23zw67-76.js","/sen-navigator/_next/static/chunks/14mrh2-p_w84d.js","/sen-navigator/_next/static/chunks/41r1ipg_243o4.js"],"default"]
+3:I[97367,["/sen-navigator/_next/static/chunks/3nkp23zw67-76.js","/sen-navigator/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","section",null,{"className":"bg-gradient-to-br from-brand-50 to-white","children":["$","div",null,{"className":"container-page py-14","children":[["$","p",null,{"className":"text-brand-600 font-bold text-sm mb-2","children":"紀錄 · 跟進"}],["$","h1",null,{"className":"text-3xl sm:text-4xl font-black text-brand-900","children":[["$","span",null,{"aria-hidden":"true","children":"📋 "}],"我的規劃清單"]}],["$","p",null,{"className":"mt-4 max-w-2xl text-ink-soft","children":"把服務、流程步驟與資源集中在一處，逐項打勾跟進。可加入自訂待辦，也可列印帶去諮詢。"}]]}]}],["$","section",null,{"className":"container-page py-10 max-w-2xl","children":["$","$L2",null,{}]}]],[["$","script","script-0",{"src":"/sen-navigator/_next/static/chunks/41r1ipg_243o4.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-KxyvtAiY90ZMEsam8Dwi"}
+5:null
