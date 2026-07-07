@@ -192,13 +192,13 @@ export const DIRECTORY: ResourceItem[] = [
   },
   {
     id: "dir-caring-school",
-    name: "關愛校園獎勵計劃（得獎學校名單）",
+    name: "關愛校園獎勵計劃（外部連結）",
     type: "ngo",
     funding: "free",
-    tags: ["共融", "關愛校園", "揀學校參考", "學校文化"],
+    tags: ["共融", "關愛校園", "揀學校參考", "學校文化", "外部連結"],
     ageGroup: "學前及學齡",
     description:
-      "香港基督教服務處自 2005 年起主辦（2015/16 學年起與香港輔導教師協會聯合主辦），以 BLESS 框架公開表揚實踐關愛文化嘅學校——揀學校時可參考得獎名單了解學校關愛文化。",
+      "香港基督教服務處自 2005 年起主辦（2015/16 學年起與香港輔導教師協會聯合主辦），以 BLESS 框架公開表揚實踐關愛文化嘅學校。得獎學校名單喺主辦機構官網公佈（外部頁面）——揀學校時可作參考，了解學校關愛文化。想睇本站整理嘅特殊學校名單，去「關愛共融政策・學校列表」。",
     url: "https://www.hkcs.org/tc/services/caringschoolawardscheme",
     confidence: "high",
     sources: [

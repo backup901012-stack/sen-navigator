@@ -65,6 +65,14 @@ export default function InclusionSchoolsPage() {
             呢一頁幫你搵「學校層面」嘅共融資料：主流學校點查支援、
             以及全港 {total} 所資助特殊學校嘅官方名單（按類別、逐間列出）。
           </p>
+          {/* 直接跳去學校名單：呢一頁上半部係政策解說，62 所名單喺頁尾——
+              加個明顯跳掣，等撳「學校列表」入嚟嘅家長一 click 就見到真名單，唔使捲十幾屏。 */}
+          <a
+            href="#school-list"
+            className="mt-5 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-colors"
+          >
+            <span aria-hidden>⤵</span> 直接睇 {total} 所特殊學校名單
+          </a>
         </div>
       </section>
 
@@ -315,7 +323,7 @@ export default function InclusionSchoolsPage() {
       </section>
 
       {/* 特殊學校 62 所官方名單 */}
-      <section className="bg-white border-y border-brand-100">
+      <section id="school-list" className="scroll-mt-20 bg-white border-y border-brand-100">
         <div className="container-page py-12">
           <SectionTitle
             eyebrow={`官方名單 · 共 ${total} 所（2023/24 學年）`}
@@ -324,8 +332,10 @@ export default function InclusionSchoolsPage() {
           />
           <div className="mt-8 space-y-4">
             {Object.entries(SPECIAL_SCHOOLS).map(([cat, schools]) => (
+              // 預設展開：呢一頁叫「學校列表」，落地就應該見到校名，唔可以再摺埋令人以為「搵唔到名單」。
               <details
                 key={cat}
+                open
                 className="rounded-2xl bg-brand-50/40 border border-brand-100 overflow-hidden"
               >
                 <summary className="flex items-center gap-3 px-5 py-4 cursor-pointer font-black text-brand-900">
