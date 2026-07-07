@@ -247,7 +247,7 @@ export default function EntryGate() {
                 你嘅路線準備好喇 ✨
               </h2>
               <p className="mt-2 text-sm text-ink-soft">
-                由任何一步開始都得；之後隨時撳「揀身份」重新揀過。
+                👇 撳下面<strong className="text-brand-700">任何一步</strong>，就直接帶你去嗰版——由邊步開始都得。
               </p>
             </div>
             <div className="mt-6 space-y-5">
@@ -265,7 +265,7 @@ export default function EntryGate() {
                         <Link
                           href={s.href}
                           onClick={close}
-                          className="flex gap-2.5 rounded-xl bg-brand-50/60 hover:bg-brand-50 p-3 transition-colors h-full"
+                          className="group flex items-center gap-2.5 rounded-xl bg-brand-50/70 ring-1 ring-brand-100 hover:ring-brand-300 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:bg-brand-50 p-3 transition-all h-full shadow-sm"
                         >
                           <span className="grid place-items-center w-7 h-7 rounded-full bg-brand-500 text-white font-black text-xs shrink-0">
                             {i + 1}
@@ -283,6 +283,12 @@ export default function EntryGate() {
                               {s.desc}
                             </span>
                           </span>
+                          <span
+                            aria-hidden
+                            className="shrink-0 self-center text-brand-500 font-black text-lg transition-transform group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5"
+                          >
+                            →
+                          </span>
                         </Link>
                       </li>
                     ))}
@@ -294,9 +300,9 @@ export default function EntryGate() {
               <button
                 type="button"
                 onClick={close}
-                className="px-8 py-3.5 rounded-full font-bold text-white bg-brand-600 hover:bg-brand-700 transition-colors"
+                className="px-6 py-3 rounded-full font-bold text-brand-700 bg-white border border-brand-200 hover:bg-brand-50 transition-colors"
               >
-                開始瀏覽網站 →
+                唔跟路線，自己四圍睇
               </button>
               <button
                 type="button"

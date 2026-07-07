@@ -70,10 +70,10 @@ export const PERSONAS: Persona[] = [
     gradient: "linear-gradient(160deg, #c5dab8, #eef5e8)",
     greeting: "共融唔係口號。睇清政策點運作、學校實際有咩支援：",
     steps: [
-      { href: "/special-schools", title: "睇明雙軌制與學校安排", desc: "融合教育 vs 特殊學校、EDB 點安排，共融學校支援現實講白。", time: "6 分鐘" },
-      { href: "/services", title: "認識到校支援服務", desc: "到校學前康復服務（OPRS）：跨專業團隊點入校支援孩子同老師。", time: "5 分鐘" },
-      { href: "/intelligences", title: "了解共融背後嘅理念", desc: "多元智能：每個孩子強項唔同，共融教育嘅根基。", time: "4 分鐘" },
+      { href: "/primary-inclusion", title: "搵有共融支援嘅小學", desc: "官方《小學概覽 2025》507 間小學，按校網／標籤篩有校本教育心理學家、言語治療、社交小組嘅學校。", time: "自行瀏覽" },
       { href: "/inclusion-schools", title: "睇關愛共融・學校列表", desc: "62 所特殊學校官方名單逐間睇，仲教你點查主流學校嘅共融支援。", time: "3 分鐘" },
+      { href: "/special-schools", title: "睇明雙軌制與學校安排", desc: "融合教育 vs 特殊學校、EDB 點安排，共融學校支援現實講白。", time: "6 分鐘" },
+      { href: "/intelligences", title: "了解共融背後嘅理念", desc: "多元智能：每個孩子強項唔同，共融教育嘅根基。", time: "4 分鐘" },
     ],
   },
   {
